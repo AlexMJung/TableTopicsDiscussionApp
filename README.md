@@ -21,7 +21,7 @@ The session organizer drives the session. At the beginning of the session, the s
 Stretch goal - The session organizer does not enter the questions, however participants join as session using their phone or electronic device, and are asked to enter their name and question based on that session’s theme.
 
 ## Application Features
-# User Roles
+## User Roles
 
 **Session Organizer:**
 Sets up a new session, names it, chooses theme, and enters questions for that theme. Drives the session experience.
@@ -29,7 +29,7 @@ Sets up a new session, names it, chooses theme, and enters questions for that th
 **Session Participant:**
 Views the browser during a session and responds to direction from but does not physically interact with computer.
 
-# Admin Login and Create Session
+## Admin Login and Create Session
 	Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
 At the base ‘/’ of the application, the session organizer is asked to login to create a new
@@ -40,7 +40,7 @@ Upon login the session organizer names the session, creates a theme for the sess
 
 Sockets Stretch Goal -
 
-## Organizer Opens a Session
+### Organizer Opens a Session
 
 Instead of the session organizer adding in questions, the organizer will name the session and set its theme then create a session that participants will be invited to join.
 
@@ -48,7 +48,7 @@ Create Session button pops up an alert, probably a sweet one, which verifies tha
 
 
 
-# Enters Participants
+## Enters Participants
   Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
 After create session is verified, the session organizer is brought to an input participant names view. Participants names are added to the current session object in the database collection of sessions. The organizer wants to get as many of the participants entered as possible before beginning a session, however they will be able to alter the participants as the session is in progress.
@@ -57,12 +57,12 @@ Begin Session button pops up an alert, probably a sweet one, which verifies that
 
 Sockets Stretch Goal -
 
-## Participants Join Open Session
+### Participants Join Open Session
 
 Session Participant enters their name and specific question from their phone or electronic device connected to a main session which was created by the session organizer. The database needs to know that there is a connection between the person and the question entered, so that they cannot be randomly assigned their own question.
 
 
-# Session Introduction
+## Session Introduction
 
   Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
@@ -71,7 +71,7 @@ The landing page is the first screen participants will see when a session is abo
 The Session Introduction view naturally progresses to the Practice Session view.
 
 
-# Practice Session
+## Practice Session
 
   Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
@@ -85,7 +85,7 @@ Assigning of question is triggered by session organizer, by clicking “choose n
 
 Sockets Stretch Goal -
 
-## Participants Are Assigned Random Question
+### Participants Are Assigned Random Question
 
 If no one volunteers to answer a question, then a participant is chosen at random, ensuring that the person chosen does not  get assigned their own question. Further logic needs to be put in place making sure that the last question asked is not the question of the last person to speak.
 
@@ -97,33 +97,33 @@ Bottom half of display becomes an end session button allowing the session organi
 
 ---
 
-## Database Collections
+### Database Collections
 Session Object Collection
 Contains objects which represent each session. Object properties will include session name, session theme, questions, and participants.
 
-## Version 2.0
+### Version 2.0
 Stretch goal - Session organizer as admin is able to login/logout and manage database of questions, as well as past and present sessions.
 
 Stretch goal - Participant is able to login/logout and view past and current sessions, questions answered, times, and time averages.
 
-## Browsers
+### Browsers
 Application will fully support browsers listed below. All browsers or versions not listed below are considered out of scope.
 
-Browser Name
-Version
+Browser Name Version:
 
   *Firefox 52
   *Chrome 57
   *Safari 10.1
 
-## Assumptions
+### Assumptions
 While completing this estimate the following assumptions were made:
 
 Session Organizer and Participants will use browsers which support ES6.
 
 Heroku and mLabs will host the application.
 
-##Technologies
+### Technologies:
+
   *MEAN Stack
   *MongoDB
   *Socket.io
