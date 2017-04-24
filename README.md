@@ -11,14 +11,14 @@ Important Directions:
 Keith Tomlinson
 April 19, 2017 | Version 1.0
 
-Application Overview
+## Application Overview
 Table Topics Discussion Practice App is a full-stack web application which facilitates groups in practicing off the cuff responses to themed questions in a low stakes and supportive environment. Inspired by the Table Topics portion of the Toastmasters format, this app will help participants become comfortable with speaking publicly for 1 - 2 minutes on a wide range of topics. By engaging the participants with a playful environment it will work toward building confidence and improv skills, lowering anxiety, and helping them to communicate their thoughts and needs more effectively.
 
 The interface of the app will allow a session organizer to instantiate a practice session. The session organiser then will name the session, set its theme, adds questions for the session ensuring that there are at least as many questions as potential participants.
 
 The session organizer drives the session. At the beginning of the session, the session organizer will display their browser (preferably on a large projection screen or monitor) and enters participant’s names as they join the group. Questions are chosen randomly and participants are given the opportunity to volunteer, if no one volunteers a participant is chosen at random. Participants answers are timed with a goal of speaking for at least one minute. The session continues until everyone has spoken once. After everyone has been asked a question, the total percentage of participants which spoke for more than one minute is revealed and the session ends.
 
-Stretch goal - The session organizer does not enter the questions, however participants join as session using their phone or electronic device, and are asked to enter their name and question based on that session’s theme.
+**Stretch goal -** The session organizer does not enter the questions, however participants join as session using their phone or electronic device, and are asked to enter their name and question based on that session’s theme.
 
 ## Application Features
 ## User Roles
@@ -46,8 +46,6 @@ Instead of the session organizer adding in questions, the organizer will name th
 
 Create Session button pops up an alert, probably a sweet one, which verifies that the session organizer wants to create this new session. Confirming this alert moves the session to the Enter Participants view.
 
-
-
 ## Enters Participants
   Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
@@ -55,7 +53,7 @@ After create session is verified, the session organizer is brought to an input p
 
 Begin Session button pops up an alert, probably a sweet one, which verifies that the session organizer wants to being a session. Confirming this alert moves the session to the Session Introduction view.
 
-Sockets Stretch Goal -
+**Sockets Stretch Goal -**
 
 ### Participants Join Open Session
 
@@ -83,7 +81,7 @@ Initial view of the page shows a list of participants in the session on the righ
 
 Assigning of question is triggered by session organizer, by clicking “choose next” question. The participants are given 15 seconds before a timer begins and a person is assigned the question. During this time a participant may volunteer to answer the question. The session organizer clicks on that participant’s name in order to assign them to that question.  The choose next button changes views to provide visual feedback to the speaker as to how long they have been talking as well as provides the session organizer a stop timer button. As the timer hits 60 seconds, 90 seconds, and 120 seconds it changes in appearance to give visual cues as to how long the participant has been speaking. Once the participant has indicated they are finished speaking, the session organizer hits a stop button located on the timer. The time the person spoke for is logged next to the participant's name.  The participant’s name is greyed out indicating that they are done for the round. The timer view changes back to a “choose next question” button, and the question field is emptied.
 
-Sockets Stretch Goal -
+**Sockets Stretch Goal -**
 
 ### Participants Are Assigned Random Question
 
@@ -98,13 +96,13 @@ Bottom half of display becomes an end session button allowing the session organi
 ---
 
 ### Database Collections
-Session Object Collection
+**Session Object Collection**
 Contains objects which represent each session. Object properties will include session name, session theme, questions, and participants.
 
 ### Version 2.0
-Stretch goal - Session organizer as admin is able to login/logout and manage database of questions, as well as past and present sessions.
+**Stretch goal** - Session organizer as admin is able to login/logout and manage database of questions, as well as past and present sessions.
 
-Stretch goal - Participant is able to login/logout and view past and current sessions, questions answered, times, and time averages.
+**Stretch goal** - Participant is able to login/logout and view past and current sessions, questions answered, times, and time averages.
 
 ### Browsers
 Application will fully support browsers listed below. All browsers or versions not listed below are considered out of scope.
@@ -118,9 +116,8 @@ Browser Name Version:
 ### Assumptions
 While completing this estimate the following assumptions were made:
 
-Session Organizer and Participants will use browsers which support ES6.
-
-Heroku and mLabs will host the application.
+  * Session Organizer and Participants will use browsers which support ES6.
+  * Heroku and mLabs will host the application.
 
 ### Technologies:
 
