@@ -30,16 +30,17 @@ Sets up a new session, names it, chooses theme, and enters questions for that th
 Views the browser during a session and responds to direction from but does not physically interact with computer.
 
 ## Admin Login and Create Session
-	Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
+
+	**Admin Login>** Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
 At the base ‘/’ of the application, the session organizer is asked to login to create a new
 session.
-  Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
+
+  Admin Login> **Create Session>** Enter Participants> Session Intro> Practice Session> Admin Logout
 
 Upon login the session organizer names the session, creates a theme for the session and enters questions for the session. This builds a session object which will be stored in a database collection of sessions. The view will update as questions are entered allowing the session organizer to see what has been entered. Each entered question can be updated or deleted by the organizer.
 
 Sockets Stretch Goal -
-
 ### Organizer Opens a Session
 
 Instead of the session organizer adding in questions, the organizer will name the session and set its theme then create a session that participants will be invited to join.
@@ -47,14 +48,13 @@ Instead of the session organizer adding in questions, the organizer will name th
 Create Session button pops up an alert, probably a sweet one, which verifies that the session organizer wants to create this new session. Confirming this alert moves the session to the Enter Participants view.
 
 ## Enters Participants
-  Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
+  Admin Login> Create Session> **Enter Participants>** Session Intro> Practice Session> Admin Logout
 
 After create session is verified, the session organizer is brought to an input participant names view. Participants names are added to the current session object in the database collection of sessions. The organizer wants to get as many of the participants entered as possible before beginning a session, however they will be able to alter the participants as the session is in progress.
 
 Begin Session button pops up an alert, probably a sweet one, which verifies that the session organizer wants to being a session. Confirming this alert moves the session to the Session Introduction view.
 
 **Sockets Stretch Goal -**
-
 ### Participants Join Open Session
 
 Session Participant enters their name and specific question from their phone or electronic device connected to a main session which was created by the session organizer. The database needs to know that there is a connection between the person and the question entered, so that they cannot be randomly assigned their own question.
@@ -62,7 +62,7 @@ Session Participant enters their name and specific question from their phone or 
 
 ## Session Introduction
 
-  Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
+  Admin Login> Create Session> Enter Participants> **Session Intro>** Practice Session> Admin Logout
 
 The landing page is the first screen participants will see when a session is about to begin, it will feature logo and brand animations and it will set the tone of the application. Because public speaking  can produce a natural level of anxiety, it is important that the animation feel playful and game-like as well as engaging the participants.
 
@@ -71,7 +71,7 @@ The Session Introduction view naturally progresses to the Practice Session view.
 
 ## Practice Session
 
-  Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
+  Admin Login> Create Session> Enter Participants> Session Intro> **Practice Session>** Admin Logout
 
 Session organizer and participants will spend the majority of their time on this page. This page executes the practice session, choosing participants and questions at random.
 
@@ -82,14 +82,13 @@ Initial view of the page shows a list of participants in the session on the righ
 Assigning of question is triggered by session organizer, by clicking “choose next” question. The participants are given 15 seconds before a timer begins and a person is assigned the question. During this time a participant may volunteer to answer the question. The session organizer clicks on that participant’s name in order to assign them to that question.  The choose next button changes views to provide visual feedback to the speaker as to how long they have been talking as well as provides the session organizer a stop timer button. As the timer hits 60 seconds, 90 seconds, and 120 seconds it changes in appearance to give visual cues as to how long the participant has been speaking. Once the participant has indicated they are finished speaking, the session organizer hits a stop button located on the timer. The time the person spoke for is logged next to the participant's name.  The participant’s name is greyed out indicating that they are done for the round. The timer view changes back to a “choose next question” button, and the question field is emptied.
 
 **Sockets Stretch Goal -**
-
 ### Participants Are Assigned Random Question
 
 If no one volunteers to answer a question, then a participant is chosen at random, ensuring that the person chosen does not  get assigned their own question. Further logic needs to be put in place making sure that the last question asked is not the question of the last person to speak.
 
 After the final person has completed the top half of the view provides a display of the percentage of participants who successfully spoke for more than one minute. It does not however call out the people who did not, the focus is on success.
 
-  Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
+  Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> **Admin Logout**
 
 Bottom half of display becomes an end session button allowing the session organizer to logout via pop up. Upon logging out the session is application is reset to the ‘/’ screen.
 
