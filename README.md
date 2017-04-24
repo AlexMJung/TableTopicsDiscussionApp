@@ -111,9 +111,9 @@ Application will fully support browsers listed below. All browsers or versions n
 
 Browser Name Version:
 
-  *Firefox 52
-  *Chrome 57
-  *Safari 10.1
+  * Firefox 52
+  * Chrome 57
+  * Safari 10.1
 
 ### Assumptions
 While completing this estimate the following assumptions were made:
@@ -124,16 +124,16 @@ Heroku and mLabs will host the application.
 
 ### Technologies:
 
-  *MEAN Stack
-  *MongoDB
-  *Socket.io
-  *Express.js
-  *AngularJS
-  *Node.js
-  *ES6
-  *CSS Grid or Bootstrap
-  *Post CSS or SASS
-  *Passport
-  *Grunt
-  *Probably some Sweet Alerts
-  *Gimp
+  * MEAN Stack
+  * MongoDB
+  * Socket.io
+  * Express.js
+  * AngularJS
+  * Node.js
+  * ES6
+  * CSS Grid or Bootstrap
+  * Post CSS or SASS
+  * Passport
+  * Grunt
+  * Probably some Sweet Alerts
+  * Gimp
