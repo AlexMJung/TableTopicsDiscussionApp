@@ -11,35 +11,12 @@
                 <input class = 'user-input' type="text" placeholder = 'username' ng-model="user.username" />
             </div>
             <div>
-                <input class = 'user-input' type="password" placeholder = ' password' ng-model="user.password" />
+                <input class = 'user-input' type="password" placeholder = 'password' ng-model="user.password" />
             </div>
             <input class="btn btn-default" type="submit" name="submit" value="REGISTER" />
             <br>
             <a href="#home">Cancel</a>
           </form>
-
-
-
-
-          <h2>Login to Begin</h2>
-          <!-- end login panel header -->
-          <h5 class = 'alert alert-danger login-error' role = 'alert' ng-if = "message != ''">{{message}}</h5>
-          <!-- error message for loggin in -->
-
-          <form ng-submit = 'login()'>
-            <div>
-                <input class = 'user-input' type = 'text' placeholder = 'username' ng-model = 'user.username' />
-            </div>
-            <div>
-                <input class = 'user-input' type = 'password' placeholder = 'password' ng-model = 'user.password' />
-            </div>
-            <div>
-                <input class = 'btn btn-default' type = 'submit' name = 'submit' value = 'LOGIN' />
-                <br>
-                <a href = '#register'>Register</a>
-            </div>
-          </form>
-          <!--ends form-->
 
         </div>
         <!-- ends panel-body -->
