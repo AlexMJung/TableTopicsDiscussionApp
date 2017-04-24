@@ -11,6 +11,10 @@
   width: 150px;
 }
 
+.login-container{
+  text-align: center;
+}
+
 /*EVERYTHING BELOW IS FROM THE ORIGINAL BASE PROJECT FILE*/
 
 /*header.html uses this*/
