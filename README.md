@@ -18,7 +18,7 @@ The interface of the app will allow a session organizer to instantiate a practic
 
 The session organizer drives the session. At the beginning of the session, the session organizer will display their browser (preferably on a large projection screen or monitor) and enters participant’s names as they join the group. Questions are chosen randomly and participants are given the opportunity to volunteer, if no one volunteers a participant is chosen at random. Participants answers are timed with a goal of speaking for at least one minute. The session continues until everyone has spoken once. After everyone has been asked a question, the total percentage of participants which spoke for more than one minute is revealed and the session ends.
 
-**Stretch goal -** The session organizer does not enter the questions, however participants join as session using their phone or electronic device, and are asked to enter their name and question based on that session’s theme.
+//The session organizer does not enter the questions, however participants join as session using their phone or electronic device, and are asked to enter their name and question based on that session’s theme.
 
 ## Application Features
 ## User Roles
@@ -39,7 +39,6 @@ session.
 
 Upon login the session organizer names the session, creates a theme for the session and enters questions for the session. This builds a session object which will be stored in a database collection of sessions. The view will update as questions are entered allowing the session organizer to see what has been entered. Each entered question can be updated or deleted by the organizer.
 
-Sockets Stretch Goal -
 ### Organizer Opens a Session
 
 Instead of the session organizer adding in questions, the organizer will name the session and set its theme then create a session that participants will be invited to join.
@@ -53,11 +52,9 @@ After create session is verified, the session organizer is brought to an input p
 
 Begin Session button pops up an alert, probably a sweet one, which verifies that the session organizer wants to being a session. Confirming this alert moves the session to the Session Introduction view.
 
-**Sockets Stretch Goal -**
 ### Participants Join Open Session
 
 Session Participant enters their name and specific question from their phone or electronic device connected to a main session which was created by the session organizer. The database needs to know that there is a connection between the person and the question entered, so that they cannot be randomly assigned their own question.
-
 
 ## Session Introduction
 
@@ -66,7 +63,6 @@ Session Participant enters their name and specific question from their phone or 
 The landing page is the first screen participants will see when a session is about to begin, it will feature logo and brand animations and it will set the tone of the application. Because public speaking  can produce a natural level of anxiety, it is important that the animation feel playful and game-like as well as engaging the participants.
 
 The Session Introduction view naturally progresses to the Practice Session view.
-
 
 ## Practice Session
 
@@ -80,7 +76,6 @@ Initial view of the page shows a list of participants in the session on the righ
 
 Assigning of question is triggered by session organizer, by clicking “choose next” question. The participants are given 15 seconds before a timer begins and a person is assigned the question. During this time a participant may volunteer to answer the question. The session organizer clicks on that participant’s name in order to assign them to that question.  The choose next button changes views to provide visual feedback to the speaker as to how long they have been talking as well as provides the session organizer a stop timer button. As the timer hits 60 seconds, 90 seconds, and 120 seconds it changes in appearance to give visual cues as to how long the participant has been speaking. Once the participant has indicated they are finished speaking, the session organizer hits a stop button located on the timer. The time the person spoke for is logged next to the participant's name.  The participant’s name is greyed out indicating that they are done for the round. The timer view changes back to a “choose next question” button, and the question field is emptied.
 
-**Sockets Stretch Goal -**
 ### Participants Are Assigned Random Question
 
 If no one volunteers to answer a question, then a participant is chosen at random, ensuring that the person chosen does not  get assigned their own question. Further logic needs to be put in place making sure that the last question asked is not the question of the last person to speak.
@@ -98,9 +93,9 @@ Bottom half of display becomes an end session button allowing the session organi
 Contains objects which represent each session. Object properties will include session name, session theme, questions, and participants.
 
 ### Version 2.0
-**Stretch goal** - Session organizer as admin is able to login/logout and manage database of questions, as well as past and present sessions.
+Session organizer as admin is able to login/logout and manage database of questions, as well as past and present sessions.
 
-**Stretch goal** - Participant is able to login/logout and view past and current sessions, questions answered, times, and time averages.
+Participant is able to login/logout and view past and current sessions, questions answered, times, and time averages.
 
 ### Browsers
 Application will fully support browsers listed below. All browsers or versions not listed below are considered out of scope.
