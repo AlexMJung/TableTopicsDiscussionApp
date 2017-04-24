@@ -39,3 +39,9 @@
 .btn-danger{
     margin-left: 10px;
 }
+
+/*EVERYTHING ABOVE THIS LINE WAS FROM THE BASE PROJECT*/
+#headerLogo{
+  height: 50px;
+  width: 50px;
+}
