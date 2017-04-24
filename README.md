@@ -14,7 +14,7 @@ April 19, 2017 | Version 1.0
 ## Application Overview
 Table Topics Discussion Practice App is a full-stack web application which facilitates groups in practicing off the cuff responses to themed questions in a low stakes and supportive environment. Inspired by the Table Topics portion of the Toastmasters format, this app will help participants become comfortable with speaking publicly for 1 - 2 minutes on a wide range of topics. By engaging the participants with a playful environment it will work toward building confidence and improv skills, lowering anxiety, and helping them to communicate their thoughts and needs more effectively.
 
-The interface of the app will allow a session organizer to instantiate a practice session. The session organiser then will name the session, set its theme, adds questions for the session ensuring that there are at least as many questions as potential participants.
+The interface of the app will allow a session organizer to instantiate a practice session. The session organizer then will name the session, set its theme, adds questions for the session ensuring that there are at least as many questions as potential participants.
 
 The session organizer drives the session. At the beginning of the session, the session organizer will display their browser (preferably on a large projection screen or monitor) and enters participant’s names as they join the group. Questions are chosen randomly and participants are given the opportunity to volunteer, if no one volunteers a participant is chosen at random. Participants answers are timed with a goal of speaking for at least one minute. The session continues until everyone has spoken once. After everyone has been asked a question, the total percentage of participants which spoke for more than one minute is revealed and the session ends.
 
@@ -30,10 +30,9 @@ Sets up a new session, names it, chooses theme, and enters questions for that th
 Views the browser during a session and responds to direction from but does not physically interact with computer.
 
 ## Admin Login and Create Session
+**Admin Login>** Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
-	**Admin Login>** Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
-
-At the base ‘/’ of the application, the session organizer is asked to login to create a new
+At the base / of the application, the session organizer is asked to login to create a new
 session.
 
   Admin Login> **Create Session>** Enter Participants> Session Intro> Practice Session> Admin Logout
