@@ -60,7 +60,7 @@ mongoDB.on('error', function(err){
 });
 
 mongoDB.once('open', function(){
-   console.log("Connected to Mongo, meow!");
+   console.log("Mongo and I had coffee. We feel good about each other now.");
 });
 
 // App Set //
@@ -68,5 +68,5 @@ app.set('port', (process.env.PORT || 5000));
 
 // Listen //
 app.listen(app.get("port"), function(){
-   console.log("Listening on port: " + app.get("port"));
+   console.log("I'm here to listen to you: " + app.get("port"));
 });
