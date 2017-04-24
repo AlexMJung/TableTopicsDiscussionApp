@@ -1,5 +1,5 @@
 .instructions .container h1 {
-    font-size: 24px;
+    font-size: 100px;
     font-weight: 700;
 }
 
@@ -42,6 +42,9 @@
 
 /*EVERYTHING ABOVE THIS LINE WAS FROM THE BASE PROJECT*/
 #headerLogo{
-  height: 50px;
-  width: 50px;
+  border-radius: 15px;
+  float:left;
+  padding: 10px;
+  height: 150px;
+  width: 150px;
 }
