@@ -19,7 +19,7 @@ module.exports = function(grunt){
       css: {
         expand: true,
         cwd: 'client/styles',
-        src: ['style.css'],
+        src: ['style.css','images/*.*'],
         dest: 'server/public/styles/'
       },
       bootstrap: {
