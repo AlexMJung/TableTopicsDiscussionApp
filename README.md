@@ -29,20 +29,16 @@ Sets up a new session, names it, chooses theme, and enters questions for that th
 **Session Participant:**
 Views the browser during a session and responds to direction from but does not physically interact with computer.
 
-  Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
-
-
 # Admin Login and Create Session
 	Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
 At the base ‘/’ of the application, the session organizer is asked to login to create a new
 session.
-
   Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
 Upon login the session organizer names the session, creates a theme for the session and enters questions for the session. This builds a session object which will be stored in a database collection of sessions. The view will update as questions are entered allowing the session organizer to see what has been entered. Each entered question can be updated or deleted by the organizer.
 
-	Sockets Stretch Goal -
+Sockets Stretch Goal -
 
 ## Organizer Opens a Session
 
@@ -53,14 +49,13 @@ Create Session button pops up an alert, probably a sweet one, which verifies tha
 
 
 # Enters Participants
-
   Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
 After create session is verified, the session organizer is brought to an input participant names view. Participants names are added to the current session object in the database collection of sessions. The organizer wants to get as many of the participants entered as possible before beginning a session, however they will be able to alter the participants as the session is in progress.
 
 Begin Session button pops up an alert, probably a sweet one, which verifies that the session organizer wants to being a session. Confirming this alert moves the session to the Session Introduction view.
 
-  Sockets Stretch Goal -
+Sockets Stretch Goal -
 
 ## Participants Join Open Session
 
