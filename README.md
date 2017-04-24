@@ -104,7 +104,7 @@ Contains objects which represent each session. Object properties will include se
 ## Version 2.0
 Stretch goal - Session organizer as admin is able to login/logout and manage database of questions, as well as past and present sessions.
 
-## Stretch goal - Participant is able to login/logout and view past and current sessions, questions answered, times, and time averages.
+Stretch goal - Participant is able to login/logout and view past and current sessions, questions answered, times, and time averages.
 
 ## Browsers
 Application will fully support browsers listed below. All browsers or versions not listed below are considered out of scope.
@@ -112,27 +112,28 @@ Application will fully support browsers listed below. All browsers or versions n
 Browser Name
 Version
 
-*Firefox 52
-*Chrome 57
-*Safari 10.1
+  *Firefox 52
+  *Chrome 57
+  *Safari 10.1
 
 ## Assumptions
-While completing this estimate the following assumptions were made.
+While completing this estimate the following assumptions were made:
 
-Session Organizer and Participants will use browsers which support ES6
-Heroku and mLabs will host the application
+Session Organizer and Participants will use browsers which support ES6.
+
+Heroku and mLabs will host the application.
 
 ##Technologies
-*MEAN Stack
-*MongoDB
-*Socket.io
-*Express.js
-*AngularJS
-*Node.js
-*ES6
-*CSS Grid or Bootstrap
-*Post CSS or SASS
-*Passport
-*Grunt
-*Probably some Sweet Alerts
-*Gimp
+  *MEAN Stack
+  *MongoDB
+  *Socket.io
+  *Express.js
+  *AngularJS
+  *Node.js
+  *ES6
+  *CSS Grid or Bootstrap
+  *Post CSS or SASS
+  *Passport
+  *Grunt
+  *Probably some Sweet Alerts
+  *Gimp
