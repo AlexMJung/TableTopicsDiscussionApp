@@ -20,19 +20,16 @@ The session organizer drives the session. At the beginning of the session, the s
 
 Stretch goal - The session organizer does not enter the questions, however participants join as session using their phone or electronic device, and are asked to enter their name and question based on that session’s theme.
 
-Application Features
-	User Roles
+## Application Features
+# User Roles
 
-Session Organizer:
+**bold** Session Organizer:
 Sets up a new session, names it, chooses theme, and enters questions for that theme. Drives the session experience.
 
-	Session Participant:
+**bold** Session Participant:
 Views the browser during a session and responds to direction from but does not physically interact with computer.
 
-
-Due to the linear nature of this task, navigation will be handled by breadcrumbs instead of utilizing navigation menu.
-
-Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
+  Admin Login> Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
 
 # Admin Login and Create Session
