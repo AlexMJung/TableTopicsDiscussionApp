@@ -1,17 +1,35 @@
-.instructions .container h1 {
-    font-size: 100px;
-    font-weight: 700;
+*{
+  margin: 0px;
+  padding: 0px;
 }
 
+#headerLogo{
+  border-radius: 15px;
+  float:left;
+  height: 150px;
+  padding: 10px;
+  width: 150px;
+}
+
+/*EVERYTHING BELOW IS FROM THE ORIGINAL BASE PROJECT FILE*/
+
+/*header.html uses this*/
 .instructions {
     background-color: #333333;
     color: #DDDDDD;
+}
+
+/*header.html uses this*/
+.instructions .container h1 {
+    font-size: 100px;
+    font-weight: 700;
 }
 
 #entryForm {
     margin-top: 14px;
 }
 
+/*lots of containers throughout*/
 #container {
     margin-top: 10px;
 }
@@ -38,13 +56,4 @@
 
 .btn-danger{
     margin-left: 10px;
-}
-
-/*EVERYTHING ABOVE THIS LINE WAS FROM THE BASE PROJECT*/
-#headerLogo{
-  border-radius: 15px;
-  float:left;
-  padding: 10px;
-  height: 150px;
-  width: 150px;
 }
