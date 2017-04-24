@@ -12,6 +12,13 @@
 }
 
 .login-container{
+  padding: 20px;
+  text-align: center;
+}
+
+.user-input{
+  margin: 10px;
+  padding: 10px;
   text-align: center;
 }
 
