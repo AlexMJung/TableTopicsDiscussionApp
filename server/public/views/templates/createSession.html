@@ -12,8 +12,8 @@
   <div class = 'container'>
       <h2 id="welcome">Welcome, {{userObject.userName}}!</h2>
       <h3>Create a New Session and Add Questions</h3>
-      <!-- <button class="btn btn-default" ng-click="logout()">Log Out</button> -->
-      <form ng-submit = ''>
+
+      <form class = 'new-session-form' ng-submit = ''>
         <div>
             <input class = 'user-input' type = 'text' placeholder = 'Session Name' ng-model = '' />
         </div>
@@ -22,6 +22,14 @@
         </div>
         <div>
             <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = ''/>
+        </div>
+        <div>
+          <ul class="list-group" ng-reapeat = ''>
+            <li class="list-group-item question-list">This will be a question that the session organizer will have typed in.</li>
+          </ul>
+        </div>
+        <div>
+            <input class = 'btn btn-default submit' type = 'submit' name = 'submit' value = 'Create Session' />
         </div>
       </form>
   </div>
