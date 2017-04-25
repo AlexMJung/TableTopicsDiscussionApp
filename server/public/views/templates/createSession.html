@@ -21,7 +21,7 @@
             <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = 'newTheme'/>
         </div>
         <div>
-            <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = 'newQuestion' ng-click = 'addQuestion()'/>
+            <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = 'newQuestion' ng-keypress = '$event.keyCode === 13 && addQuestion(newQuestion)'/>
         </div>
         <div>
           <ul class="list-group" ng-repeat = 'question in sessionObject.questionsArray'>

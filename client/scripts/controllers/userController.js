@@ -7,10 +7,15 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   var theme = "Interview Questions";
   var questionsArray = ["Tell me about a time you went above and beyond.","What is your biggest fear?","How many kittens are too many?"];
 
-  function addQuestion(){
-
-
+  function addQuestion(newQuestion){
+    console.log("I'm trying to add a newQuestion");
+    console.log("This question:", newQuestion);
   }//ends addQuestion
+
+  function createSession(newSessionObject){
+    console.log("I'm trying to create a newSession");
+
+  }//ends createSession
 
   sessionObject.sessionName = sessionName;
   sessionObject.theme = theme;
@@ -21,7 +26,9 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.newSession;
   $scope.newTheme;
   $scope.newQuestion;
+
   $scope.addQuestion = addQuestion;
+  $scope.createSession = createSession;
 
   $scope.sessionObject = sessionObject;
 
