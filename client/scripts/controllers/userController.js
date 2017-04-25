@@ -4,7 +4,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
 
   var sessionObject = {};
   var sessionName = '';
-  var theme = '';
+  var sessionTheme = '';
   var questionsArray = [];
 
   function addQuestion(newQuestion){
@@ -14,25 +14,31 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     console.log("question copy:", question);
     $scope.sessionObject.questionsArray.push(question);
     $scope.newQuestion = '';
-
   }//ends addQuestion
+
+  function deleteQuestion(){
+    console.log("I'm trying to delete a Question");
+    console.log("I have zero functionality right now");
+
+  }//ends deleteQuestion
 
   function createSession(newSessionObject){
     console.log("I'm trying to create a newSession");
+    console.log("This is the object I have:", newSessionObject);
+    console.log("I think I need a sweet alert here");
+    console.log("I think I have to make a post from here");
+    console.log("Move on to the Enter Participants Screen");
 
   }//ends createSession
 
   sessionObject.sessionName = sessionName;
-  sessionObject.theme = theme;
+  sessionObject.sessionTheme = sessionTheme;
   sessionObject.questionsArray = questionsArray;
 
-  console.log("sessionObject", sessionObject);
-
-  $scope.newSession = '';
-  $scope.newTheme = '';
   $scope.newQuestion = '';
 
   $scope.addQuestion = addQuestion;
+  $scope.deleteQuestion = deleteQuestion;
   $scope.createSession = createSession;
 
   $scope.sessionObject = sessionObject;

@@ -3,7 +3,6 @@
     <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
     <div class = 'logout col-md-2'>
       <button class="btn btn-default" ng-click="logout()">Log Out</button>
-      <!-- <a ng-click="logout()">Log Out</a> -->
     </div>
   </div>
 </div>
@@ -13,23 +12,46 @@
       <h2 id="welcome">Welcome, {{userObject.userName}}!</h2>
       <h3>Create a New Session and Add Questions</h3>
 
-      <form class = 'new-session-form' ng-submit = ''>
+        <!-- create session input fields -->
         <div>
-            <input class = 'user-input' type = 'text' placeholder = 'Session Name' ng-model = 'newTitle'/>
+            <input class = 'user-input' type = 'text' placeholder = 'Session Name' ng-model = 'sessionObject.sessionName'/>
+            <span>Session Name</span>
         </div>
         <div>
-            <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = 'newTheme'/>
+            <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = 'sessionObject.sessionTheme'/>
+            <span>Session Name</span>
         </div>
         <div>
             <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = 'newQuestion' ng-keypress = '$event.keyCode === 13 && addQuestion(newQuestion)'/>
+            <span>Press Enter to Add Question</span>
         </div>
+        <!-- ends create session input fields -->
+
+        <!-- question display div -->
         <div>
           <ul class="list-group" ng-repeat = 'question in sessionObject.questionsArray'>
-            <li class="list-group-item question-list">{{question}}</li>
+
+            <div class = 'row'>
+
+              <div class = 'col-md-10'>
+                <li class="list-group-item question-list">{{question}}</li>
+              </div>
+
+              <div class = 'col-md-2'>
+                <button type="button" class="btn btn-default btn-sm" ng-click='deleteQuestion()' >
+                  <span class="glyphicon glyphicon-remove red"></span>
+                </button>
+              </div>
+
+            </div>
+            <!-- ends row -->
           </ul>
+          <!-- ends unordered list and ng-repeat -->
         </div>
+        <!-- ends question display div -->
+
         <div>
-            <input class = 'btn btn-default submit' type = 'submit' name = 'submit' value = 'Create Session' />
+            <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Create Session' ng-click = 'createSession(sessionObject)'/>
         </div>
-      </form>
+
   </div>
