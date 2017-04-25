@@ -10,6 +10,18 @@
 
 
   <div class = 'container'>
-      <h1 id="welcome" class="lead">Welcome, {{userObject.userName}}!</h1>
+      <h2 id="welcome">Welcome, {{userObject.userName}}!</h2>
+      <h3>Create a New Session and Add Questions</h3>
       <!-- <button class="btn btn-default" ng-click="logout()">Log Out</button> -->
+      <form ng-submit = ''>
+        <div>
+            <input class = 'user-input' type = 'text' placeholder = 'Session Name' ng-model = '' />
+        </div>
+        <div>
+            <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = '' />
+        </div>
+        <div>
+            <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = ''/>
+        </div>
+      </form>
   </div>
