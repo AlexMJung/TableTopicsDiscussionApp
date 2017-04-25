@@ -15,17 +15,17 @@
 
       <form class = 'new-session-form' ng-submit = ''>
         <div>
-            <input class = 'user-input' type = 'text' placeholder = 'Session Name' ng-model = '' />
+            <input class = 'user-input' type = 'text' placeholder = 'Session Name' ng-model = 'newTitle'/>
         </div>
         <div>
-            <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = '' />
+            <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = 'newTheme'/>
         </div>
         <div>
-            <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = ''/>
+            <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = 'newQuestion' ng-click = 'addQuestion()'/>
         </div>
         <div>
-          <ul class="list-group" ng-reapeat = ''>
-            <li class="list-group-item question-list">This will be a question that the session organizer will have typed in.</li>
+          <ul class="list-group" ng-repeat = 'question in sessionObject.questionsArray'>
+            <li class="list-group-item question-list">{{question}}</li>
           </ul>
         </div>
         <div>
