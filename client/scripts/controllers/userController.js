@@ -8,17 +8,18 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   var questionsArray = [];
 
   function addQuestion(newQuestion){
-    console.log("I'm trying to add a newQuestion");
-    console.log("This question:", newQuestion);
+    if (newQuestion === ''){
+      return;
+    }
     var question = angular.copy(newQuestion);
     console.log("question copy:", question);
     $scope.sessionObject.questionsArray.push(question);
     $scope.newQuestion = '';
   }//ends addQuestion
 
-  function deleteQuestion(){
+  function deleteQuestion(index){
     console.log("I'm trying to delete a Question");
-    console.log("I have zero functionality right now");
+    $scope.sessionObject.questionsArray.splice(index,1);
 
   }//ends deleteQuestion
 
@@ -28,7 +29,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     console.log("I think I need a sweet alert here");
     console.log("I think I have to make a post from here");
     console.log("Move on to the Enter Participants Screen");
-
+    // $location.path("/info");
   }//ends createSession
 
   sessionObject.sessionName = sessionName;

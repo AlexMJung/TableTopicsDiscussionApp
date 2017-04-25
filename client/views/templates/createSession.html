@@ -19,10 +19,10 @@
         </div>
         <div>
             <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = 'sessionObject.sessionTheme'/>
-            <span>Session Name</span>
+            <span>Session Theme</span>
         </div>
         <div>
-            <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = 'newQuestion' ng-keypress = '$event.keyCode === 13 && addQuestion(newQuestion)'/>
+            <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = 'newQuestion' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addQuestion(newQuestion)'/>
             <span>Press Enter to Add Question</span>
         </div>
         <!-- ends create session input fields -->
@@ -38,7 +38,7 @@
               </div>
 
               <div class = 'col-md-2'>
-                <button type="button" class="btn btn-default btn-sm" ng-click='deleteQuestion()' >
+                <button type="button" class="btn btn-default btn-sm" ng-click='deleteQuestion($index)' >
                   <span class="glyphicon glyphicon-remove red"></span>
                 </button>
               </div>
