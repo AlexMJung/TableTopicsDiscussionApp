@@ -7,7 +7,6 @@ h1,h2,h5{
   text-transform: uppercase;
 }
 
-
 #headerLogo{
   border-radius: 15px;
   float:left;
@@ -30,6 +29,10 @@ h1,h2,h5{
 
 .login-error{
   text-transform: uppercase;
+}
+
+.logout{
+  text-align: center;
 }
 
 /*EVERYTHING BELOW IS FROM THE ORIGINAL BASE PROJECT FILE*/

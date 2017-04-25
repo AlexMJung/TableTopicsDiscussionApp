@@ -15,7 +15,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       controller: 'LoginController'
     })
     .when('/user', {
-      templateUrl: '/views/templates/user.html',
+      templateUrl: '/views/templates/createSession.html',
       controller: 'UserController',
       resolve: {
         getuser : ['UserService', function(UserService){
