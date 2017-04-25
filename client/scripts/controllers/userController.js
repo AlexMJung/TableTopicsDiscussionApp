@@ -3,13 +3,18 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.logout = UserService.logout;
 
   var sessionObject = {};
-  var sessionName = "Firsties";
-  var theme = "Interview Questions";
-  var questionsArray = ["Tell me about a time you went above and beyond.","What is your biggest fear?","How many kittens are too many?"];
+  var sessionName = '';
+  var theme = '';
+  var questionsArray = [];
 
   function addQuestion(newQuestion){
     console.log("I'm trying to add a newQuestion");
     console.log("This question:", newQuestion);
+    var question = angular.copy(newQuestion);
+    console.log("question copy:", question);
+    $scope.sessionObject.questionsArray.push(question);
+    $scope.newQuestion = '';
+
   }//ends addQuestion
 
   function createSession(newSessionObject){
@@ -23,9 +28,9 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
 
   console.log("sessionObject", sessionObject);
 
-  $scope.newSession;
-  $scope.newTheme;
-  $scope.newQuestion;
+  $scope.newSession = '';
+  $scope.newTheme = '';
+  $scope.newQuestion = '';
 
   $scope.addQuestion = addQuestion;
   $scope.createSession = createSession;
