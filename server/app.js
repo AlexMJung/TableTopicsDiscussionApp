@@ -1,25 +1,42 @@
+//base modules
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var path = require('path');
 
-var passport = require('./strategies/userStrategy');
-var session = require('express-session');
+//david bowies modules
+//add modules for database connections
+//database connections should be very clean and should just establish
+//connections to the two databse collections you will have for this project
+//collection 1 is to the passports collections
+//collection 2 is to the sessions collections
 
-// Route includes
+//route modules
 var index = require('./routes/index');
 var user = require('./routes/user');
 var register = require('./routes/register');
 
-// Body parser middleware
+// // Route includes <--- this is from the BASE Project.
+// var index = require('./routes/index');
+// var user = require('./routes/user');
+// var register = require('./routes/register');
+
+//app config
+app.set('port', (process.env.PORT || 5000));
+
+//middleware
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var path = require('path');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// Serve back static files
+// Serve back static files <---MOVE THIS TO A Route
 app.use(express.static('./server/public'));
 
-// Passport Session Configuration //
+//passport configuration
+var passport = require('./strategies/userStrategy');
+var session = require('express-session');
+
 app.use(session({
    secret: 'secret',
    key: 'user', // this is the name of the req.variable. 'user' is convention, but not required
@@ -32,12 +49,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Routes
+//routes
 app.use('/register', register);
 app.use('/user', user);
 app.use('/', index);
 
-// Mongo Connection //
+// Mongo Connection // <----NEEED TO MOVE MONGO CONNECTION TO A module
 var mongoURI = '';
 // process.env.MONGODB_URI will only be defined if you
 // are running on Heroku
@@ -63,10 +80,10 @@ mongoDB.once('open', function(){
    console.log("Mongo and I had coffee. We feel good about each other now.");
 });
 
-// App Set //
-app.set('port', (process.env.PORT || 5000));
+// // App Set // <---- This is from the BASE Project.
+// app.set('port', (process.env.PORT || 5000));
 
-// Listen //
+//listen
 app.listen(app.get("port"), function(){
    console.log("I'm here to listen to you: " + app.get("port"));
 });
