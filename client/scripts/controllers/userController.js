@@ -49,9 +49,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     $http.post('/createSession/addSession', newSessionObject).then(function(response){
         console.log("after post response:", response);
         currentSessionObject = response;
-        console.log("after post, after get, currentSessionObject:", currentSessionObject);
-        console.log("let's go to the /info (add users) page!");
-        // $location.path("/info");
+        $location.path("/info");
     });//ends post to addSession
 
 
