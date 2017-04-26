@@ -11,14 +11,14 @@
       <h2>Name: {{currentSessionObject.data.sessionName}}</h2>
       <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
 
-<!-- add participant input fields -->
+<!-- add participants input fields -->
 <div>
     <input class = 'user-input' type = 'text' placeholder = 'Add a Participant' ng-model = 'newParticipant' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addParticipant(newParticipant,$event)'/>
     <span>Press Tab or Enter to Add Participant</span>
 </div>
-<!-- ends create session input fields -->
+<!-- ends add participants input fields -->
 
-<!-- question display div -->
+<!-- participant display div -->
 <div>
   <ul class="list-group" ng-repeat = 'participant in sessionObject.participantsArray track by $index'>
 
@@ -39,7 +39,11 @@
   </ul>
   <!-- ends unordered list and ng-repeat -->
 </div>
-<!-- ends question display div -->
+<!-- ends participant display div -->
+
+<div>
+    <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Save Participants' ng-click = 'saveParticipants(currentSessionObject.data._id, sessionObject)'/>
+</div>
 
 </div>
 <!-- ends continer -->

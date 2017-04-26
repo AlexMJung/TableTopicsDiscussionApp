@@ -3,7 +3,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.logout = UserService.logout;
   $scope.currentSessionObject = UserService.currentSessionObject;
   $scope.createSession = UserService.createSession;
-  $scope.factoryTest = UserService.factoryTest;
+  $scope.saveParticipants = UserService.saveParticipants;
 
 
   //define object

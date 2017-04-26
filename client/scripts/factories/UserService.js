@@ -13,6 +13,11 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     });//ends post to addSession
   }//ends createSession
 
+  function saveParticipants(id, newSessionObject){
+      console.log("going to save some changes");
+      console.log("id and newSessionObject.participantsArray", id, newSessionObject.participantsArray);
+  }//ends saveParticipants
+
   function getuser(){
     $http.get('/user').then(function(response) {
         if(response.data.username) {
@@ -37,6 +42,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     userObject : userObject,
     currentSessionObject: currentSessionObject,
     createSession: createSession,
+    saveParticipants: saveParticipants,
     getuser : getuser,
     logout : logout
   };//ends return
