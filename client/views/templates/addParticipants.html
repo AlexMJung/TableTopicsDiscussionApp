@@ -7,10 +7,39 @@
   </div>
 </div>
 
+<div class = 'container'>
+      <h2>Name: {{currentSessionObject.data.sessionName}}</h2>
+      <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
+
+<!-- add participant input fields -->
 <div>
-  {{currentSessionObject.data.sessionTheme}}
-  {{currentSessionObject.data.sessionName}}
-  {{test}}
-  {{factoryTest.test}}
+    <input class = 'user-input' type = 'text' placeholder = 'Add a Participant' ng-model = 'newParticipant' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addParticipant(newParticipant,$event)'/>
+    <span>Press Tab or Enter to Add Participant</span>
+</div>
+<!-- ends create session input fields -->
+
+<!-- question display div -->
+<div>
+  <ul class="list-group" ng-repeat = 'participant in sessionObject.participantsArray track by $index'>
+
+    <div class = 'row'>
+
+      <div class = 'col-md-10'>
+        <li class="list-group-item participant-list">{{participant}}</li>
+      </div>
+
+      <div class = 'col-md-2'>
+        <button type="button" class="btn btn-default btn-sm" ng-click='deleteParticipant($index)' >
+          <span class="glyphicon glyphicon-remove red"></span>
+        </button>
+      </div>
+
+    </div>
+    <!-- ends row -->
+  </ul>
+  <!-- ends unordered list and ng-repeat -->
+</div>
+<!-- ends question display div -->
 
 </div>
+<!-- ends continer -->

@@ -5,18 +5,18 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.createSession = UserService.createSession;
   $scope.factoryTest = UserService.factoryTest;
 
-  console.log("building a userController again");
-  console.log("this is what I have for UserService.currentSessionObject", UserService.currentSessionObject);
 
   //define object
   var sessionObject = {};
   var sessionName = '';
   var sessionTheme = '';
   var questionsArray = [];
+  var participantsArray = [];
   //assign object
   sessionObject.sessionName = sessionName;
   sessionObject.sessionTheme = sessionTheme;
   sessionObject.questionsArray = questionsArray;
+  sessionObject.participantsArray = participantsArray;
   $scope.sessionObject = sessionObject;
 
   //bring newQuesiton into scope
@@ -24,9 +24,6 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   //bring functions into scope
   $scope.addQuestion = addQuestion;
   $scope.deleteQuestion = deleteQuestion;
-
-  $scope.test = "There is no band. No hay banda. It is a recording";
-
 
   function addQuestion(newQuestion, $event){
     $event.preventDefault();
@@ -39,8 +36,27 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   }//ends addQuestion
 
   function deleteQuestion(index){
-    console.log("I'm trying to delete a Question");
     $scope.sessionObject.questionsArray.splice(index,1);
+  }//ends deleteQuestion
+
+  //bring newParticipant into scope
+  $scope.newParticipant = '';
+  //bring functions into scope
+  $scope.addParticipant = addParticipant;
+  $scope.deleteParticipant = deleteParticipant;
+
+  function addParticipant(newParticipant, $event){
+    $event.preventDefault();
+    if (newParticipant === ''){
+      return;
+    }
+    var participant = angular.copy(newParticipant);
+    $scope.sessionObject.participantsArray.push(participant);
+    $scope.newParticipant = '';
+  }//ends addQuestion
+
+  function deleteParticipant(index){
+    $scope.sessionObject.participantsArray.splice(index,1);
   }//ends deleteQuestion
 
 }]);//ends UserController

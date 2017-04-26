@@ -3,7 +3,6 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
   var userObject = {};
   var currentSessionObject = {};
-  var factoryTest = {test:"Ill n'est pas d'orchestra"};
 
   function createSession(newSessionObject){
     $http.post('/createSession/addSession', newSessionObject).then(function(response){
@@ -39,7 +38,6 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     currentSessionObject: currentSessionObject,
     createSession: createSession,
     getuser : getuser,
-    logout : logout,
-    factoryTest: factoryTest
+    logout : logout
   };//ends return
 }]);//ends myApp.factory
