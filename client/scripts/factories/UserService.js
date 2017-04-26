@@ -3,14 +3,14 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
   var userObject = {};
   var currentSessionObject = {};
+  var factoryTest = {test:"Ill n'est pas d'orchestra"};
 
   function createSession(newSessionObject){
     $http.post('/createSession/addSession', newSessionObject).then(function(response){
         console.log("after post response:", response);
         currentSessionObject = response.data;
-        $scope.currentSessionObject = currentSessionObject;
-        console.log("what?", $scope.currentSessionObject);
-        $location.path("/info");
+        console.log(currentSessionObject, "currentSessionObject");
+        $location.path("/addParticipants");
     });//ends post to addSession
   }//ends createSession
 
@@ -39,6 +39,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     currentSessionObject: currentSessionObject,
     createSession: createSession,
     getuser : getuser,
-    logout : logout
+    logout : logout,
+    factoryTest: factoryTest
   };//ends return
 }]);//ends myApp.factory

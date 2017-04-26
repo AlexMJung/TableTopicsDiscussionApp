@@ -3,6 +3,10 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.logout = UserService.logout;
   $scope.currentSessionObject = UserService.currentSessionObject;
   $scope.createSession = UserService.createSession;
+  $scope.factoryTest = UserService.factoryTest;
+
+  console.log("building a userController again");
+  console.log("this is what I have for UserService.currentSessionObject", UserService.currentSessionObject);
 
   //define object
   var sessionObject = {};
@@ -21,6 +25,8 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.addQuestion = addQuestion;
   $scope.deleteQuestion = deleteQuestion;
 
+  $scope.test = "There is no band. No hay banda. It is a recording";
+
 
   function addQuestion(newQuestion, $event){
     $event.preventDefault();
@@ -28,7 +34,6 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
       return;
     }
     var question = angular.copy(newQuestion);
-    console.log("question copy:", question);
     $scope.sessionObject.questionsArray.push(question);
     $scope.newQuestion = '';
   }//ends addQuestion

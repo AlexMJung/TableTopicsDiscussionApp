@@ -23,8 +23,8 @@ myApp.config(['$routeProvider', '$locationProvider',
         }]
       }
     })
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
+    .when('/addParticipants', {
+      templateUrl: '/views/templates/addParticipants.html',
       controller: 'UserController',
       resolve: {
         getuser : ['UserService', function(UserService){
