@@ -5,8 +5,8 @@ var mongoose = require("mongoose");
 
 //schema
 var SessionsSchema = mongoose.Schema({
-  name: String,
-  theme: String,
+  sessionName: String,
+  sessionTheme: String,
   questionsArray: [],
   participantsArray: []
 });//ends SessionSchema
