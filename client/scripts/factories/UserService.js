@@ -8,7 +8,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   function createSession(newSessionObject){
     $http.post('/createSession/addSession', newSessionObject).then(function(response){
         console.log("after post response:", response);
-        currentSessionObject = response.data;
+        currentSessionObject.data = response.data;
         console.log(currentSessionObject, "currentSessionObject");
         $location.path("/addParticipants");
     });//ends post to addSession
