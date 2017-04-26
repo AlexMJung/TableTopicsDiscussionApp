@@ -47,13 +47,11 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     console.log("Move on to the Enter Participants Screen");
 
     $http.post('/createSession/addSession', newSessionObject).then(function(response){
-      $http.get('/createSession').then(function(response){
-        console.log("after post, afterget, response:", currentSessionObject);
+        console.log("after post response:", response);
         currentSessionObject = response;
         console.log("after post, after get, currentSessionObject:", currentSessionObject);
-        conosle.log("let's go to the /info (add users) page!");
+        console.log("let's go to the /info (add users) page!");
         $location.path("/info");
-      });// ends get to createSession
     });//ends post to addSession
 
 
