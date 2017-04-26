@@ -3,11 +3,10 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 
-console.log("congrats Keith, you made it all the way to createSession on the server side!");
 //schema
 var SessionsSchema = mongoose.Schema({
-  name: 'string',
-  theme: 'string',
+  name: String,
+  theme: String,
   questionsArray: [],
   participantsArray: []
 });//ends SessionSchema
@@ -23,15 +22,16 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 //posts
   router.post( '/addSession', function(req,res){
     var session = new Sessions();
-    session.name = req.body.name;
-    session.theme = req.body.theme;
+    session.sessionName = req.body.sessionName;
+    session.sessionTheme = req.body.sessionTheme;
     session.questionsArray = req.body.questionsArray;
-
+    console.log("session:", session);
     session.save(function(err, savedSession){
       if(err){
         console.log(err);
         res.sendStatus(500);
       }
+      console.log("right before res.send");
       res.send(savedSession);
     });//end session.save
   });//ends router.post to /addSession
