@@ -5,7 +5,7 @@ var mongoURI = '';
 if(process.env.MONGODB_URI !== undefined) {
     mongoURI = process.env.MONGODB_URI;
 } else {
-    mongoURI = 'mongodb://localhost:27017/passport';
+    mongoURI = 'mongodb://localhost:27017/TableTopicsDPG';
 }
 
 var MongoDB = mongoose.connect(mongoURI).connection;
