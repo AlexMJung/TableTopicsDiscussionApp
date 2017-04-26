@@ -14,7 +14,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
           if(response.data.username) {
             console.log('success: ', response.data);
             // location works with SPA (ng-route)
-            $location.path('/user');
+            $location.path('/createSession');
           } else {
             console.log('failure: ', response);
             $scope.message = "Incorrect login information";
@@ -34,8 +34,8 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
         },
         function(response) {
           console.log('error');
-          $scope.message = "Please try again"
+          $scope.message = "Please try again";
         });
       }
-    }
+    };
 }]);

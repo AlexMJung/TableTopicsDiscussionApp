@@ -14,7 +14,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController'
     })
-    .when('/user', {
+    .when('/createSession', {
       templateUrl: '/views/templates/createSession.html',
       controller: 'UserController',
       resolve: {
