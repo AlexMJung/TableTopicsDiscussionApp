@@ -24,7 +24,7 @@ h1,h2,h5{
 .user-input{
   margin: 10px;
   padding: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .login-error{
