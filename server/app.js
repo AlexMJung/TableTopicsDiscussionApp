@@ -4,8 +4,7 @@ var app = express();
 
 //david bowies modules
 var davidBowie = require( './modules/db.js');
-//collection 1 is to the passports collections
-//collection 2 is to the sessions collections
+
 
 //route modules
 var index = require('./routes/index');

@@ -7,6 +7,22 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   var sessionTheme = '';
   var questionsArray = [];
 
+  var currentSessionObject = {};
+
+  sessionObject.sessionName = sessionName;
+  sessionObject.sessionTheme = sessionTheme;
+  sessionObject.questionsArray = questionsArray;
+
+  $scope.newQuestion = '';
+
+  $scope.addQuestion = addQuestion;
+  $scope.deleteQuestion = deleteQuestion;
+  $scope.createSession = createSession;
+
+  $scope.sessionObject = sessionObject;
+
+  $scope.currentSessionObject = currentSessionObject;
+
   function addQuestion(newQuestion){
     if (newQuestion === ''){
       return;
@@ -29,19 +45,19 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     console.log("I think I need a sweet alert here");
     console.log("I think I have to make a post from here");
     console.log("Move on to the Enter Participants Screen");
-    // $location.path("/info");
+
+    $http.post('/createSession/addSession', newSessionObject).then(function(response){
+      $http.get('/createSession').then(function(response){
+        console.log("after post, afterget, response:", currentSessionObject);
+        currentSessionObject = response;
+        console.log("after post, after get, currentSessionObject:", currentSessionObject);
+        conosle.log("let's go to the /info (add users) page!");
+        $location.path("/info");
+      });// ends get to createSession
+    });//ends post to addSession
+
+
   }//ends createSession
 
-  sessionObject.sessionName = sessionName;
-  sessionObject.sessionTheme = sessionTheme;
-  sessionObject.questionsArray = questionsArray;
-
-  $scope.newQuestion = '';
-
-  $scope.addQuestion = addQuestion;
-  $scope.deleteQuestion = deleteQuestion;
-  $scope.createSession = createSession;
-
-  $scope.sessionObject = sessionObject;
 
 }]);
