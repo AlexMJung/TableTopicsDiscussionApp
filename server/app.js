@@ -17,13 +17,11 @@ app.set('port', (process.env.PORT || 5000));
 
 //middleware
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var path = require('path');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// Serve back static files <---MOVE THIS TO A Route
 app.use(express.static('./server/public'));
 
 //passport configuration
