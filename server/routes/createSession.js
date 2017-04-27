@@ -5,8 +5,8 @@ var mongoose = require("mongoose");
 
 //schema
 var SessionsSchema = mongoose.Schema({
-  name: String,
-  theme: String,
+  sessionName: String,
+  sessionTheme: String,
   questionsArray: [],
   participantsArray: []
 });//ends SessionSchema
@@ -38,6 +38,22 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 
 
 //puts
+  router.put('/saveParticipants', function(req,res){
+    var objectId = {};
+    objectId.id = req.body.id;
+    var participantsArray = req.body.participantsArray;
+
+    console.log("objectId.id, then participantsArray", objectId.id, participantsArray);
+
+    Sessions.findOneAndUpdate({'_id': objectId.id}, {$addToSet:{'participantsArray':{$each: participantsArray}}},{new: true}, function(err, updatedObject){
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }
+      console.log(updatedObject);
+      res.send(updatedObject);
+    });//ends updateOne
+  });//ends router.put
 
 //deletes
 

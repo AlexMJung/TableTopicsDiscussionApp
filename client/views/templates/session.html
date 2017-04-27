@@ -1,0 +1,38 @@
+<div class = 'instructions row'>
+  <div class = 'container'>
+    <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
+    <div class = 'logout col-md-2'>
+      <button class="btn btn-default" ng-click="logout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<div class = 'container'>
+
+  <div class = 'row'>
+
+    <div class = 'col-md-9'>
+      <div class = 'row'>
+        <div class = 'col-md-12'>
+          <h2>Name: {{currentSessionObject.data.sessionName}}</h2>
+          <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
+        </div>
+      </div>
+      <div class = 'row'>
+        <div class = 'col-md-12'>
+          <h2>This is where a button and a timer will go</h2>
+        </div>
+      </div>
+    </div>
+    <!-- ends topic and timer div -->
+
+    <div class = 'col-md-3'>
+      <h2>all the names, right here</h2>
+    </div>
+    <!-- ends name display div -->
+
+  </div>
+  <!-- ends main body row -->
+
+</div>
+<!-- ends container -->

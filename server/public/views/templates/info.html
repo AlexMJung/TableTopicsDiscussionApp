@@ -1,6 +1,16 @@
-<div ng-include="'views/partials/nav.html'"></div>
-<div class = 'container'>
-  <p>
-    In Info
-  </p>
+<div class = 'instructions row'>
+  <div class = 'container'>
+    <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
+    <div class = 'logout col-md-2'>
+      <button class="btn btn-default" ng-click="logout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<div>
+  {{currentSessionObject.sessionTheme}}
+  {{currentSessionObject.sessionName}}
+  {{test}}
+  {{factoryTest.test}}
+
 </div>
