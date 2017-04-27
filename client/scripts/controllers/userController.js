@@ -11,7 +11,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   var sessionName = '';
   var sessionTheme = '';
   var questionsArray = [];
-  var participantsArray = ['1','2'];
+  var participantsArray = [];
 
   //assign object
   sessionObject.sessionName = sessionName;

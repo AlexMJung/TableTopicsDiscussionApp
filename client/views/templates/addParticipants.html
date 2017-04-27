@@ -8,20 +8,23 @@
 </div>
 
 <div class = 'container'>
+  <div class = 'row'>
       <h2>Name: {{currentSessionObject.data.sessionName}}</h2>
       <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
       <h3>There are {{currentSessionObject.data.questionsArray.length}} questions prepared for this session.</h3>
       <h3>There are {{sessionObject.participantsArray.length}} participants in this session.</h3>
+  </div>
+
 
   <!-- add participants input fields -->
-  <div>
+  <div id = 'addParticipants' class = 'row'>
       <input class = 'user-input' type = 'text' placeholder = 'Add a Participant' ng-model = 'newParticipant' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addParticipant(newParticipant)'/>
       <span>Press Enter to Add Participant</span>
   </div>
   <!-- ends add participants input fields -->
 
   <!-- participant display div -->
-  <div>
+  <div class = 'row'>
     <ul class="list-group" ng-repeat = 'participant in sessionObject.participantsArray track by $index'>
 
       <div class = 'row'>
@@ -43,7 +46,7 @@
   </div>
   <!-- ends participant display div -->
 
-  <div>
+  <div class = 'row'>
       <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Save Participants' ng-click = 'saveParticipants(currentSessionObject.data._id, sessionObject)'/>
   </div>
 
