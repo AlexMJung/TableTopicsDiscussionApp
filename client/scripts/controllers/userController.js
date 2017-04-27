@@ -11,7 +11,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   var sessionName = '';
   var sessionTheme = '';
   var questionsArray = [];
-  var participantsArray = [];
+  var participantsArray = ['1','2'];
 
   //assign object
   sessionObject.sessionName = sessionName;
@@ -52,6 +52,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     var participant = angular.copy(newParticipant);
     $scope.sessionObject.participantsArray.push(participant);
     $scope.newParticipant = '';
+    console.log("$scope.sessionObject.participantsArray", $scope.sessionObject.participantsArray);
   }//ends addQuestion
 
   function deleteParticipant(index){
