@@ -27,7 +27,7 @@
     <!-- ends topic and timer div -->
 
     <div id = 'participantsColumn' class = 'col-md-3'>
-      <div class = 'well well-sm green' ng-repeat = 'participant in currentSessionObject.data.participantsArray'>
+      <div class = 'well well-sm green' ng-repeat = 'participant in currentSessionObject.data.participantsArray track by $index'>
         <p>{{participant}}</p>
       </div>
     </div>
