@@ -10,9 +10,10 @@ h1,h2,h5{
 #headerLogo{
   border-radius: 15px;
   float:left;
-  height: 150px;
+  height: 100px;
+  margin-top: 18px;
   padding: 10px;
-  width: 150px;
+  width: 100px;
 }
 
 
@@ -67,6 +68,36 @@ h1,h2,h5{
   color: crimson;
 }
 
+.green{
+  background-color: lightgreen;
+}
+
+#nameAndTheme{
+  background-color: ghostwhite;
+  margin-top: 5px;
+  padding: 50px;
+}
+
+#chooseNext{
+  background-color: whitesmoke;
+  margin-top: 5px;
+  padding: 50px;
+  text-align: center;
+
+}
+
+#participantsColumn{
+  background-color: floralwhite;
+  margin-top: 5px;
+  text-align: center;
+
+}
+
+.well-sm{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .btn{
   margin: 5px;
 }
@@ -82,7 +113,7 @@ h1,h2,h5{
 
 /*header.html uses this*/
 .instructions .container h1 {
-    font-size: 100px;
+    font-size: 80px;
     font-weight: 700;
 }
 

@@ -13,21 +13,21 @@
 
     <div class = 'col-md-9'>
       <div class = 'row'>
-        <div class = 'col-md-12'>
+        <div id = 'nameAndTheme' class = 'col-md-12'>
           <h2>{{currentSessionObject.data.sessionName}}</h2>
           <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
         </div>
       </div>
       <div class = 'row'>
-        <div class = 'col-md-12'>
+        <div id = 'chooseNext' class = 'col-md-12'>
           <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Choose Next Question' ng-click = 'chooseNext()'/>
         </div>
       </div>
     </div>
     <!-- ends topic and timer div -->
 
-    <div class = 'col-md-3'>
-      <div ng-repeat = 'participant in currentSessionObject.data.participantsArray'>
+    <div id = 'participantsColumn' class = 'col-md-3'>
+      <div class = 'well well-sm green' ng-repeat = 'participant in currentSessionObject.data.participantsArray'>
         <p>{{participant}}</p>
       </div>
     </div>
