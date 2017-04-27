@@ -18,6 +18,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     console.log("putObject", putObject);
     $http.put('/createSession/saveParticipants', putObject).then(function(response){
       console.log("response", response);
+    $location.path("/sessionIntro");
     });//ends put to saveParticipants
   }//ends saveParticipants
 

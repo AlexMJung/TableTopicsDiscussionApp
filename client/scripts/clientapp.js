@@ -10,10 +10,12 @@ myApp.config(['$routeProvider', '$locationProvider',
       templateUrl: '/views/templates/home.html',
       controller: 'LoginController',
     })
+
     .when('/register', {
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController'
     })
+
     .when('/createSession', {
       templateUrl: '/views/templates/createSession.html',
       controller: 'UserController',
@@ -23,6 +25,7 @@ myApp.config(['$routeProvider', '$locationProvider',
         }]
       }
     })
+
     .when('/addParticipants', {
       templateUrl: '/views/templates/addParticipants.html',
       controller: 'UserController',
@@ -32,6 +35,17 @@ myApp.config(['$routeProvider', '$locationProvider',
         }]
       }
     })
+
+    .when('/sessionIntro', {
+      templateUrl: '/views/templates/sessionIntro.html',
+      controller: 'UserController',
+      resolve: {
+        getuser : ['UserService', function(UserService){
+          return UserService.getuser();
+        }]
+      }
+    })
+    
     .otherwise({
       redirectTo: 'home'
     });
