@@ -25,8 +25,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.addQuestion = addQuestion;
   $scope.deleteQuestion = deleteQuestion;
 
-  function addQuestion(newQuestion, $event){
-    $event.preventDefault();
+  function addQuestion(newQuestion){
     if (newQuestion === ''){
       return;
     }

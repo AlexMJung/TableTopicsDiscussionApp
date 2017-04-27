@@ -38,7 +38,12 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 
 
 //puts
-
+  router.put('/saveParticipants', function(req,res){
+    var id = req.body.id;
+    var participantsArray = req.body.participantsArray;
+    console.log("id and participants", id, participantsArray);
+    res.sendStatus(200);
+  });//ends router.put
 //deletes
 
 //exports

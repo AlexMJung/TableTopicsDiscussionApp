@@ -6,16 +6,17 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
   function createSession(newSessionObject){
     $http.post('/createSession/addSession', newSessionObject).then(function(response){
-        console.log("after post response:", response);
         currentSessionObject.data = response.data;
-        console.log(currentSessionObject, "currentSessionObject");
         $location.path("/addParticipants");
     });//ends post to addSession
   }//ends createSession
 
   function saveParticipants(id, newSessionObject){
-    console.log("going to save some changes");
-    console.log("id and newSessionObject.participantsArray", id, newSessionObject.participantsArray);
+
+    var putObject = {};
+    putObject.id = id;
+    putObject.participantsArray = newSessionObject.participantsArray;
+    console.log("putObject", putObject);
     $http.put('/createSession/saveParticipants', putObject).then(function(response){
       console.log("response");
     });//ends put to saveParticipants
