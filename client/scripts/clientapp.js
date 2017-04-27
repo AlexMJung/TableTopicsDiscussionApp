@@ -37,7 +37,7 @@ myApp.config(['$routeProvider', '$locationProvider',
     })
 
     .when('/sessionIntro', {
-      templateUrl: '/views/templates/sessionIntro.html',
+      templateUrl: '/views/templates/session.html',
       controller: 'UserController',
       resolve: {
         getuser : ['UserService', function(UserService){
@@ -45,7 +45,7 @@ myApp.config(['$routeProvider', '$locationProvider',
         }]
       }
     })
-    
+
     .otherwise({
       redirectTo: 'home'
     });
