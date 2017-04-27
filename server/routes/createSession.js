@@ -39,11 +39,20 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 
 //puts
   router.put('/saveParticipants', function(req,res){
-    var id = req.body.id;
+    var objectId = {};
+    objectId.id = req.body.id;
     var participantsArray = req.body.participantsArray;
-    console.log("id and participants", id, participantsArray);
-    res.sendStatus(200);
+
+    Sessions.findOneAndUpdate({'_id': objectId.id}, {$set:{'participantsArray': participantsArray}}, function(err, updatedObject){
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }
+      console.log(updatedObject);
+      res.send(updatedObject);
+    });//ends updateOne
   });//ends router.put
+
 //deletes
 
 //exports

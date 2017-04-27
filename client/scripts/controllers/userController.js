@@ -44,8 +44,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.addParticipant = addParticipant;
   $scope.deleteParticipant = deleteParticipant;
 
-  function addParticipant(newParticipant, $event){
-    $event.preventDefault();
+  function addParticipant(newParticipant){
     if (newParticipant === ''){
       return;
     }

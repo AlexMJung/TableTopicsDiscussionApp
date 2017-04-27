@@ -12,13 +12,12 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   }//ends createSession
 
   function saveParticipants(id, newSessionObject){
-
     var putObject = {};
     putObject.id = id;
     putObject.participantsArray = newSessionObject.participantsArray;
     console.log("putObject", putObject);
     $http.put('/createSession/saveParticipants', putObject).then(function(response){
-      console.log("response");
+      console.log("response", response);
     });//ends put to saveParticipants
   }//ends saveParticipants
 
