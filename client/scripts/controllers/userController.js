@@ -27,8 +27,15 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   //bring newQuesiton into scope
   $scope.newQuestion = '';
   //bring functions into scope
+  $scope.chooseSession = chooseSession;
   $scope.addQuestion = addQuestion;
   $scope.deleteQuestion = deleteQuestion;
+
+  function chooseSession(object){
+    console.log("chooseSession object", object);
+    $scope.sessionObject = object;
+    object = {};
+  }//ends chooseSession
 
   function addQuestion(newQuestion){
     if (newQuestion === ''){
