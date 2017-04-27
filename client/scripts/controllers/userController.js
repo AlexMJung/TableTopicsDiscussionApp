@@ -57,4 +57,11 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     $scope.sessionObject.participantsArray.splice(index,1);
   }//ends deleteQuestion
 
+  $scope.chooseNext = chooseNext;
+
+  function chooseNext(){
+    console.log("choosing a question, then choosing a name");
+
+  }//ends chooseNext
+
 }]);//ends UserController

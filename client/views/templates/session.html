@@ -14,20 +14,22 @@
     <div class = 'col-md-9'>
       <div class = 'row'>
         <div class = 'col-md-12'>
-          <h2>Name: {{currentSessionObject.data.sessionName}}</h2>
+          <h2>{{currentSessionObject.data.sessionName}}</h2>
           <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
         </div>
       </div>
       <div class = 'row'>
         <div class = 'col-md-12'>
-          <h2>This is where a button and a timer will go</h2>
+          <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Choose Next Question' ng-click = 'chooseNext()'/>
         </div>
       </div>
     </div>
     <!-- ends topic and timer div -->
 
     <div class = 'col-md-3'>
-      <h2>all the names, right here</h2>
+      <div ng-repeat = 'participant in currentSessionObject.data.participantsArray'>
+        <p>{{participant}}</p>
+      </div>
     </div>
     <!-- ends name display div -->
 
