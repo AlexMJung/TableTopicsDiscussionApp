@@ -1,4 +1,6 @@
 myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserService', function($scope, $http, $location, UserService) {
+    $scope.getAllSessions = UserService.getAllSessions;
+    $scope.getAllSessions();
     $scope.user = {
       username: '',
       password: ''

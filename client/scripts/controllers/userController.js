@@ -4,6 +4,10 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.currentSessionObject = UserService.currentSessionObject;
   $scope.createSession = UserService.createSession;
   $scope.saveParticipants = UserService.saveParticipants;
+  $scope.allSessions = UserService.allSessions;
+  $scope.getAllSessions = UserService.getAllSessions;
+
+  console.log("allSessions object in controller", $scope.allSessions);
 
 
   //define object
