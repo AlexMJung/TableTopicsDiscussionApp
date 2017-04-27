@@ -17,6 +17,15 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 
 //CRUD
 //gets
+router.get( '/getAll', function(req,res){
+  Sessions.find(function( err, allSessions){
+    if( err ){
+      console.log(err);
+      res.sendStatus(500);
+    }//ends error
+    res.send(allSessions);
+  });
+});//ends get all sessions
 
 
 //posts

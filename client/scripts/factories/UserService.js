@@ -3,6 +3,16 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
   var userObject = {};
   var currentSessionObject = {};
+  var allSessions = {};
+
+  getAllSessions();
+
+  function getAllSessions(){
+    $http.get('/createSession/getAll').then(function(response){
+      console.log("getAllSessions response", response);
+      allSessions.data = response.data;
+    });//ends http.get
+  }//ends getAllSessions
 
   function createSession(newSessionObject){
     $http.post('/createSession/addSession', newSessionObject).then(function(response){
@@ -47,6 +57,8 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   return {
     userObject : userObject,
     currentSessionObject: currentSessionObject,
+    allSessions: allSessions,
+    getAllSessions: getAllSessions,
     createSession: createSession,
     saveParticipants: saveParticipants,
     getuser : getuser,
