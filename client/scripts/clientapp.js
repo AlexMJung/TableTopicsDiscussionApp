@@ -36,7 +36,7 @@ myApp.config(['$routeProvider', '$locationProvider',
       }
     })
 
-    .when('/sessionIntro', {
+    .when('/session', {
       templateUrl: '/views/templates/session.html',
       controller: 'UserController',
       resolve: {

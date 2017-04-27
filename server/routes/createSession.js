@@ -45,7 +45,7 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 
     console.log("objectId.id, then participantsArray", objectId.id, participantsArray);
 
-    Sessions.findOneAndUpdate({'_id': objectId.id}, {$addToSet:{'participantsArray': participantsArray}}, function(err, updatedObject){
+    Sessions.findOneAndUpdate({'_id': objectId.id}, {$addToSet:{'participantsArray':{$each: participantsArray}}}, function(err, updatedObject){
       if(err){
         console.log(err);
         res.sendStatus(500);
