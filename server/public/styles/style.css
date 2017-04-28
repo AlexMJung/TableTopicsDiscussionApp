@@ -3,6 +3,10 @@
   padding: 0px;
 }
 
+body{
+  background-color: ivory;
+}
+
 h1,h2,h5{
   text-transform: uppercase;
 }
@@ -105,8 +109,8 @@ h1,h2,h5{
 }
 
 .well-sm{
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 1px;
+  margin-bottom: 0px;
 }
 
 .btn{

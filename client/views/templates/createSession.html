@@ -9,8 +9,14 @@
 
 
   <div class = 'container'>
-      <h2 id="welcome">Welcome, {{userObject.userName}}!</h2>
-
+      <div class = 'row'>
+        <div class = 'col-md-10'>
+          <h2 id="welcome">Welcome, {{userObject.userName}}!</h2>
+        </div>
+        <div class = 'col-md-2'>
+            <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Create Session' ng-click = 'createSession(sessionObject)'/>
+        </div>
+      </div>
       <div id = 'createSession' class = 'row'>
         <div class = 'col-md-6'>
           <h3>Create a New Session and Add Questions:</h3>
@@ -68,9 +74,5 @@
           <!-- ends unordered list and ng-repeat -->
         </div>
         <!-- ends question display div -->
-
-        <div>
-            <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Create Session' ng-click = 'createSession(sessionObject)'/>
-        </div>
 
   </div>

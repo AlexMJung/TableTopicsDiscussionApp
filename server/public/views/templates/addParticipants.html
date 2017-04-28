@@ -9,10 +9,14 @@
 
 <div class = 'container'>
   <div class = 'row'>
-      <h2>Name: {{currentSessionObject.data.sessionName}}</h2>
-      <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
+    <div class = 'col-md-10'>
+      <h2>{{currentSessionObject.data.sessionName}} - {{currentSessionObject.data.sessionTheme}}</h2>
       <h3>There are {{currentSessionObject.data.questionsArray.length}} questions prepared for this session.</h3>
       <h3>There are {{sessionObject.participantsArray.length}} participants in this session.</h3>
+    </div>
+    <div class = 'col-md-2'>
+      <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Save Participants' ng-click = 'saveParticipants(currentSessionObject.data._id, sessionObject)'/>
+    </div>
   </div>
 
 
@@ -45,10 +49,6 @@
     <!-- ends unordered list and ng-repeat -->
   </div>
   <!-- ends participant display div -->
-
-  <div class = 'row'>
-      <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Save Participants' ng-click = 'saveParticipants(currentSessionObject.data._id, sessionObject)'/>
-  </div>
 
 </div>
 <!-- ends continer -->
