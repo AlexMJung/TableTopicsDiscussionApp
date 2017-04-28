@@ -54,7 +54,11 @@ router.get( '/getAll', function(req,res){
 
     console.log("objectId.id, then participantsArray", objectId.id, participantsArray);
 
-    Sessions.findOneAndUpdate({'_id': objectId.id}, {$push:{'participantsArray':{$each: participantsArray}}},{new: true}, function(err, updatedObject){
+    Sessions.findOneAndUpdate(
+        {'_id': objectId.id},
+        {$push:{'participantsArray':{$each: participantsArray}}},
+        {new: true},
+        function(err, updatedObject){
       if(err){
         console.log(err);
         res.sendStatus(500);

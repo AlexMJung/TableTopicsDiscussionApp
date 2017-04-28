@@ -22,10 +22,13 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     });//ends post to addSession
   }//ends createSession
 
-  function saveParticipants(id, newSessionObject){
+  function saveParticipants(currentSessionObject, sessionObject){
+    if(currentSessionObject.data.questionsArray.length < sessionObject.participantsArray.length){
+      console.log("you have fewer questions than participants, that is not going to work.");
+    }
     var putObject = {};
-    putObject.id = id;
-    putObject.participantsArray = newSessionObject.participantsArray;
+    putObject.id = currentSessionObject.data._id;
+    putObject.participantsArray = sessionObject.participantsArray;
     console.log("putObject", putObject);
     $http.put('/createSession/saveParticipants', putObject).then(function(response){
       console.log("response", response);
@@ -42,7 +45,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     participants = angular.copy(participants);
     randoms.randomQuestions = randomize(questions);
     randoms.randomParticipants = randomize(participants);
-    console.log("randomQuestions and then randomParticipants", randoms.randomQuestions, randoms.randomParticipants);
+    randoms.numRound = participants.length;
+    randoms.currentRound = 0;
+    console.log("randomQuestions and then randomParticipants then numRound then currentRound", randoms.randomQuestions, randoms.randomParticipants, randoms.numRound, randoms.currentRound);
     $location.path("/session");
 
   }//ends startSession

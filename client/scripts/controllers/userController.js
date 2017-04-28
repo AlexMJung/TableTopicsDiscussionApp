@@ -69,9 +69,17 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
 
   $scope.chooseNext = chooseNext;
 
-  function chooseNext(questions, participants){
+  function chooseNext(object){
     console.log("choosing a question, then choosing a name");
     console.log("I've got this object to play with",object);
   }//ends chooseNext
+
+  function startTimer(){
+    console.log("start timer");
+  }//ends start timer
+
+  function stopTimer(){
+    console.log("stop timer");
+  }
 
 }]);//ends UserController

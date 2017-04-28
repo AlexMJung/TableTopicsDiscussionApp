@@ -16,11 +16,17 @@
         <div id = 'nameAndTheme' class = 'col-md-12'>
           <!-- <h2>{{currentSessionObject.data.sessionName}}</h2> -->
           <h2>Today's Theme: {{currentSessionObject.data.sessionTheme}}</h2>
+          <h2>NumRound: {{randoms.numRound}}</h2>
+          <h2>CurrentRound: {{randoms.currentRound}}</h2>
+          <h2>Question: {{randoms.randomQuestions[randoms.currentRound]}}</h2>
+          <h2>{{randoms.randomParticipants[randoms.currentRound]}}</h2>
         </div>
       </div>
       <div class = 'row'>
         <div id = 'chooseNext' class = 'col-md-12'>
-          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Choose Next Question' ng-click = 'chooseNext(currentSessionObject)'/>
+          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Start Timer' ng-click = 'startTimer()'/>
+          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Stop Timer' ng-click = 'stopTimer()'/>
+          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Choose Next' ng-click = 'createSession(randoms)'/>
         </div>
       </div>
     </div>

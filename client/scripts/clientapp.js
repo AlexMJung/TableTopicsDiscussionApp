@@ -56,66 +56,6 @@ myApp.config(['$routeProvider', '$locationProvider',
       }
     })
 
-        .when('/session/chooseNextView', {
-          templateUrl: '/views/templates/sessionTemplates/chooseNextView.html',
-          controller: 'UserController',
-          resolve: {
-            getuser : ['UserService', function(UserService){
-              return UserService.getuser();
-            }]
-          }
-        })
-
-        .when('/session/endSessionView', {
-          templateUrl: '/views/templates/sessionTemplates/endSessionView.html',
-          controller: 'UserController',
-          resolve: {
-            getuser : ['UserService', function(UserService){
-              return UserService.getuser();
-            }]
-          }
-        })
-
-        .when('/session/percentView', {
-          templateUrl: '/views/templates/sessionTemplates/percentView.html',
-          controller: 'UserController',
-          resolve: {
-            getuser : ['UserService', function(UserService){
-              return UserService.getuser();
-            }]
-          }
-        })
-
-        .when('/session/questionView', {
-          templateUrl: '/views/templates/sessionTemplates/questionView.html',
-          controller: 'UserController',
-          resolve: {
-            getuser : ['UserService', function(UserService){
-              return UserService.getuser();
-            }]
-          }
-        })
-
-        .when('/session/summaryView', {
-          templateUrl: '/views/templates/sessionTemplates/summaryView.html',
-          controller: 'UserController',
-          resolve: {
-            getuser : ['UserService', function(UserService){
-              return UserService.getuser();
-            }]
-          }
-        })
-
-        .when('/session/timerView', {
-          templateUrl: '/views/templates/sessionTemplates/timerView.html',
-          controller: 'UserController',
-          resolve: {
-            getuser : ['UserService', function(UserService){
-              return UserService.getuser();
-            }]
-          }
-        })
-
     .otherwise({
       redirectTo: 'home'
     });
