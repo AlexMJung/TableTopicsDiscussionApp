@@ -27,7 +27,7 @@ h1,h2,h5{
 }
 
 .user-input{
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
   text-align: left;
 }
@@ -42,6 +42,12 @@ h1,h2,h5{
 
 .new-session-form{
 
+}
+
+.drop-down-scroll{
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
 }
 
 .submit{
@@ -76,7 +82,10 @@ h1,h2,h5{
 #addParticipants{
   border-bottom: 1px solid black;
   margin-bottom: 15px;
+}
 
+#preScrollOverride{
+  max-height: 500px;
 }
 
 .red{
@@ -122,8 +131,8 @@ h1,h2,h5{
 
 /*header.html uses this*/
 .instructions {
-    background-color: #333333;
-    color: #DDDDDD;
+    background-color: dimgray;
+    color: ghostwhite;
 }
 
 /*header.html uses this*/

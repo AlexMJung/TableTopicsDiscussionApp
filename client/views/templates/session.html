@@ -14,32 +14,24 @@
     <div class = 'col-md-9'>
       <div class = 'row'>
         <div id = 'nameAndTheme' class = 'col-md-12'>
-          <h2>{{currentSessionObject.data.sessionName}}</h2>
-          <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
+          <!-- <h2>{{currentSessionObject.data.sessionName}}</h2> -->
+          <h2>Today's Theme: {{currentSessionObject.data.sessionTheme}}</h2>
         </div>
       </div>
       <div class = 'row'>
         <div id = 'chooseNext' class = 'col-md-12'>
-          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Choose Next Question' ng-click = 'chooseNext()'/>
+          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Choose Next Question' ng-click = 'chooseNext(currentSessionObject)'/>
         </div>
       </div>
     </div>
     <!-- ends topic and timer div -->
 
     <div id = 'participantsColumn' class = 'col-md-3'>
-      <!-- <div ng-repeat = 'participant in currentSessionObject.data.participantsArray track by $index' ng-if = '$index %2 ==0' class = 'row'>
-        <div class = 'col-md-6 well well-sm green'>
-          <p>{{participant}}</p>
-        </div>
-      </div> -->
       <div class="row">
           <div ng-repeat="participant in currentSessionObject.data.participantsArray track by $index">
               <div class="clearfix" ng-if="$index % 2 == 0"></div>
                 <div class = 'col-sm-6 well well-sm green'>
                   {{participant}}
-                  <!-- <button class = 'green' ng-click = 'chooseNext()'>
-                    {{participant}}
-                  </button> -->
                 </div>
           </div>
       </div>

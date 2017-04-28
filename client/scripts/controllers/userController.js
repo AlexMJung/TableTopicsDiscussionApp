@@ -6,9 +6,8 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.saveParticipants = UserService.saveParticipants;
   $scope.allSessions = UserService.allSessions;
   $scope.getAllSessions = UserService.getAllSessions;
-
-  console.log("allSessions object in controller", $scope.allSessions);
-
+  $scope.startSession = UserService.startSession;
+  $scope.randoms = UserService.randoms;
 
   //define object
   var sessionObject = {};
@@ -32,7 +31,6 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.deleteQuestion = deleteQuestion;
 
   function chooseSession(object){
-    console.log("chooseSession object", object);
     $scope.sessionObject = object;
     object = {};
   }//ends chooseSession
@@ -63,8 +61,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     var participant = angular.copy(newParticipant);
     $scope.sessionObject.participantsArray.push(participant);
     $scope.newParticipant = '';
-    console.log("$scope.sessionObject.participantsArray", $scope.sessionObject.participantsArray);
-  }//ends addQuestion
+  }//ends addParticipant
 
   function deleteParticipant(index){
     $scope.sessionObject.participantsArray.splice(index,1);
@@ -72,9 +69,9 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
 
   $scope.chooseNext = chooseNext;
 
-  function chooseNext(){
+  function chooseNext(questions, participants){
     console.log("choosing a question, then choosing a name");
-
+    console.log("I've got this object to play with",object);
   }//ends chooseNext
 
 }]);//ends UserController

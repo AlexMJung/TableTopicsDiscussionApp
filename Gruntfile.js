@@ -4,7 +4,7 @@ module.exports = function(grunt){
     uglify: {
       build: {
         src: ['client/scripts/*.js',
-              'client/scripts/**/*.js'],
+              'client/scripts/**/*.js',],
         dest: 'server/public/scripts/client.min.js'
       }
     },
@@ -13,7 +13,8 @@ module.exports = function(grunt){
         expand: true,
         cwd: 'client/views',
         src: ['index.html',
-              '**/*.html'],
+              '**/*.html',
+              '**/**/*.html'],
         dest: 'server/public/views/'
       },
       css: {

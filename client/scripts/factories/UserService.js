@@ -4,6 +4,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   var userObject = {};
   var currentSessionObject = {};
   var allSessions = {};
+  var randoms = {};
 
   getAllSessions();
 
@@ -30,9 +31,21 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
       console.log("response", response);
       currentSessionObject.data = response.data;
       console.log("currentSessionObject.data", currentSessionObject.data);
-    $location.path("/session");
+    $location.path("/sessionIntro");
     });//ends put to saveParticipants
   }//ends saveParticipants
+
+  function startSession(questions, participants){
+    console.log("I'm going to start a session. I've got to randomize some stuff first.");
+    console.log("questions and then participants", questions, participants);
+    questions = angular.copy(questions);
+    participants = angular.copy(participants);
+    randoms.randomQuestions = randomize(questions);
+    randoms.randomParticipants = randomize(participants);
+    console.log("randomQuestions and then randomParticipants", randoms.randomQuestions, randoms.randomParticipants);
+    $location.path("/session");
+
+  }//ends startSession
 
   function getuser(){
     $http.get('/user').then(function(response) {
@@ -54,6 +67,23 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     });//ends $http.get
   }//end logout
 
+  //randomize Quesitons and participantsArray
+  function randomize (array){
+        console.log("inside randomizePeople");
+    var m = array.length,
+        t, i;
+    // While there remain elements to shuffle…
+    while (m) {
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * m--);
+        // And swap it with the current element.
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+    }
+    return array;
+  }//ends randomize
+
   return {
     userObject : userObject,
     currentSessionObject: currentSessionObject,
@@ -61,7 +91,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     getAllSessions: getAllSessions,
     createSession: createSession,
     saveParticipants: saveParticipants,
-    getuser : getuser,
-    logout : logout
+    startSession: startSession,
+    getuser: getuser,
+    logout: logout,
+    randoms: randoms
   };//ends return
 }]);//ends myApp.factory
