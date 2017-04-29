@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div id = 'relative' class = 'container'>
+<div id = 'wrapper' class = 'container'>
 
   <div class = 'row'>
 
@@ -18,8 +18,8 @@
         <div id = 'nameAndTheme' class = 'col-md-12'>
           <!-- <h2>{{currentSessionObject.data.sessionName}}</h2> -->
           <h2>Today's Theme: {{currentSessionObject.data.sessionTheme}}</h2>
-          <h2>{{randoms.randomQuestions[randoms.currentRound]}}</h2>
           <h2>{{randoms.randomParticipants[randoms.currentRound]}}</h2>
+          <h2>{{randoms.randomQuestions[randoms.currentRound]}}</h2>
         </div>
       </div>
       <div class = 'row'>
@@ -55,6 +55,8 @@
   </div>
   <!-- ends main body row -->
 </div>
+<!-- ends container -->
+
   <div>
       <div id = 'chooseNext' class = 'col-md-12'>
         <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Start Timer' ng-click = 'startTimer()'/>
@@ -63,4 +65,3 @@
         <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'End Session' ng-click = 'endSession()'/>
       </div>
   </div>
-<!-- ends container -->
