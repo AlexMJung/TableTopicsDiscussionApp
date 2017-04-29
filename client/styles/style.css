@@ -1,10 +1,12 @@
 *{
   margin: 0px;
   padding: 0px;
+
 }
 
 body{
   background-color: ivory;
+    height: 100%;
 }
 
 h1,h2,h5{
@@ -99,21 +101,18 @@ h1,h2,h5{
 #nameAndTheme{
   background-color: ghostwhite;
   margin-top: 5px;
-  padding: 50px;
+  padding: 10px;
 }
 
-#chooseNext{
-  background-color: whitesmoke;
-  margin-top: 5px;
-  padding: 50px;
-  text-align: center;
-
-}
 
 #participantsColumn{
   background-color: floralwhite;
-  margin-top: 5px;
   text-align: center;
+}
+
+#participantsSpacing{
+    margin-top: 5px;
+    margin-left: 5px;
 
 }
 
@@ -126,6 +125,28 @@ h1,h2,h5{
   margin: 5px;
 }
 
+#chooseNext{
+  background-color: whitesmoke;
+  margin-top: 5px;
+  /*padding: 10px;*/
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+
+}
+
+#timer{
+  background-color: grey;
+}
+
+#relative{
+  position: relative;
+}
+
+#fixed{
+  position: fixed;
+  bottom: 0;
+}
 
 /*EVERYTHING BELOW IS FROM THE ORIGINAL BASE PROJECT FILE*/
 

@@ -79,8 +79,18 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     console.log("start timer");
   }//ends start timer
 
+  $scope.startTimer = startTimer;
+
   function stopTimer(){
     console.log("stop timer");
   }
+
+  $scope.stopTimer = stopTimer;
+
+  function endSession(){
+    console.log("endSession");
+  }
+
+  $scope.endSession = endSession;
 
 }]);//ends UserController
