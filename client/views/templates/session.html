@@ -17,26 +17,16 @@
       <div class = 'row'>
         <div id = 'nameAndTheme' class = 'col-md-12'>
           <!-- <h2>{{currentSessionObject.data.sessionName}}</h2> -->
-          <h2>Today's Theme: {{currentSessionObject.data.sessionTheme}}</h2>
+          <h2>{{currentSessionObject.data.sessionTheme}}</h2>
           <h2>{{randoms.randomParticipants[randoms.currentRound]}}</h2>
           <h2>{{randoms.randomQuestions[randoms.currentRound]}}</h2>
         </div>
       </div>
       <div class = 'row'>
         <div id = 'timer' class = 'col-md-12'>
-          <div>
-            <h2>Timer Can Go Here</h2>
-          </div>
+            <h1>{{timer | secondsToDateTime | date: 'mm:ss'}}</h1>
         </div>
       </div>
-      <!-- <div  class = 'row'>
-          <div id = 'chooseNext' class = 'col-md-12'>
-            <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Start Timer' ng-click = 'startTimer()'/>
-            <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Stop Timer' ng-click = 'stopTimer()'/>
-            <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Choose Next' ng-click = 'chooseNext(randoms)'/>
-            <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'End Session' ng-click = 'endSession()'/>
-          </div>
-      </div> -->
     </div>
     <!-- ends topic and timer div -->
 
@@ -57,11 +47,11 @@
 </div>
 <!-- ends container -->
 
-  <div>
-      <div id = 'chooseNext' class = 'col-md-12'>
-        <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Start Timer' ng-click = 'startTimer()'/>
-        <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Stop Timer' ng-click = 'stopTimer()'/>
-        <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Choose Next' ng-click = 'chooseNext(randoms)'/>
-        <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'End Session' ng-click = 'endSession()'/>
-      </div>
-  </div>
+<div>
+    <div id = 'chooseNext' class = 'col-md-12'>
+      <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Start Timer' ng-click = 'startTimer()'/>
+      <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Stop Timer' ng-click = 'stopTimer()'/>
+      <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Choose Next' ng-click = 'chooseNext(randoms)'/>
+      <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'End Session' ng-click = 'endSession()'/>
+    </div>
+</div>

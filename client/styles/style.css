@@ -5,9 +5,10 @@
 }
 
 body{
-  background-color: ivory;
+  background-color: lightgoldenrodyellow;
   height: 100%;
   position: relative;
+  color: #slategrey;
 }
 
 h1,h2,h5{
@@ -16,6 +17,17 @@ h1,h2,h5{
 
 .center{
   text-align: center;
+}
+
+#introTron{
+  background-color: white;
+  background-image: url(/styles/images/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  margin-top: 50px;
+  text-align: right;
 }
 
 #headerLogo{
@@ -100,18 +112,19 @@ h1,h2,h5{
 }
 
 .green{
-  background-color: lightgreen;
+  background-color: olivedrab;
 }
 
 #nameAndTheme{
-  background-color: ghostwhite;
-  margin-top: 5px;
+  background-color: whitesmoke;
+  margin-top: 10px;
   padding: 10px;
+  border-radius: 5px;
 }
 
 
 #participantsColumn{
-  background-color: floralwhite;
+  /*background-color: whitesmoke;*/
   text-align: center;
 }
 
@@ -131,7 +144,7 @@ h1,h2,h5{
 }
 
 #chooseNext{
-  background-color: whitesmoke;
+  background-color: palegoldenrod;
   margin-top: 5px;
   /*padding: 10px;*/
   text-align: center;
@@ -140,8 +153,11 @@ h1,h2,h5{
 }
 
 #timer{
-  background-color: grey;
+  background-color: whitesmoke;
   min-height: 200px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 #relative{
@@ -157,8 +173,8 @@ h1,h2,h5{
 
 /*header.html uses this*/
 .instructions {
-    background-color: dimgray;
-    color: ghostwhite;
+    background-color: palegoldenrod;
+    color: #3399ff;
 }
 
 /*header.html uses this*/

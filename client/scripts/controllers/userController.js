@@ -1,4 +1,4 @@
-myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService', function($scope, $http, $location, UserService) {
+myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 'UserService', function($scope, $http, $location, $interval, UserService) {
   $scope.userObject = UserService.userObject;
   $scope.logout = UserService.logout;
   $scope.currentSessionObject = UserService.currentSessionObject;
@@ -87,14 +87,37 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
     object.currentRound += 1;
   }//ends chooseNext
 
+  $scope.timer = 0;
+  $scope.timerEnd = 0;
+  $scope.enabled = false;
+
+  function theTimer(){
+    var interval = $interval(function(){
+      if($scope.enabled){
+        console.log("plus one");
+        $scope.timer += 1;
+      }
+      else{
+        console.log("is this happening");
+        $interval.cancel(interval);
+      }
+    },1000);
+  }
+
   function startTimer(){
+    $scope.enabled = true;
     console.log("start timer");
+    theTimer();
   }//ends start timer
 
   $scope.startTimer = startTimer;
 
   function stopTimer(){
     console.log("stop timer");
+    $scope.timerEnd = $scope.timer;
+    $scope.timer = 0;
+    $scope.enabled = false;
+
   }
 
   $scope.stopTimer = stopTimer;
@@ -104,5 +127,8 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   }
 
   $scope.endSession = endSession;
+
+
+
 
 }]);//ends UserController

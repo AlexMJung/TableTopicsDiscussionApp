@@ -1,5 +1,12 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
+// Filters ///
+myApp.filter('secondsToDateTime', [function() {
+    return function(seconds) {
+        return new Date(1970, 0, 1).setSeconds(seconds);
+    };
+}]);
+
 /// Routes ///
 myApp.config(['$routeProvider', '$locationProvider',
       function($routeProvider, $locationProvider) {
