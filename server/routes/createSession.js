@@ -47,6 +47,28 @@ router.get( '/getAll', function(req,res){
 
 
 //puts
+  router.put('/saveSession', function(req,res){
+    console.log("req.body", req.body);
+    var objectId = {};
+    objectId.id = req.body._id;
+    var questionsArray = req.body.questionsArray;
+
+    console.log("objectId.id, then participantsArray", objectId.id, questionsArray);
+
+    Sessions.findOneAndUpdate(
+        {'_id': objectId.id},
+        {$addToSet:{'questionsArray':{$each: questionsArray}}},
+        {new: true},
+        function(err, updatedObject){
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }
+      console.log(updatedObject);
+      res.send(updatedObject);
+    });//ends updateOne
+  });//ends router.put
+
   router.put('/saveParticipants', function(req,res){
     var objectId = {};
     objectId.id = req.body.id;
@@ -56,7 +78,7 @@ router.get( '/getAll', function(req,res){
 
     Sessions.findOneAndUpdate(
         {'_id': objectId.id},
-        {$push:{'participantsArray':{$each: participantsArray}}},
+        {$set:{'participantsArray': participantsArray}},
         {new: true},
         function(err, updatedObject){
       if(err){

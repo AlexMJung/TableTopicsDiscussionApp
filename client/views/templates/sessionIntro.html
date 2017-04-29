@@ -12,6 +12,7 @@
 <div class = 'container'>
   <h2>session intro</h2>
   <div>
+    {{currentSessionObject.data.participantsArray}}
     <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Start Session' ng-click = 'startSession(currentSessionObject.data.questionsArray,currentSessionObject.data.participantsArray)'/>
   </div>
 </div>

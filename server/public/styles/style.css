@@ -14,6 +14,10 @@ h1,h2,h5{
   text-transform: uppercase;
 }
 
+.center{
+  text-align: center;
+}
+
 #headerLogo{
   border-radius: 15px;
   float:left;

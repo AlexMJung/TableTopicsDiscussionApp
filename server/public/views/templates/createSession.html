@@ -12,11 +12,12 @@
 
   <div class = 'container'>
       <div class = 'row'>
-        <div class = 'col-md-10'>
+        <div class = 'col-md-8'>
           <h2 id="welcome">Welcome, {{userObject.userName}}!</h2>
         </div>
-        <div class = 'col-md-2'>
-            <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Create Session' ng-click = 'createSession(sessionObject)'/>
+        <div class = 'center col-md-4'>
+          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Save Changes' ng-click = 'saveSession(sessionObject)'/>
+          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Save As New Theme' ng-click = 'createSession(sessionObject)'/>
         </div>
       </div>
       <div id = 'createSession' class = 'row'>
@@ -45,12 +46,12 @@
           <div class="dropdown">
 
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Session Name
+              Session Theme
               <span class="caret"></span>
             </button>
 
             <ul class="dropdown-menu drop-down-scroll" aria-labelledby="dropdownMenu1" >
-              <li ng-repeat = 'session in allSessions.data' ng-click = 'chooseSession(session)'><a>{{session.sessionName}} - {{session.sessionTheme}}</a></li>
+              <li ng-repeat = 'session in allSessions.data' ng-click = 'chooseSession(session)'><a>{{session.sessionTheme}}</a></li>
             </ul>
 
           </div>

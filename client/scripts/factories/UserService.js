@@ -22,6 +22,18 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     });//ends post to addSession
   }//ends createSession
 
+  function saveSession(saveObject){
+    console.log("another update, save session changes");
+    console.log("here is the object I have to play with", saveObject);
+    var putObject = saveObject;
+    $http.put('/createSession/saveSession', putObject).then(function(response){
+      console.log("response", response);
+      currentSessionObject.data = response.data;
+      currentSessionObject.data.participantsArray = [];
+      $location.path("/addParticipants");
+    });//ends put to save changes to theme
+  }//ends saveSession
+
   function saveParticipants(currentSessionObject, sessionObject){
     if(currentSessionObject.data.questionsArray.length < sessionObject.participantsArray.length){
       console.log("you have fewer questions than participants, that is not going to work.");
@@ -99,6 +111,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     startSession: startSession,
     getuser: getuser,
     logout: logout,
-    randoms: randoms
+    randoms: randoms,
+    saveSession: saveSession
   };//ends return
 }]);//ends myApp.factory

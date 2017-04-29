@@ -8,6 +8,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.getAllSessions = UserService.getAllSessions;
   $scope.startSession = UserService.startSession;
   $scope.randoms = UserService.randoms;
+  $scope.saveSession = UserService.saveSession;
 
   //define object
   var sessionObject = {};
@@ -32,6 +33,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
 
   function chooseSession(object){
     $scope.sessionObject = object;
+    $scope.sessionObject.participantsArray = [];
     object = {};
   }//ends chooseSession
 
@@ -54,9 +56,19 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.addParticipant = addParticipant;
   $scope.deleteParticipant = deleteParticipant;
 
+  var firstParticipant = true;
+  console.log("firstParticipant", firstParticipant);
+
   function addParticipant(newParticipant){
     if (newParticipant === ''){
       return;
+    }
+    if (firstParticipant === true){
+      console.log("cleaning stuff out");
+      $scope.sessionObject.participantsArray = [];
+      $scope.currentSessionObject.data.participantsArray = [];
+      console.log($scope.currentSessionObject.data.participantsArray);
+      firstParticipant = false;
     }
     var participant = angular.copy(newParticipant);
     $scope.sessionObject.participantsArray.push(participant);
