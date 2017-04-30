@@ -3,7 +3,7 @@
   <div class = 'container'>
     <div class = 'row'>
       <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
-      <div class = 'logout col-md-2'>
+      <div class = 'button-right col-md-2'>
         <button class="btn btn-default" ng-click="logout()">Log Out</button>
       </div>
     </div>
@@ -17,7 +17,7 @@
       <h3>There are {{currentSessionObject.data.questionsArray.length}} questions prepared for this session.</h3>
       <h3>There are {{sessionObject.participantsArray.length}} participants in this session.</h3>
     </div>
-    <div class = 'col-md-2'>
+    <div class = 'col-md-2 button-right'>
       <button type="button" class="btn btn-default" ng-click = 'saveParticipants(currentSessionObject, sessionObject)' >
         <span class="glyphicon glyphicon-floppy-disk"></span> Save Participants
       </button>
@@ -36,7 +36,8 @@
   <!-- ends add participants input fields -->
 
   <!-- participant display div -->
-  <div id = 'preScrollOverride' class = 'pre-scrollable row'>
+  <div id = 'preScrollOverride' class = 'pre-scrollable'>
+
     <ul class="list-group" ng-repeat = 'participant in sessionObject.participantsArray track by $index'>
 
       <div class = 'row'>

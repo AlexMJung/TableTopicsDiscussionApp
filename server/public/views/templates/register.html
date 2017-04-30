@@ -1,3 +1,5 @@
+<header ng-include="'/views/partials/header.html'"></header>
+
 <div class = 'container login-container'>
   <div class = 'row'>
     <div class = 'col-md-offset-4 col-md-4 col-md-offset-4'>
@@ -5,7 +7,7 @@
         <div class = 'panel-body'>
 
           <h2>Register User</h2>
-          <h5 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h5>
+          <h5 class="alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h5>
           <form ng-submit="registerUser()">
             <div>
                 <input class = 'user-input' type="text" placeholder = 'username' ng-model="user.username" />
