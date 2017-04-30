@@ -84,6 +84,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 
   function chooseNext(object){
     console.log("choosing a question, then choosing a name");
     console.log("I've got this object to play with",object);
+    $scope.timer = 0;
     object.currentRound += 1;
   }//ends chooseNext
 
@@ -115,7 +116,6 @@ myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 
   function stopTimer(){
     console.log("stop timer");
     $scope.timerEnd = $scope.timer;
-    $scope.timer = 0;
     $scope.enabled = false;
 
   }

@@ -1,3 +1,4 @@
+<header ng-include="'/views/partials/header.html'"></header>
 <div class = 'instructions'>
   <div class = 'container'>
     <div class = 'row'>
@@ -11,23 +12,25 @@
 
 
   <div class = 'container'>
-      <div class = 'row'>
+      <div id = 'createSession' class = 'row'>
         <div class = 'col-md-8'>
           <h2 id="welcome">Welcome, {{userObject.userName}}!</h2>
         </div>
-        <div class = 'center col-md-4'>
-          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Save Changes' ng-click = 'saveSession(sessionObject)'/>
-          <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Save As New Theme' ng-click = 'createSession(sessionObject)'/>
+        <div id = 'welcomeButtons' class = 'center col-md-4'>
+          <button type="button" class="btn btn-default" ng-click = 'saveSession(sessionObject)' >
+            <span class="glyphicon glyphicon-refresh"></span> Update Theme
+          </button>
+          <button type="button" class="btn btn-default" ng-click = 'createSession(sessionObject)' >
+            <span class="glyphicon glyphicon-floppy-disk"></span> Save As New Theme
+          </button>
+          <!-- <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Update Theme' ng-click = 'saveSession(sessionObject)'/> -->
+          <!-- <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Save As New Theme' ng-click = 'createSession(sessionObject)'/> -->
         </div>
       </div>
       <div id = 'createSession' class = 'row'>
         <div class = 'col-md-6'>
           <h3>Create a New Session and Add Questions:</h3>
           <!-- create session input fields -->
-          <div>
-              <input class = 'user-input' type = 'text' placeholder = 'Session Date' ng-model = 'sessionObject.sessionName'/>
-              <span>Session Date</span>
-          </div>
           <div>
               <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = 'sessionObject.sessionTheme'/>
               <span>Session Theme</span>
@@ -61,7 +64,7 @@
         <!-- question display div -->
 
 
-        <div  class = 'pre-scrollable'>
+        <div  id = 'preScrollOverride' class = 'pre-scrollable'>
           <ul class="list-group" ng-repeat = 'question in sessionObject.questionsArray track by $index'>
 
             <div class = 'row'>

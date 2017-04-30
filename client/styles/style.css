@@ -5,13 +5,14 @@
 }
 
 body{
+  font-family: 'News Cycle', sans-serif;
   background-color: lightgoldenrodyellow;
   height: 100%;
   position: relative;
   color: #slategrey;
 }
 
-h1,h2,h5{
+h1{
   text-transform: uppercase;
 }
 
@@ -34,9 +35,13 @@ h1,h2,h5{
   border-radius: 15px;
   float:left;
   height: 100px;
-  margin-top: 18px;
+  margin-top: 8px;
   padding: 10px;
   width: 100px;
+}
+
+.breadcrumb{
+  margin-bottom: 10px;
 }
 
 
@@ -98,9 +103,14 @@ h1,h2,h5{
   margin-bottom: 15px;
 }
 
+#welcomeButtons{
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
 #addParticipants{
   border-bottom: 1px solid black;
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
 }
 
 #preScrollOverride{
@@ -112,14 +122,15 @@ h1,h2,h5{
 }
 
 .green{
-  background-color: olivedrab;
+  background-color: #3399ff;
 }
 
 #nameAndTheme{
-  background-color: whitesmoke;
+  background-color: ivory;
   margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
+  min-height: 225px;
 }
 
 
@@ -153,11 +164,15 @@ h1,h2,h5{
 }
 
 #timer{
-  background-color: whitesmoke;
-  min-height: 200px;
+  background-color: floralwhite;
+  min-height: 225px;
   border-radius: 5px;
   margin-top: 10px;
   text-align: center;
+}
+
+#timer h1{
+  font-size: 150px;
 }
 
 #relative{
@@ -167,6 +182,11 @@ h1,h2,h5{
 #fixed{
   position: fixed;
   bottom: 0;
+}
+
+#sessionLogo{
+  height: 200px;
+  width: 200px;
 }
 
 /*EVERYTHING BELOW IS FROM THE ORIGINAL BASE PROJECT FILE*/
@@ -181,6 +201,7 @@ h1,h2,h5{
 .instructions .container h1 {
     font-size: 80px;
     font-weight: 700;
+    margin-top: 10px;
 }
 
 #entryForm {
