@@ -4,7 +4,7 @@ module.exports = function(grunt){
     uglify: {
       build: {
         src: ['client/scripts/*.js',
-              'client/scripts/**/*.js'],
+              'client/scripts/**/*.js',],
         dest: 'server/public/scripts/client.min.js'
       }
     },
@@ -13,7 +13,8 @@ module.exports = function(grunt){
         expand: true,
         cwd: 'client/views',
         src: ['index.html',
-              '**/*.html'],
+              '**/*.html',
+              '**/**/*.html'],
         dest: 'server/public/views/'
       },
       css: {
@@ -29,6 +30,12 @@ module.exports = function(grunt){
               'fonts/*.*',
               'js/*.*'],
         dest: 'server/public/vendors/bootstrap/'
+      },
+      jQuery: {
+        expand: true,
+        cwd: 'node_modules/jquery/dist/',
+        src: ['jquery.js'],
+        dest: 'server/public/vendors/jquery/'
       },
       angular: {
         expand: true,

@@ -1,10 +1,14 @@
-myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService', function($scope, $http, $location, UserService) {
+myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 'UserService', function($scope, $http, $location, $interval, UserService) {
   $scope.userObject = UserService.userObject;
   $scope.logout = UserService.logout;
   $scope.currentSessionObject = UserService.currentSessionObject;
   $scope.createSession = UserService.createSession;
   $scope.saveParticipants = UserService.saveParticipants;
-
+  $scope.allSessions = UserService.allSessions;
+  $scope.getAllSessions = UserService.getAllSessions;
+  $scope.startSession = UserService.startSession;
+  $scope.randoms = UserService.randoms;
+  $scope.saveSession = UserService.saveSession;
 
   //define object
   var sessionObject = {};
@@ -12,6 +16,7 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   var sessionTheme = '';
   var questionsArray = [];
   var participantsArray = [];
+
   //assign object
   sessionObject.sessionName = sessionName;
   sessionObject.sessionTheme = sessionTheme;
@@ -22,8 +27,15 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   //bring newQuesiton into scope
   $scope.newQuestion = '';
   //bring functions into scope
+  $scope.chooseSession = chooseSession;
   $scope.addQuestion = addQuestion;
   $scope.deleteQuestion = deleteQuestion;
+
+  function chooseSession(object){
+    $scope.sessionObject = object;
+    $scope.sessionObject.participantsArray = [];
+    object = {};
+  }//ends chooseSession
 
   function addQuestion(newQuestion){
     if (newQuestion === ''){
@@ -44,17 +56,79 @@ myApp.controller('UserController', ['$scope', '$http', '$location', 'UserService
   $scope.addParticipant = addParticipant;
   $scope.deleteParticipant = deleteParticipant;
 
+  var firstParticipant = true;
+  console.log("firstParticipant", firstParticipant);
+
   function addParticipant(newParticipant){
     if (newParticipant === ''){
       return;
     }
+    if (firstParticipant === true){
+      console.log("cleaning stuff out");
+      $scope.sessionObject.participantsArray = [];
+      $scope.currentSessionObject.data.participantsArray = [];
+      console.log($scope.currentSessionObject.data.participantsArray);
+      firstParticipant = false;
+    }
     var participant = angular.copy(newParticipant);
     $scope.sessionObject.participantsArray.push(participant);
     $scope.newParticipant = '';
-  }//ends addQuestion
+  }//ends addParticipant
 
   function deleteParticipant(index){
     $scope.sessionObject.participantsArray.splice(index,1);
   }//ends deleteQuestion
+
+  $scope.chooseNext = chooseNext;
+
+  function chooseNext(object){
+    console.log("choosing a question, then choosing a name");
+    console.log("I've got this object to play with",object);
+    $scope.timer = 0;
+    object.currentRound += 1;
+  }//ends chooseNext
+
+  $scope.timer = 0;
+  $scope.timerEnd = 0;
+  $scope.enabled = false;
+
+  function theTimer(){
+    var interval = $interval(function(){
+      if($scope.enabled){
+        console.log("plus one");
+        $scope.timer += 1;
+      }
+      else{
+        console.log("is this happening");
+        $interval.cancel(interval);
+      }
+    },1000);
+  }
+
+  function startTimer(){
+    $scope.enabled = true;
+    console.log("start timer");
+    theTimer();
+  }//ends start timer
+
+  $scope.startTimer = startTimer;
+
+  function stopTimer(){
+    console.log("stop timer");
+    $scope.timerEnd = $scope.timer;
+    $scope.enabled = false;
+
+  }
+
+  $scope.stopTimer = stopTimer;
+
+  function endSession(){
+    console.log("endSession");
+  }
+
+  $scope.endSession = endSession;
+
+
+
 
 }]);//ends UserController

@@ -1,26 +1,43 @@
-<div class = 'instructions row'>
+<header ng-include="'/views/partials/header.html'"></header>
+<div class = 'instructions'>
   <div class = 'container'>
-    <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
-    <div class = 'logout col-md-2'>
-      <button class="btn btn-default" ng-click="logout()">Log Out</button>
+    <div class = 'row'>
+      <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
+      <div class = 'button-right col-md-2'>
+        <button class="btn btn-default" ng-click="logout()">Log Out</button>
+      </div>
     </div>
   </div>
 </div>
 
 <div class = 'container'>
-      <h2>Name: {{currentSessionObject.data.sessionName}}</h2>
-      <h2>Theme: {{currentSessionObject.data.sessionTheme}}</h2>
+  <div class = 'row'>
+    <div class = 'col-md-10'>
+      <h2>{{currentSessionObject.data.sessionTheme}}</h2>
       <h3>There are {{currentSessionObject.data.questionsArray.length}} questions prepared for this session.</h3>
+      <h3>There are {{sessionObject.participantsArray.length}} participants in this session.</h3>
+    </div>
+    <div class = 'col-md-2 button-right'>
+      <button type="button" class="btn btn-default" ng-click = 'saveParticipants(currentSessionObject, sessionObject)' >
+        <span class="glyphicon glyphicon-floppy-disk"></span> Save Participants
+      </button>
+      <!-- <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Save Participants' ng-click = 'saveParticipants(currentSessionObject, sessionObject)'/> -->
+    </div>
+  </div>
+
 
   <!-- add participants input fields -->
-  <div>
+  <div id = 'addParticipants' class = 'row'>
+    <div class = 'col-md-12'>
       <input class = 'user-input' type = 'text' placeholder = 'Add a Participant' ng-model = 'newParticipant' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addParticipant(newParticipant)'/>
       <span>Press Enter to Add Participant</span>
+    </div>
   </div>
   <!-- ends add participants input fields -->
 
   <!-- participant display div -->
-  <div>
+  <div id = 'preScrollOverride' class = 'pre-scrollable'>
+
     <ul class="list-group" ng-repeat = 'participant in sessionObject.participantsArray track by $index'>
 
       <div class = 'row'>
@@ -41,10 +58,6 @@
     <!-- ends unordered list and ng-repeat -->
   </div>
   <!-- ends participant display div -->
-
-  <div>
-      <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Save Participants' ng-click = 'saveParticipants(currentSessionObject.data._id, sessionObject)'/>
-  </div>
 
 </div>
 <!-- ends continer -->

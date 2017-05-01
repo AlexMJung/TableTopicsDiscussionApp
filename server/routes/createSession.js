@@ -17,6 +17,15 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 
 //CRUD
 //gets
+router.get( '/getAll', function(req,res){
+  Sessions.find(function( err, allSessions){
+    if( err ){
+      console.log(err);
+      res.sendStatus(500);
+    }//ends error
+    res.send(allSessions);
+  });
+});//ends get all sessions
 
 
 //posts
@@ -38,6 +47,28 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 
 
 //puts
+  router.put('/saveSession', function(req,res){
+    console.log("req.body", req.body);
+    var objectId = {};
+    objectId.id = req.body._id;
+    var questionsArray = req.body.questionsArray;
+
+    console.log("objectId.id, then participantsArray", objectId.id, questionsArray);
+
+    Sessions.findOneAndUpdate(
+        {'_id': objectId.id},
+        {$addToSet:{'questionsArray':{$each: questionsArray}}},
+        {new: true},
+        function(err, updatedObject){
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }
+      console.log(updatedObject);
+      res.send(updatedObject);
+    });//ends updateOne
+  });//ends router.put
+
   router.put('/saveParticipants', function(req,res){
     var objectId = {};
     objectId.id = req.body.id;
@@ -45,7 +76,11 @@ var Sessions = mongoose.model( "sessions", SessionsSchema, "sessions");
 
     console.log("objectId.id, then participantsArray", objectId.id, participantsArray);
 
-    Sessions.findOneAndUpdate({'_id': objectId.id}, {$addToSet:{'participantsArray':{$each: participantsArray}}},{new: true}, function(err, updatedObject){
+    Sessions.findOneAndUpdate(
+        {'_id': objectId.id},
+        {$set:{'participantsArray': participantsArray}},
+        {new: true},
+        function(err, updatedObject){
       if(err){
         console.log(err);
         res.sendStatus(500);

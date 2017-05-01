@@ -1,48 +1,101 @@
+/*elements*/
 *{
   margin: 0px;
   padding: 0px;
 }
 
-h1,h2,h5{
+body{
+  font-family: 'News Cycle', sans-serif;
+  background-color: white;
+  height: 100%;
+  position: relative;
+  color: #slategrey;
+}
+
+h1{
   text-transform: uppercase;
 }
 
+/*order of appearance*/
+/*general use*/
+.container {
+    margin-top: 10px;
+}
+
+.user-input{
+  margin: 5px;
+  padding: 10px;
+  text-align: left;
+}
+
+.red{
+  color: crimson;
+}
+
+.blue{
+  background-color: #3399ff;
+}
+
+.well-sm{
+  margin-top: 1px;
+  margin-bottom: 0px;
+}
+
+.btn{
+  margin: 5px;
+}
+
+.button-right{
+  text-align: right;
+}
+
+.center{
+  text-align: center;
+}
+
+.breadcrumb{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+/*header*/
 #headerLogo{
   border-radius: 15px;
   float:left;
-  height: 150px;
+  height: 100px;
+  margin-top: 8px;
   padding: 10px;
-  width: 150px;
+  width: 100px;
 }
 
-
+/*home*/
+/*register*/
 .login-container{
   padding: 20px;
   text-align: center;
 }
 
-.user-input{
-  margin: 10px;
-  padding: 10px;
-  text-align: left;
+/*createSession*/
+.create-session{
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
 }
 
-.login-error{
-  text-transform: uppercase;
+#welcomeButtons{
+  margin-top: 14px;
+  margin-bottom: 4px;
 }
 
-.logout{
-  text-align: center;
+.drop-down-scroll{
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
 }
 
-.new-session-form{
-
-}
-
-.submit{
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
+#preScrollOverride{
+  max-height: 500px;
 }
 
 .question-list{
@@ -50,6 +103,35 @@ h1,h2,h5{
   margin-right: 10px;
   padding: 10px;
 }
+    /*this formatting is used multiple times*/
+
+/*addParticipants*/
+
+/*sessionIntro*/
+#introTron{
+  background-image: url(/styles/images/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  margin-top: 50px;
+  text-align: right;
+  background-color: white;
+}
+
+/*session*/
+
+
+
+
+
+.submit{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+
 
 .participant-list{
   margin-left: 10px;
@@ -57,46 +139,84 @@ h1,h2,h5{
   padding: 10px;
 }
 
-.breadcrumb{
-  margin-left: 10px;
-  margin-right: 10px;
+
+
+
+
+
+
+#addParticipants{
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+#nameAndTheme{
+  margin-top: 10px;
   padding: 10px;
-}
-
-.red{
-  color: crimson;
-}
-
-.btn{
-  margin: 5px;
+  border-radius: 5px;
+  min-height: 225px;
 }
 
 
-/*EVERYTHING BELOW IS FROM THE ORIGINAL BASE PROJECT FILE*/
-
-/*header.html uses this*/
-.instructions {
-    background-color: #333333;
-    color: #DDDDDD;
+#participantsColumn{
+  margin-top: 4px;
+  padding: 10px;
+  /*background-color: whitesmoke;*/
+  text-align: center;
 }
 
-/*header.html uses this*/
-.instructions .container h1 {
-    font-size: 100px;
-    font-weight: 700;
+#participantsSpacing{
+    margin-left: 5px;
 }
 
-#entryForm {
+#participant{
+  text-align: left;
+  font-size: 20px;
+}
+
+
+
+#chooseNext{
+  margin-top: 5px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+#timer{
+  min-height: 225px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#timer h1{
+  font-size: 150px;
+}
+
+#relative{
+  position: relative;
+}
+
+#fixed{
+  position: fixed;
+  bottom: 0;
+}
+
+#sessionLogo{
+  height: 200px;
+  width: 200px;
+}
+
+/*From BASE Project*/
+/*#entryForm {
     margin-top: 14px;
-}
-
-/*lots of containers throughout*/
-#container {
-    margin-top: 10px;
-}
-
-.container p{
-    margin-top : 14px;
 }
 
 .message {
@@ -117,4 +237,4 @@ h1,h2,h5{
 
 .btn-danger{
     margin-left: 10px;
-}
+}*/

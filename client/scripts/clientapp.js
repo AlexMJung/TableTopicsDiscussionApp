@@ -1,5 +1,12 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
+// Filters ///
+myApp.filter('secondsToDateTime', [function() {
+    return function(seconds) {
+        return new Date(1970, 0, 1).setSeconds(seconds);
+    };
+}]);
+
 /// Routes ///
 myApp.config(['$routeProvider', '$locationProvider',
       function($routeProvider, $locationProvider) {
@@ -28,6 +35,16 @@ myApp.config(['$routeProvider', '$locationProvider',
 
     .when('/addParticipants', {
       templateUrl: '/views/templates/addParticipants.html',
+      controller: 'UserController',
+      resolve: {
+        getuser : ['UserService', function(UserService){
+          return UserService.getuser();
+        }]
+      }
+    })
+
+    .when('/sessionIntro', {
+      templateUrl: '/views/templates/sessionIntro.html',
       controller: 'UserController',
       resolve: {
         getuser : ['UserService', function(UserService){
