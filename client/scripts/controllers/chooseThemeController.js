@@ -1,4 +1,4 @@
-myApp.controller('ChooseThemeController', ['$scope', '$http', '$location','$interval', '$animate', 'UserService', function($scope, $http, $location, $interval, $animate, UserService) {
+myApp.controller('ChooseThemeController', ['$scope', 'UserService', function($scope, UserService) {
 
   //gets the user and lets the user logout
   $scope.userObject = UserService.userObject;
@@ -11,7 +11,6 @@ myApp.controller('ChooseThemeController', ['$scope', '$http', '$location','$inte
   $scope.getAllThemes = UserService.getAllThemes;
   $scope.getAllThemes();
   $scope.themes = UserService.themes;
-  console.log("$scope.themes", $scope.themes);
 
   //add theme and questions to database
   $scope.newQuestion = '';
@@ -36,7 +35,6 @@ myApp.controller('ChooseThemeController', ['$scope', '$http', '$location','$inte
   $scope.chooseTheme = chooseTheme;
 
   function chooseTheme(object){
-    console.log("I made it to chooseTheme, and I have this object", object);
     $scope.currentThemeObject = object;
     object = {};
   }//ends chooseSession
@@ -49,9 +47,7 @@ myApp.controller('ChooseThemeController', ['$scope', '$http', '$location','$inte
     $scope.addTheme(newTheme);
   }
 
-
   //update theme
   $scope.updateTheme = UserService.updateTheme;
 
-
-}]);//ends UserController
+}]);//ends ChooseThemeController

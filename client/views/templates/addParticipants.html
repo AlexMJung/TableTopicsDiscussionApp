@@ -1,3 +1,4 @@
+<!--Header and Logout  -->
 <header ng-include="'/views/partials/header.html'"></header>
 <div class = 'instructions'>
   <div class = 'container'>
@@ -10,40 +11,40 @@
   </div>
 </div>
 
+<!--Theme, Save Participants, numQ's and numP's -->
 <div class = 'container'>
   <div class = 'row'>
     <div class = 'col-md-10'>
-      <h2>{{currentSessionObject.data.sessionTheme}}</h2>
-      <h3>There are {{currentSessionObject.data.questionsArray.length}} questions prepared for this session.</h3>
-      <h3>There are {{sessionObject.participantsArray.length}} participants in this session.</h3>
+      <h2>{{currentThemeObject.data.theme}}</h2>
+      <h3>There are {{currentThemeObject.data.questionsArray.length}} questions prepared for this session.</h3>
+      <h3>There are {{currentSessionObject.participantsArray.length}} participants in this session.</h3>
     </div>
     <div class = 'col-md-2 button-right'>
-      <button type="button" class="btn btn-default" ng-click = 'saveParticipants(currentSessionObject, sessionObject)' >
+      <button type="button" class="btn btn-default" ng-click = 'saveParticipants(currentSessionObject)' >
         <span class="glyphicon glyphicon-floppy-disk"></span> Save Participants
       </button>
-      <!-- <input class = 'btn btn-default submit' type = 'button' name = 'buton' value = 'Save Participants' ng-click = 'saveParticipants(currentSessionObject, sessionObject)'/> -->
     </div>
   </div>
 
 
-  <!-- add participants input fields -->
+<!--Add Participants-->
   <div id = 'addParticipants' class = 'row'>
     <div class = 'col-md-12'>
-      <input class = 'user-input' type = 'text' placeholder = 'Add a Participant' ng-model = 'newParticipant' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addParticipant(newParticipant)'/>
+      <input class = 'user-input' type = 'text' placeholder = 'Add a Participant' ng-model = 'participant.name' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addParticipant(participant.name)'/>
       <span>Press Enter to Add Participant</span>
     </div>
   </div>
-  <!-- ends add participants input fields -->
 
-  <!-- participant display div -->
+
+<!-- Participant display div -->
   <div class = 'pre-scrollable pre-scroll-verride'>
 
-    <ul class="list-group" ng-repeat = 'participant in sessionObject.participantsArray track by $index'>
+    <ul class="list-group" ng-repeat = 'participant in currentSessionObject.participantsArray track by $index'>
 
       <div class = 'row'>
 
         <div class = 'col-md-10'>
-          <li class="list-group-item participant-list">{{participant}}</li>
+          <li class="list-group-item participant-list">{{participant.name}}</li>
         </div>
 
         <div class = 'col-md-2'>
@@ -53,11 +54,7 @@
         </div>
 
       </div>
-      <!-- ends row -->
     </ul>
-    <!-- ends unordered list and ng-repeat -->
   </div>
-  <!-- ends participant display div -->
-
 </div>
 <!-- ends continer -->

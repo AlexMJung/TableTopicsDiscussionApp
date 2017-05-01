@@ -35,7 +35,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 
     .when('/addParticipants', {
       templateUrl: '/views/templates/addParticipants.html',
-      controller: 'UserController',
+      controller: 'AddParticipantsController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
