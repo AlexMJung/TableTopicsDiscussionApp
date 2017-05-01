@@ -18,6 +18,33 @@ h1{
 
 /*order of appearance*/
 /*general use*/
+.participant-list{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.question-list{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.submit{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#relative{
+  position: relative;
+}
+
+#fixed{
+  position: fixed;
+  bottom: 0;
+}
+
 .container {
     margin-top: 10px;
 }
@@ -60,6 +87,11 @@ h1{
   padding: 10px;
 }
 
+#preScrollOverride{
+  max-height: 500px;
+}
+    /*preScrollOverride needs to be a class*/
+
 /*header*/
 #headerLogo{
   border-radius: 15px;
@@ -89,23 +121,20 @@ h1{
 }
 
 .drop-down-scroll{
-    height: auto;
-    max-height: 200px;
-    overflow-x: hidden;
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
 }
 
-#preScrollOverride{
-  max-height: 500px;
-}
 
-.question-list{
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
-}
-    /*this formatting is used multiple times*/
 
 /*addParticipants*/
+#addParticipants{
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+}
+
+
 
 /*sessionIntro*/
 #introTron{
@@ -120,41 +149,21 @@ h1{
 }
 
 /*session*/
-
-
-
-
-
-.submit{
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
+#timer{
+  min-height: 225px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
 }
 
-
-
-.participant-list{
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
+#timer h1{
+  font-size: 150px;
 }
 
-
-
-
-
-
-
-#addParticipants{
-  border-bottom: 1px solid black;
-  margin-bottom: 15px;
+#sessionLogo{
+  height: 200px;
+  width: 200px;
 }
-
-
-
-
-
-
 
 #nameAndTheme{
   margin-top: 10px;
@@ -162,7 +171,6 @@ h1{
   border-radius: 5px;
   min-height: 225px;
 }
-
 
 #participantsColumn{
   margin-top: 4px;
@@ -180,61 +188,9 @@ h1{
   font-size: 20px;
 }
 
-
-
 #chooseNext{
   margin-top: 5px;
   text-align: center;
   position: fixed;
   bottom: 0;
 }
-
-#timer{
-  min-height: 225px;
-  border-radius: 5px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-#timer h1{
-  font-size: 150px;
-}
-
-#relative{
-  position: relative;
-}
-
-#fixed{
-  position: fixed;
-  bottom: 0;
-}
-
-#sessionLogo{
-  height: 200px;
-  width: 200px;
-}
-
-/*From BASE Project*/
-/*#entryForm {
-    margin-top: 14px;
-}
-
-.message {
-    padding: 10px 0;
-}
-
-.message p {
-    margin-left: 10px;
-}
-
-.message:nth-child(odd) {
-     background-color: #eeeeee;
-}
-
-.message:nth-child(even) {
-    background-color: #f8f8f8;
-}
-
-.btn-danger{
-    margin-left: 10px;
-}*/
