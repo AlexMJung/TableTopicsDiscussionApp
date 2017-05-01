@@ -1,11 +1,11 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
   console.log('User Service Loaded');
 
-// user related functionality
+//users
   //variables
   var userObject = {};
 
-  //login user
+  //functions
   function getuser(){
     $http.get('/user').then(function(response) {
         if(response.data.username) {
@@ -17,7 +17,6 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     });//ends $http.get/user
   }//ends getuser
 
-  //logout user
   function logout(){
     $http.get('/user/logout').then(function(response) {
       $location.path("/login");
@@ -25,11 +24,14 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   }//ends logout
 
 
-//chooseTheme rleated functionality
+//chooseTheme
   //variables
   var themes = {};
   var currentThemeObject;
+  currentThemeObject.theme = '';
+  currentThemeObject.questionsArray = [];
 
+  //functions
   function getAllThemes(){
     $http.get('/themes/getAll').then(function(response){
       console.log("getAllThemes response", response);
@@ -38,7 +40,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     });//ends http.get/themes/getAll
   }//ends getAllThemes
 
-  function createTheme(newThemeObject){
+  function addTheme(newThemeObject){
     $http.post('/themes/addTheme', newThemeObject).then(function(response){
         currentThemeObject.data = response.data;
         $location.path("/addParticipants");
@@ -145,7 +147,7 @@ var randoms = {};
     themes: themes,
     //theme functions
     getAllThemes: getAllThemes,
-    createTheme: createTheme,
+    addTheme: addTheme,
     updateTheme: updateTheme,
 
 

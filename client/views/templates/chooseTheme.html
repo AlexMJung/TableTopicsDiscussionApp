@@ -1,5 +1,6 @@
+<!-- header -->
 <header ng-include="'/views/partials/header.html'"></header>
-
+<!-- nav and logout -->
 <div class = 'container'>
   <div class = 'row'>
     <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
@@ -10,80 +11,77 @@
 </div>
 
 
-
   <div class = 'container'>
+      <!--Welcome, Update Theme, Save As New Theme-->
       <div class = 'create-session row'>
+
+        <!-- Welcome -->
         <div class = 'col-md-8'>
           <h2>Welcome, {{userObject.userName}}!</h2>
         </div>
+
+        <!-- Update Theme, Save As New Theme -->
         <div id = 'welcomeButtons' class = 'button-right col-md-4'>
-          <button type="button" class="btn btn-default" ng-click = 'saveSession(sessionObject)' >
+          <button type="button" class="btn btn-default" ng-click = 'updateTheme(currentThemeObject)' >
             <span class="glyphicon glyphicon-refresh"></span> Update Theme
           </button>
-          <button type="button" class="btn btn-default" ng-click = 'createSession(sessionObject)' >
+          <button type="button" class="btn btn-default" ng-click = 'addTheme(currentThemeObject)' >
             <span class="glyphicon glyphicon-floppy-disk"></span> Save As New Theme
           </button>
-          <!-- <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Update Theme' ng-click = 'saveSession(sessionObject)'/> -->
-          <!-- <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Save As New Theme' ng-click = 'createSession(sessionObject)'/> -->
         </div>
       </div>
+
+      <!-- Create Theme and Add Questions -->
       <div class = 'create-session row'>
         <div class = 'col-md-6'>
-          <h3>Create a New Session and Add Questions:</h3>
-          <!-- create session input fields -->
+          <h3>Create Theme and Add Questions:</h3>
           <div>
-              <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = 'sessionObject.sessionTheme'/>
-              <span>Session Theme</span>
+              <input class = 'user-input' type = 'text' placeholder = 'Theme' ng-model = 'currentThemeObject.theme'/>
+              <span>Theme</span>
           </div>
           <div>
               <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = 'newQuestion' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addQuestion(newQuestion)'/>
               <span>Press Enter to Add Question</span>
           </div>
         </div>
-        <!-- ends create session input fields -->
 
-
+        <!-- Select a Previous Session -->
         <div class = 'col-md-6'>
           <h3>Select a Previous Session:</h3>
           <!-- creates dropdown -->
           <div class="dropdown">
 
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Session Theme
+              Themes
               <span class="caret"></span>
             </button>
 
             <ul class="dropdown-menu drop-down-scroll" aria-labelledby="dropdownMenu1" >
-              <li ng-repeat = 'session in allThemes.data' ng-click = 'chooseSession(session)'><a>{{session.sessionTheme}}</a></li>
+              <li ng-repeat = 'theme in themes.data' ng-click = 'chooseTheme(theme)'><a>{{theme.theme}}</a></li>
             </ul>
 
           </div>
           <!-- ends dropdown -->
         </div>
       </div>
-        <!-- question display div -->
 
+      <!-- Qustions Display -->
+      <div class = 'pre-scrollable pre-scroll-override'>
+        <ul class="list-group" ng-repeat = 'question in currentThemeObject.questionsArray track by $index'>
 
-        <div class = 'pre-scrollable pre-scroll-override'>
-          <ul class="list-group" ng-repeat = 'question in sessionObject.questionsArray track by $index'>
-
-            <div class = 'row'>
-
-              <div class = 'col-md-10'>
-                <li class="list-group-item question-list">{{question}}</li>
-              </div>
-
-              <div class = 'col-md-2'>
-                <button type="button" class="btn btn-default btn-sm" ng-click='deleteQuestion($index)' >
-                  <span class="glyphicon glyphicon-remove red"></span>
-                </button>
-              </div>
-
+          <div class = 'row'>
+            <div class = 'col-md-10'>
+              <li class="list-group-item question-list">{{question}}</li>
             </div>
-            <!-- ends row -->
-          </ul>
-          <!-- ends unordered list and ng-repeat -->
-        </div>
-        <!-- ends question display div -->
+
+            <div class = 'col-md-2'>
+              <button type="button" class="btn btn-default btn-sm" ng-click='deleteQuestion($index)' >
+                <span class="glyphicon glyphicon-remove red"></span>
+              </button>
+            </div>
+          </div>
+
+        </ul>
+      </div>
 
   </div>

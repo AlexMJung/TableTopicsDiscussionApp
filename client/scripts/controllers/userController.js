@@ -25,30 +25,30 @@ myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 
   $scope.sessionObject = sessionObject;
 
   //bring newQuesiton into scope
-  $scope.newQuestion = '';
+  // $scope.newQuestion = '';
   //bring functions into scope
-  $scope.chooseSession = chooseSession;
-  $scope.addQuestion = addQuestion;
-  $scope.deleteQuestion = deleteQuestion;
+  // $scope.chooseSession = chooseSession;
+  // $scope.addQuestion = addQuestion;
+  // $scope.deleteQuestion = deleteQuestion;
+  //
+  // function chooseSession(object){
+  //   $scope.sessionObject = object;
+  //   $scope.sessionObject.participantsArray = [];
+  //   object = {};
+  // }//ends chooseSession
 
-  function chooseSession(object){
-    $scope.sessionObject = object;
-    $scope.sessionObject.participantsArray = [];
-    object = {};
-  }//ends chooseSession
+  // function addQuestion(newQuestion){
+  //   if (newQuestion === ''){
+  //     return;
+  //   }
+  //   var question = angular.copy(newQuestion);
+  //   $scope.sessionObject.questionsArray.push(question);
+  //   $scope.newQuestion = '';
+  // }//ends addQuestion
 
-  function addQuestion(newQuestion){
-    if (newQuestion === ''){
-      return;
-    }
-    var question = angular.copy(newQuestion);
-    $scope.sessionObject.questionsArray.push(question);
-    $scope.newQuestion = '';
-  }//ends addQuestion
-
-  function deleteQuestion(index){
-    $scope.sessionObject.questionsArray.splice(index,1);
-  }//ends deleteQuestion
+  // function deleteQuestion(index){
+  //   $scope.sessionObject.questionsArray.splice(index,1);
+  // }//ends deleteQuestion
 
   //bring newParticipant into scope
   $scope.newParticipant = '';

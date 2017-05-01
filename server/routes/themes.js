@@ -61,27 +61,6 @@ var Themes = mongoose.model( "themes", ThemesSchema, "themes");
     });//ends findOneAndUpdate
   });//ends router.put to /updateTheme
 
-  // router.put('/saveParticipants', function(req,res){
-  //   var objectId = {};
-  //   objectId.id = req.body.id;
-  //   var participantsArray = req.body.participantsArray;
-  //
-  //   console.log("objectId.id, then participantsArray", objectId.id, participantsArray);
-  //
-  //   Sessions.findOneAndUpdate(
-  //       {'_id': objectId.id},
-  //       {$set:{'participantsArray': participantsArray}},
-  //       {new: true},
-  //       function(err, updatedObject){
-  //     if(err){
-  //       console.log(err);
-  //       res.sendStatus(500);
-  //     }
-  //     console.log(updatedObject);
-  //     res.send(updatedObject);
-  //   });//ends updateOne
-  // });//ends router.put
-
 //deletes
 
 //exports
