@@ -35,35 +35,13 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
   }//ends addParticipant
 
   //deleteParticipant
+  $scope.deleteParticipant =deleteParticipant;
+
+  function deleteParticipant(index){
+    $scope.currentSessionObject.participantsArray.splice(index,1);
+  }//ends deleteparticipant
+
+  //saveParticipants post Session to db
 
 
 }]);//ends addParticipantsController
-//
-// //bring newParticipant into scope
-// $scope.newParticipant = '';
-// //bring functions into scope
-// $scope.addParticipant = addParticipant;
-// $scope.deleteParticipant = deleteParticipant;
-//
-// var firstParticipant = true;
-// console.log("firstParticipant", firstParticipant);
-//
-// function addParticipant(newParticipant){
-//   if (newParticipant === ''){
-//     return;
-//   }
-//   if (firstParticipant === true){
-//     console.log("cleaning stuff out");
-//     $scope.sessionObject.participantsArray = [];
-//     $scope.currentSessionObject.data.participantsArray = [];
-//     console.log($scope.currentSessionObject.data.participantsArray);
-//     firstParticipant = false;
-//   }
-//   var participant = angular.copy(newParticipant);
-//   $scope.sessionObject.participantsArray.push(participant);
-//   $scope.newParticipant = '';
-// }//ends addParticipant
-//
-// function deleteParticipant(index){
-//   $scope.sessionObject.participantsArray.splice(index,1);
-// }//ends deleteQuestion

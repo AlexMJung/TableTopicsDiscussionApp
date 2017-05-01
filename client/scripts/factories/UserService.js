@@ -60,23 +60,21 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   currentSessionObject.theme = currentThemeObject;
   currentSessionObject.participantsArray = [];
 
-  // function saveParticipants(currentSessionObject, sessionObject){
-  //   if(currentSessionObject.data.questionsArray.length < sessionObject.participantsArray.length){
-  //     console.log("you have fewer questions than participants, that is not going to work.");
-  //   }
-  //   var putObject = {};
-  //   putObject.id = currentSessionObject.data._id;
-  //   putObject.participantsArray = sessionObject.participantsArray;
-  //   console.log("putObject", putObject);
-  //   $http.put('/createSession/saveParticipants', putObject).then(function(response){
-  //     console.log("response", response);
-  //     currentSessionObject.data = response.data;
-  //     console.log("currentSessionObject.data", currentSessionObject.data);
-  //   $location.path("/sessionIntro");
-  //   });//ends put to saveParticipants
-  // }//ends saveParticipants
-
-
+  function saveParticipants(currentSessionObject, sessionObject){
+    if(currentSessionObject.data.questionsArray.length < sessionObject.participantsArray.length){
+      console.log("you have fewer questions than participants, that is not going to work.");
+    }
+    var putObject = {};
+    putObject.id = currentSessionObject.data._id;
+    putObject.participantsArray = sessionObject.participantsArray;
+    console.log("putObject", putObject);
+    $http.put('/createSession/saveParticipants', putObject).then(function(response){
+      console.log("response", response);
+      currentSessionObject.data = response.data;
+      console.log("currentSessionObject.data", currentSessionObject.data);
+    $location.path("/sessionIntro");
+    });//ends put to saveParticipants
+  }//ends saveParticipants
 
 
   return {
@@ -92,6 +90,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
     //addParticipants
     currentSessionObject: currentSessionObject,
+    saveParticipants: saveParticipants
 
 
   };//ends return
