@@ -23,7 +23,7 @@
 
     <div id = 'participantsColumn' class = 'col-md-3'>
       <div id = 'participantsSpacing' class="row">
-          <div class="well well-sm blue" ng-repeat="participant in currentSessionObject.data.participantsArray track by $index">
+          <div class="well well-sm blue" ng-class = '{isSpeaking: deleted, hasSpoken: deleted}' ng-repeat="participant in currentSessionObject.data.participantsArray track by $index">
                 <div id = 'participant'>
                   {{participant}}
                 </div>
@@ -45,15 +45,10 @@
       <button type="button" class="btn btn-default" ng-click = 'stopTimer()' >
         <span class="glyphicon glyphicon-stop red"></span>
       </button>
-      <button type="button" class="btn btn-default" ng-click = 'chooseNext(randoms)' >
+      <button type="button" class="btn btn-default" ng-click = 'chooseNext(timer,randoms)' >
         <span class="glyphicon glyphicon-step-forward"></span> Choose Next
       </button>
       <button type="button" class="btn btn-default" ng-click = 'logout()' >Log out
-        <!-- <span class="glyphicon glyphicon-play"></span>  -->
       </button>
-      <!-- <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Start Timer' ng-click = 'startTimer()'/>
-      <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Stop Timer' ng-click = 'stopTimer()'/>
-      <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Choose Next' ng-click = 'chooseNext(randoms)'/>
-      <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'End Session' ng-click = 'logout()'/> -->
     </div>
 </div>

@@ -81,9 +81,11 @@ myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 
 
   $scope.chooseNext = chooseNext;
 
-  function chooseNext(object){
+  function chooseNext(timer, object){
     console.log("choosing a question, then choosing a name");
     console.log("I've got this object to play with",object);
+    console.log("This is the person that I think just spoke", object.randomParticipants[object.currentRound]);
+    console.log("This is how long I think that they spoke for", $scope.timer);
     $scope.timer = 0;
     object.currentRound += 1;
   }//ends chooseNext

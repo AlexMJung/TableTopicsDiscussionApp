@@ -16,6 +16,11 @@ h1{
   text-transform: uppercase;
 }
 
+/*@TODO */
+/*organize class first then id
+alphabetical by section
+alphabetical within section*/
+
 /*order of appearance*/
 /*general use*/
 .participant-list{
@@ -35,6 +40,7 @@ h1{
   margin-right: 10px;
   padding: 10px;
 }
+  /*not completely sure what this one does*/
 
 #relative{
   position: relative;
@@ -60,7 +66,8 @@ h1{
 }
 
 .blue{
-  background-color: #3399ff;
+  /*background-color: #3399ff;*/
+  border: 3px solid #3399ff;
 }
 
 .well-sm{
@@ -87,7 +94,7 @@ h1{
   padding: 10px;
 }
 
-#preScrollOverride{
+.pre-scroll-override{
   max-height: 500px;
 }
     /*preScrollOverride needs to be a class*/
