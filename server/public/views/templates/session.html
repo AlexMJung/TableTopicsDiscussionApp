@@ -23,7 +23,7 @@
 
     <div id = 'participantsColumn' class = 'col-md-3'>
       <div id = 'participantsSpacing' class="row">
-          <div class="well well-sm blue" ng-class = '{isSpeaking: deleted, hasSpoken: deleted}' ng-repeat="participant in currentSessionObject.data.participantsArray track by $index">
+          <div class="well well-sm blue" ng-repeat="participant in currentSessionObject.data.participantsArray track by $index">
                 <div id = 'participant'>
                   {{participant}}
                 </div>

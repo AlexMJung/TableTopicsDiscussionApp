@@ -1,4 +1,4 @@
-myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 'UserService', function($scope, $http, $location, $interval, UserService) {
+myApp.controller('UserController', ['$scope', '$http', '$location','$interval', '$animate', 'UserService', function($scope, $http, $location, $interval, $animate, UserService) {
   $scope.userObject = UserService.userObject;
   $scope.logout = UserService.logout;
   $scope.currentSessionObject = UserService.currentSessionObject;

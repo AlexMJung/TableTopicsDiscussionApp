@@ -201,3 +201,20 @@ alphabetical within section*/
   position: fixed;
   bottom: 0;
 }
+
+.blue{
+  /*background-color: #3399ff;*/
+  border: 3px solid #3399ff;
+}
+
+.isSpeaking{
+  border: 3px solid #82C78E
+}
+/*
+hand color #82C78E
+timer color #F4B669
+second hand color #C87061*/
+
+.hasSpoken{
+  border: 3px solid #darkgray;
+}
