@@ -9,12 +9,13 @@ myApp.controller('ChooseThemeController', ['$scope', '$http', '$location','$inte
 
   //get all themes from the database
   $scope.getAllThemes = UserService.getAllThemes;
-  $scope.themes = $scope.getAllThemes();
+  $scope.getAllThemes();
+  $scope.themes = UserService.themes;
   console.log("$scope.themes", $scope.themes);
 
   //add theme and questions to database
   $scope.newQuestion = '';
-  $scope.addTheme = UserService.addTheme;
+
   $scope.addQuestion = addQuestion;
   $scope.deleteQuestion = deleteQuestion;
 
@@ -32,12 +33,22 @@ myApp.controller('ChooseThemeController', ['$scope', '$http', '$location','$inte
   }//ends deleteQuestion
 
   //choose existing theme
-  $scope.chooseSession = chooseSession;
+  $scope.chooseTheme = chooseTheme;
 
-  function chooseSession(object){
+  function chooseTheme(object){
+    console.log("I made it to chooseTheme, and I have this object", object);
     $scope.currentThemeObject = object;
     object = {};
   }//ends chooseSession
+
+  //add theme
+  $scope.addTheme = UserService.addTheme;
+  $scope.addNewTheme = addNewTheme;
+  function addNewTheme(currentThemeObject){
+    newTheme = angular.copy(currentThemeObject);
+    $scope.addTheme(newTheme);
+  }
+
 
   //update theme
   $scope.updateTheme = UserService.updateTheme;
