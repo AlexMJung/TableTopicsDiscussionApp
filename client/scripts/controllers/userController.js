@@ -4,8 +4,8 @@ myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 
   $scope.currentSessionObject = UserService.currentSessionObject;
   $scope.createSession = UserService.createSession;
   $scope.saveParticipants = UserService.saveParticipants;
-  $scope.allSessions = UserService.allSessions;
-  $scope.getAllSessions = UserService.getAllSessions;
+  $scope.allThemes = UserService.allThemes;
+  $scope.getAllThemes = UserService.getAllThemes;
   $scope.startSession = UserService.startSession;
   $scope.randoms = UserService.randoms;
   $scope.saveSession = UserService.saveSession;

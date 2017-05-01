@@ -1,0 +1,89 @@
+<header ng-include="'/views/partials/header.html'"></header>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
+    <div class = 'button-right col-md-2'>
+      <button class="btn btn-default" ng-click="logout()">Log Out</button>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class = 'container'>
+      <div class = 'create-session row'>
+        <div class = 'col-md-8'>
+          <h2>Welcome, {{userObject.userName}}!</h2>
+        </div>
+        <div id = 'welcomeButtons' class = 'button-right col-md-4'>
+          <button type="button" class="btn btn-default" ng-click = 'saveSession(sessionObject)' >
+            <span class="glyphicon glyphicon-refresh"></span> Update Theme
+          </button>
+          <button type="button" class="btn btn-default" ng-click = 'createSession(sessionObject)' >
+            <span class="glyphicon glyphicon-floppy-disk"></span> Save As New Theme
+          </button>
+          <!-- <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Update Theme' ng-click = 'saveSession(sessionObject)'/> -->
+          <!-- <input class = 'btn btn-default submit' type = 'button' name = 'button' value = 'Save As New Theme' ng-click = 'createSession(sessionObject)'/> -->
+        </div>
+      </div>
+      <div class = 'create-session row'>
+        <div class = 'col-md-6'>
+          <h3>Create a New Session and Add Questions:</h3>
+          <!-- create session input fields -->
+          <div>
+              <input class = 'user-input' type = 'text' placeholder = 'Session Theme' ng-model = 'sessionObject.sessionTheme'/>
+              <span>Session Theme</span>
+          </div>
+          <div>
+              <input class = 'user-input' type = 'text' placeholder = 'Add a Question' ng-model = 'newQuestion' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addQuestion(newQuestion)'/>
+              <span>Press Enter to Add Question</span>
+          </div>
+        </div>
+        <!-- ends create session input fields -->
+
+
+        <div class = 'col-md-6'>
+          <h3>Select a Previous Session:</h3>
+          <!-- creates dropdown -->
+          <div class="dropdown">
+
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Session Theme
+              <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu drop-down-scroll" aria-labelledby="dropdownMenu1" >
+              <li ng-repeat = 'session in allThemes.data' ng-click = 'chooseSession(session)'><a>{{session.sessionTheme}}</a></li>
+            </ul>
+
+          </div>
+          <!-- ends dropdown -->
+        </div>
+      </div>
+        <!-- question display div -->
+
+
+        <div class = 'pre-scrollable pre-scroll-override'>
+          <ul class="list-group" ng-repeat = 'question in sessionObject.questionsArray track by $index'>
+
+            <div class = 'row'>
+
+              <div class = 'col-md-10'>
+                <li class="list-group-item question-list">{{question}}</li>
+              </div>
+
+              <div class = 'col-md-2'>
+                <button type="button" class="btn btn-default btn-sm" ng-click='deleteQuestion($index)' >
+                  <span class="glyphicon glyphicon-remove red"></span>
+                </button>
+              </div>
+
+            </div>
+            <!-- ends row -->
+          </ul>
+          <!-- ends unordered list and ng-repeat -->
+        </div>
+        <!-- ends question display div -->
+
+  </div>

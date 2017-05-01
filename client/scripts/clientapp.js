@@ -13,8 +13,8 @@ myApp.config(['$routeProvider', '$locationProvider',
   $locationProvider.hashPrefix('');
 
   $routeProvider
-    .when('/home', {
-      templateUrl: '/views/templates/home.html',
+    .when('/login', {
+      templateUrl: '/views/templates/login.html',
       controller: 'LoginController',
     })
 
@@ -23,8 +23,8 @@ myApp.config(['$routeProvider', '$locationProvider',
       controller: 'LoginController'
     })
 
-    .when('/createSession', {
-      templateUrl: '/views/templates/createSession.html',
+    .when('/chooseTheme', {
+      templateUrl: '/views/templates/chooseTheme.html',
       controller: 'UserController',
       resolve: {
         getuser : ['UserService', function(UserService){
@@ -64,6 +64,6 @@ myApp.config(['$routeProvider', '$locationProvider',
     })
 
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'login'
     });
 }]);

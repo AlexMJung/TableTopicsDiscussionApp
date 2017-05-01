@@ -1,6 +1,6 @@
 myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserService', function($scope, $http, $location, UserService) {
-    $scope.getAllSessions = UserService.getAllSessions;
-    $scope.getAllSessions();
+    // $scope.getAllThemes = UserService.getAllThemes;
+    // $scope.getAllThemes();
     $scope.user = {
       username: '',
       password: ''
@@ -16,7 +16,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
           if(response.data.username) {
             console.log('success: ', response.data);
             // location works with SPA (ng-route)
-            $location.path('/createSession');
+            $location.path('/chooseTheme');
           } else {
             console.log('failure: ', response);
             $scope.message = "Incorrect login information";
@@ -32,7 +32,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserServic
         console.log('sending to server...', $scope.user);
         $http.post('/register', $scope.user).then(function(response) {
           console.log('success');
-          $location.path('/home');
+          $location.path('/login');
         },
         function(response) {
           console.log('error');

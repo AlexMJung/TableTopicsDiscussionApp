@@ -3,15 +3,15 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
   var userObject = {};
   var currentSessionObject = {};
-  var allSessions = {};
+  var allThemes = {};
   var randoms = {};
 
-  getAllSessions();
+  getAllThemes();
 
-  function getAllSessions(){
+  function getAllThemes(){
     $http.get('/createSession/getAll').then(function(response){
-      console.log("getAllSessions response", response);
-      allSessions.data = response.data;
+      console.log("getAllThemes response", response);
+      allThemes.data = response.data;
     });//ends http.get
   }//ends getAllSessions
 
@@ -72,7 +72,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
             console.log('User Data: ', userObject.userName);
         } else {
             // user has no session, bounce them back to the login page
-            $location.path("/home");
+            $location.path("/login");
         }
     });//ends $http.get
   }//ends getuser
@@ -80,7 +80,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   function logout(){
     $http.get('/user/logout').then(function(response) {
       console.log('logged out');
-      $location.path("/home");
+      $location.path("/login");
     });//ends $http.get
   }//end logout
 
@@ -104,8 +104,8 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   return {
     userObject : userObject,
     currentSessionObject: currentSessionObject,
-    allSessions: allSessions,
-    getAllSessions: getAllSessions,
+    allThemes: allThemes,
+    getAllThemes: getAllThemes,
     createSession: createSession,
     saveParticipants: saveParticipants,
     startSession: startSession,
