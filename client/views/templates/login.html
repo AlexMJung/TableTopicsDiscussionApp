@@ -1,5 +1,7 @@
+<!-- header -->
 <header ng-include="'/views/partials/header.html'"></header>
 
+<!-- login -->
 <div class = 'container login-container'>
   <div class = 'row'>
     <div class = 'col-md-offset-4 col-md-4 col-md-offset-4'>
@@ -7,9 +9,8 @@
         <div class = 'panel-body'>
 
           <h2>Login to Begin</h2>
-          <!-- end login panel header -->
+          
           <h5 class = 'alert alert-danger' role = 'alert' ng-if = "message != ''">{{message}}</h5>
-          <!-- error message for loggin in -->
 
           <form ng-submit = 'login()'>
             <div>
@@ -24,15 +25,9 @@
                 <a href = '#register'>Register</a>
             </div>
           </form>
-          <!--ends form-->
 
         </div>
-        <!-- ends panel-body -->
       </div>
-      <!-- ends panel -->
     </div>
-    <!-- ends column -->
   </div>
-  <!-- ends row -->
 </div>
-<!-- ends container -->
