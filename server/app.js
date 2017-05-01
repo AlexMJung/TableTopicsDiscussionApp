@@ -7,10 +7,10 @@ var davidBowie = require( './modules/db.js');
 
 
 //route modules
-var index = require('./routes/index');
-var user = require('./routes/user');
-var register = require('./routes/register');
-var createSession = require('./routes/createSession');
+var index = require('./routes/index.js');
+var user = require('./routes/user.js'); //login
+var register = require('./routes/register.js');
+var themes = require('./routes/themes.js');
 
 //app config
 app.set('port', (process.env.PORT || 5000));
@@ -43,7 +43,7 @@ app.use(passport.session());
 //routes
 app.use('/register', register);
 app.use('/user', user);
-app.use('/createSession', createSession);
+app.use('/themes', themes);
 app.use('/', index);
 
 //listen

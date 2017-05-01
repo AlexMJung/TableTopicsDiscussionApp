@@ -25,7 +25,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 
     .when('/chooseTheme', {
       templateUrl: '/views/templates/chooseTheme.html',
-      controller: 'UserController',
+      controller: 'ChooseThemeController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();

@@ -1,38 +1,87 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
   console.log('User Service Loaded');
 
+// user related functionality
+  //variables
   var userObject = {};
-  var currentSessionObject = {};
-  var allThemes = {};
-  var randoms = {};
 
-  getAllThemes();
+  //login user
+  function getuser(){
+    $http.get('/user').then(function(response) {
+        if(response.data.username) {
+            userObject.userName = response.data.username;
+            console.log('User Data: ', userObject.userName);
+        } else {
+            $location.path("/login");
+        }
+    });//ends $http.get/user
+  }//ends getuser
+
+  //logout user
+  function logout(){
+    $http.get('/user/logout').then(function(response) {
+      $location.path("/login");
+    });//ends $http.get/user/logout
+  }//ends logout
+
+
+//chooseTheme rleated functionality
+  //variables
+  var themes = {};
+  var currentThemeObject;
 
   function getAllThemes(){
-    $http.get('/createSession/getAll').then(function(response){
+    $http.get('/themes/getAll').then(function(response){
       console.log("getAllThemes response", response);
-      allThemes.data = response.data;
-    });//ends http.get
-  }//ends getAllSessions
+      themes.data = response.data;
+      return themes.data;
+    });//ends http.get/themes/getAll
+  }//ends getAllThemes
 
-  function createSession(newSessionObject){
-    $http.post('/createSession/addSession', newSessionObject).then(function(response){
-        currentSessionObject.data = response.data;
+  function createTheme(newThemeObject){
+    $http.post('/themes/addTheme', newThemeObject).then(function(response){
+        currentThemeObject.data = response.data;
         $location.path("/addParticipants");
-    });//ends post to addSession
-  }//ends createSession
+    });//ends http.post/themes/addTheme
+  }//ends createTheme
 
-  function saveSession(saveObject){
-    console.log("another update, save session changes");
-    console.log("here is the object I have to play with", saveObject);
-    var putObject = saveObject;
-    $http.put('/createSession/saveSession', putObject).then(function(response){
-      console.log("response", response);
-      currentSessionObject.data = response.data;
-      currentSessionObject.data.participantsArray = [];
+  function updateTheme(updateObject){
+    $http.put('/themes/updateTheme', updateObject).then(function(response){
+      currentThemeObject.data = response.data;
       $location.path("/addParticipants");
-    });//ends put to save changes to theme
-  }//ends saveSession
+    });//ends http.put/themes/updateTheme
+  }//ends updateTheme
+
+
+
+
+
+
+
+
+var currentSessionObject = {};
+var randoms = {};
+
+//addParticipants functionality
+
+  // function createSession(newSessionObject){
+  //   $http.post('/createSession/addSession', newSessionObject).then(function(response){
+  //       currentSessionObject.data = response.data;
+  //       $location.path("/addParticipants");
+  //   });//ends post to addSession
+  // }//ends createSession
+
+  // function saveSession(saveObject){
+  //   console.log("another update, save session changes");
+  //   console.log("here is the object I have to play with", saveObject);
+  //   var putObject = saveObject;
+  //   $http.put('/createSession/saveSession', putObject).then(function(response){
+  //     console.log("response", response);
+  //     currentSessionObject.data = response.data;
+  //     currentSessionObject.data.participantsArray = [];
+  //     $location.path("/addParticipants");
+  //   });//ends put to save changes to theme
+  // }//ends saveSession
 
   function saveParticipants(currentSessionObject, sessionObject){
     if(currentSessionObject.data.questionsArray.length < sessionObject.participantsArray.length){
@@ -64,25 +113,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
   }//ends startSession
 
-  function getuser(){
-    $http.get('/user').then(function(response) {
-        if(response.data.username) {
-            // user has a curret session on the server
-            userObject.userName = response.data.username;
-            console.log('User Data: ', userObject.userName);
-        } else {
-            // user has no session, bounce them back to the login page
-            $location.path("/login");
-        }
-    });//ends $http.get
-  }//ends getuser
 
-  function logout(){
-    $http.get('/user/logout').then(function(response) {
-      console.log('logged out');
-      $location.path("/login");
-    });//ends $http.get
-  }//end logout
 
   //randomize Quesitons and participantsArray
   function randomize (array){
@@ -102,15 +133,32 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   }//ends randomize
 
   return {
+
+    //user related functionality
     userObject : userObject,
-    currentSessionObject: currentSessionObject,
-    allThemes: allThemes,
+    getuser: getuser,
+    logout: logout,
+
+    //chooseTheme related functionality
+    //theme variables
+    currentThemeObject: currentThemeObject,
+    themes: themes,
+    //theme functions
     getAllThemes: getAllThemes,
+    createTheme: createTheme,
+    updateTheme: updateTheme,
+
+
+
+
+
+
+
+
+    currentSessionObject: currentSessionObject,
     createSession: createSession,
     saveParticipants: saveParticipants,
     startSession: startSession,
-    getuser: getuser,
-    logout: logout,
     randoms: randoms,
     saveSession: saveSession
   };//ends return

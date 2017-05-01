@@ -1,6 +1,4 @@
 myApp.controller('LoginController', ['$scope', '$http', '$location', 'UserService', function($scope, $http, $location, UserService) {
-    // $scope.getAllThemes = UserService.getAllThemes;
-    // $scope.getAllThemes();
     $scope.user = {
       username: '',
       password: ''
