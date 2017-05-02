@@ -6,6 +6,8 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
   $scope.currentSessionObject = UserService.currentSessionObject;
   $scope.randoms = UserService.randoms;
 
+  $scope.sessionStatus = 'ready'; //ready, talking, next, done
+
   $scope.chooseNext = chooseNext;
   function chooseNext(timer, randoms){
     $scope.timer = 0;
@@ -18,6 +20,7 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
         speakers[i].speakStatus = 'isSpeaking';
       }
     }
+    $scope.sessionStatus = 'ready';
   }//ends chooseNext
 
   $scope.timer = 0;
@@ -52,6 +55,7 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
     $scope.enabled = true;
     console.log("start timer");
     theTimer();
+    $scope.sessionStatus = 'talking';
   }//ends start timer
 
   $scope.stopTimer = stopTimer;
@@ -76,7 +80,9 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
       console.log("overMin", overMin);
       console.log("numSpeakers", speakers.length);
       $scope.currentSessionObject.percentage = 100 * (overMin/speakers.length);
+      $scope.sessionStatus = 'done';
     }
+    $scope.sessionStatus = 'next';
   }
 
   $scope.logoutAndUpdate = logoutAndUpdate;

@@ -45,13 +45,13 @@
 
 <div>
     <div id = 'chooseNext' class = 'col-md-12'>
-      <button type="button" class="btn btn-default" ng-click = 'startTimer()' >
+      <button type="button" class="btn btn-default" ng-disabled = "(sessionStatus === 'talking' || sessionStatus === 'next' || sessionStatus === 'done')" ng-click = 'startTimer()' >
         <span class="glyphicon glyphicon-play"></span>
       </button>
-      <button type="button" class="btn btn-default" ng-click = 'stopTimer(timer, randoms)' >
+      <button type="button" class="btn btn-default" ng-disabled = "(sessionStatus === 'ready' || sessionStatus === 'next' || sessionStatus === 'done')" ng-click = 'stopTimer(timer, randoms)' >
         <span class="glyphicon glyphicon-stop red"></span>
       </button>
-      <button type="button" class="btn btn-default" ng-click = 'chooseNext(timer,randoms)' >
+      <button type="button" class="btn btn-default" ng-disabled = "(sessionStatus === 'ready' || sessionStatus === 'talking' || sessionStatus === 'done')" ng-click = 'chooseNext(timer,randoms)' >
         <span class="glyphicon glyphicon-step-forward"></span> Choose Next
       </button>
       <button type="button" class="btn btn-default" ng-click = 'logoutAndUpdate(currentSessionObject)' >Log out
