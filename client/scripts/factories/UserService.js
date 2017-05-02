@@ -84,6 +84,13 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     randoms.randomParticipants = randomize(participants);
     randoms.numRound = participants.length;
     randoms.currentRound = 0;
+    var speaker = randoms.randomParticipants[randoms.currentRound].name;
+    var speakers = currentSessionObject.participantsArray;
+    for (var i = 0; i < speakers.length; i++){
+      if (speaker === speakers[i].name){
+        speakers[i].speakStatus = 'isSpeaking';
+      }
+    }
     console.log("randomQuestions and then randomParticipants then numRound then currentRound", randoms.randomQuestions, randoms.randomParticipants, randoms.numRound, randoms.currentRound);
     $location.path("/session");
   }//ends startSession

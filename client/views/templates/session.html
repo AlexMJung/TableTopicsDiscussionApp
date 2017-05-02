@@ -11,10 +11,11 @@
           <h2>{{currentSessionObject.theme.theme}}</h2>
           <h2>{{randoms.randomParticipants[randoms.currentRound].name}}</h2>
           <h2>{{randoms.randomQuestions[randoms.currentRound]}}</h2>
+          <h2>{{currentSessionObject.percentage}}</h2>
         </div>
       </div>
       <div class = 'row'>
-        <div id = 'timer' class = 'col-md-12' ng-class = "{timerGreen:(timerStatus == 0),timerOrange:(timerStatus == 1),timerRed:(timerStatus == 2)}">
+        <div id = 'timer' class = 'col-md-12' ng-class = "{timerStart:(timerStatus == 0), timerGreen:(timerStatus == 1),timerOrange:(timerStatus == 2),timerRed:(timerStatus == 3)}">
             <h1>{{timer | secondsToDateTime | date: 'mm:ss'}}</h1>
         </div>
       </div>
@@ -24,7 +25,7 @@
     <div id = 'participantsColumn' class = 'col-md-3'>
       <div id = 'participantsSpacing' class="row">
             <div ng-repeat="participant in currentSessionObject.participantsArray track by $index">
-              <div class = 'row well well-sm' ng-class = "{hasNotSpoke:(participant.speakStatus === 'hasNot'), hasSpoken:(participant.speakStatus === 'hasSpoke')}" >
+              <div class = 'row well well-sm' ng-class = "{hasNotSpoke:(participant.speakStatus === 'hasNot'), isSpeaking:(participant.speakStatus === 'isSpeaking'), hasSpoken:(participant.speakStatus === 'hasSpoke')}" >
                 <div class = 'col-md-6 participant-display'>
                   {{participant.name}}
                 </div>

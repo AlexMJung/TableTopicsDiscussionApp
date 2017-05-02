@@ -223,17 +223,24 @@ second hand color #C87061*/
   color: darkgray;
 }
 
+.timerStart{
+
+}
+
 .timerGreen{
-  color: #82C78E;
-  /*background-color: #82C78E;*/
+  /*color: #82C78E;*/
+
+  background-color: #82C78E;
 }
 
 .timerOrange{
-  color: #F4B669;
+  /*color: #F4B669;*/
 
+  background-color: #F4B669;
 }
 
 .timerRed{
-  color: #C87061;
+  /*color: #C87061;*/
 
+  background-color: #C87061;
 }
