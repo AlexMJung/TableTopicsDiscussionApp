@@ -60,21 +60,18 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   currentSessionObject.theme = currentThemeObject;
   currentSessionObject.participantsArray = [];
 
-  function saveParticipants(currentSessionObject, sessionObject){
-    if(currentSessionObject.data.questionsArray.length < sessionObject.participantsArray.length){
+  function saveSession(currentSessionObject){
+    if(currentSessionObject.theme.questionsArray.length < currentSessionObject.participantsArray.length){
       console.log("you have fewer questions than participants, that is not going to work.");
     }
-    var putObject = {};
-    putObject.id = currentSessionObject.data._id;
-    putObject.participantsArray = sessionObject.participantsArray;
-    console.log("putObject", putObject);
-    $http.put('/createSession/saveParticipants', putObject).then(function(response){
-      console.log("response", response);
+
+    $http.post('/sessions/addSession', currentSessionObject).then(function(response){
       currentSessionObject.data = response.data;
-      console.log("currentSessionObject.data", currentSessionObject.data);
-    $location.path("/sessionIntro");
-    });//ends put to saveParticipants
-  }//ends saveParticipants
+      $location.path("/sessionIntro");
+    });//ends http.post/sessions.addSession
+  }//ends saveSession
+
+//sessionIntro
 
 
   return {
@@ -88,9 +85,10 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     addTheme: addTheme,
     updateTheme: updateTheme,
 
-    //addParticipants
     currentSessionObject: currentSessionObject,
-    saveParticipants: saveParticipants
+    saveSession: saveSession,
+
+    //sessionIntro
 
 
   };//ends return

@@ -42,6 +42,7 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
   }//ends deleteparticipant
 
   //saveParticipants post Session to db
+  $scope.saveSession = UserService.saveSession;
 
 
 }]);//ends addParticipantsController
