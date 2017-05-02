@@ -119,6 +119,7 @@ alphabetical within section*/
 /*createSession*/
 .create-session{
   border-bottom: 1px solid black;
+  padding-bottom: 10px;
   margin-bottom: 15px;
 }
 
@@ -190,7 +191,7 @@ alphabetical within section*/
     margin-left: 5px;
 }
 
-#participant{
+.participant-display{
   text-align: left;
   font-size: 20px;
 }

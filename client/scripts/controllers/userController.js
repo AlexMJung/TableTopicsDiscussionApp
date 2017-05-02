@@ -4,8 +4,8 @@ myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 
   $scope.currentSessionObject = UserService.currentSessionObject;
   $scope.createSession = UserService.createSession;
   $scope.saveParticipants = UserService.saveParticipants;
-  $scope.allSessions = UserService.allSessions;
-  $scope.getAllSessions = UserService.getAllSessions;
+  $scope.allThemes = UserService.allThemes;
+  $scope.getAllThemes = UserService.getAllThemes;
   $scope.startSession = UserService.startSession;
   $scope.randoms = UserService.randoms;
   $scope.saveSession = UserService.saveSession;
@@ -25,59 +25,59 @@ myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 
   $scope.sessionObject = sessionObject;
 
   //bring newQuesiton into scope
-  $scope.newQuestion = '';
+  // $scope.newQuestion = '';
   //bring functions into scope
-  $scope.chooseSession = chooseSession;
-  $scope.addQuestion = addQuestion;
-  $scope.deleteQuestion = deleteQuestion;
+  // $scope.chooseSession = chooseSession;
+  // $scope.addQuestion = addQuestion;
+  // $scope.deleteQuestion = deleteQuestion;
+  //
+  // function chooseSession(object){
+  //   $scope.sessionObject = object;
+  //   $scope.sessionObject.participantsArray = [];
+  //   object = {};
+  // }//ends chooseSession
 
-  function chooseSession(object){
-    $scope.sessionObject = object;
-    $scope.sessionObject.participantsArray = [];
-    object = {};
-  }//ends chooseSession
+  // function addQuestion(newQuestion){
+  //   if (newQuestion === ''){
+  //     return;
+  //   }
+  //   var question = angular.copy(newQuestion);
+  //   $scope.sessionObject.questionsArray.push(question);
+  //   $scope.newQuestion = '';
+  // }//ends addQuestion
 
-  function addQuestion(newQuestion){
-    if (newQuestion === ''){
-      return;
-    }
-    var question = angular.copy(newQuestion);
-    $scope.sessionObject.questionsArray.push(question);
-    $scope.newQuestion = '';
-  }//ends addQuestion
+  // function deleteQuestion(index){
+  //   $scope.sessionObject.questionsArray.splice(index,1);
+  // }//ends deleteQuestion
 
-  function deleteQuestion(index){
-    $scope.sessionObject.questionsArray.splice(index,1);
-  }//ends deleteQuestion
-
-  //bring newParticipant into scope
-  $scope.newParticipant = '';
-  //bring functions into scope
-  $scope.addParticipant = addParticipant;
-  $scope.deleteParticipant = deleteParticipant;
-
-  var firstParticipant = true;
-  console.log("firstParticipant", firstParticipant);
-
-  function addParticipant(newParticipant){
-    if (newParticipant === ''){
-      return;
-    }
-    if (firstParticipant === true){
-      console.log("cleaning stuff out");
-      $scope.sessionObject.participantsArray = [];
-      $scope.currentSessionObject.data.participantsArray = [];
-      console.log($scope.currentSessionObject.data.participantsArray);
-      firstParticipant = false;
-    }
-    var participant = angular.copy(newParticipant);
-    $scope.sessionObject.participantsArray.push(participant);
-    $scope.newParticipant = '';
-  }//ends addParticipant
-
-  function deleteParticipant(index){
-    $scope.sessionObject.participantsArray.splice(index,1);
-  }//ends deleteQuestion
+  // //bring newParticipant into scope
+  // $scope.newParticipant = '';
+  // //bring functions into scope
+  // $scope.addParticipant = addParticipant;
+  // $scope.deleteParticipant = deleteParticipant;
+  //
+  // var firstParticipant = true;
+  // console.log("firstParticipant", firstParticipant);
+  //
+  // function addParticipant(newParticipant){
+  //   if (newParticipant === ''){
+  //     return;
+  //   }
+  //   if (firstParticipant === true){
+  //     console.log("cleaning stuff out");
+  //     $scope.sessionObject.participantsArray = [];
+  //     $scope.currentSessionObject.data.participantsArray = [];
+  //     console.log($scope.currentSessionObject.data.participantsArray);
+  //     firstParticipant = false;
+  //   }
+  //   var participant = angular.copy(newParticipant);
+  //   $scope.sessionObject.participantsArray.push(participant);
+  //   $scope.newParticipant = '';
+  // }//ends addParticipant
+  //
+  // function deleteParticipant(index){
+  //   $scope.sessionObject.participantsArray.splice(index,1);
+  // }//ends deleteQuestion
 
   $scope.chooseNext = chooseNext;
 

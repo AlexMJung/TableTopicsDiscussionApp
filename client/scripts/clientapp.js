@@ -13,8 +13,8 @@ myApp.config(['$routeProvider', '$locationProvider',
   $locationProvider.hashPrefix('');
 
   $routeProvider
-    .when('/home', {
-      templateUrl: '/views/templates/home.html',
+    .when('/login', {
+      templateUrl: '/views/templates/login.html',
       controller: 'LoginController',
     })
 
@@ -23,9 +23,9 @@ myApp.config(['$routeProvider', '$locationProvider',
       controller: 'LoginController'
     })
 
-    .when('/createSession', {
-      templateUrl: '/views/templates/createSession.html',
-      controller: 'UserController',
+    .when('/chooseTheme', {
+      templateUrl: '/views/templates/chooseTheme.html',
+      controller: 'ChooseThemeController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -35,7 +35,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 
     .when('/addParticipants', {
       templateUrl: '/views/templates/addParticipants.html',
-      controller: 'UserController',
+      controller: 'AddParticipantsController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -45,7 +45,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 
     .when('/sessionIntro', {
       templateUrl: '/views/templates/sessionIntro.html',
-      controller: 'UserController',
+      controller: 'SessionIntroController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -55,7 +55,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 
     .when('/session', {
       templateUrl: '/views/templates/session.html',
-      controller: 'UserController',
+      controller: 'SessionController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();
@@ -64,6 +64,6 @@ myApp.config(['$routeProvider', '$locationProvider',
     })
 
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'login'
     });
 }]);
