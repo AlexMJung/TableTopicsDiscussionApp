@@ -191,7 +191,7 @@ alphabetical within section*/
     margin-left: 5px;
 }
 
-#participant{
+.participant-display{
   text-align: left;
   font-size: 20px;
 }

@@ -55,7 +55,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 
     .when('/session', {
       templateUrl: '/views/templates/session.html',
-      controller: 'UserController',
+      controller: 'SessionController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();

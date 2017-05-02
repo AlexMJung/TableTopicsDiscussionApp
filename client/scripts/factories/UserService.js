@@ -74,7 +74,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
 
 //sessionIntro
   var randoms = {};
-  randoms.randomQuesitons = [];
+  randoms.randomQuestions = [];
   randoms.randomParticipants = [];
 
   function startSession(currentSessionObject){
@@ -103,6 +103,8 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     }
     return array;
   }//ends randomize
+
+//session
 
 
 
