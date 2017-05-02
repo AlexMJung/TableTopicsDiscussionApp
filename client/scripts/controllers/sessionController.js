@@ -8,15 +8,6 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
 
   $scope.chooseNext = chooseNext;
   function chooseNext(timer, randoms){
-    var speaker = randoms.randomParticipants[randoms.currentRound].name;
-    var speakers = $scope.currentSessionObject.participantsArray;
-    for (var i = 0; i < speakers.length; i++){
-      if (speaker === speakers[i].name){
-        speakers[i].time = timer;
-        speakers[i].speakStatus = 'hasSpoke';
-      }
-    }
-    console.log($scope.currentSessionObject,"speakStatus");
     $scope.timer = 0;
     $scope.timerStatus = 0;
     randoms.currentRound += 1;
@@ -54,10 +45,19 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
   }//ends start timer
 
   $scope.stopTimer = stopTimer;
-  function stopTimer(){
+  function stopTimer(timer, randoms){
     console.log("stop timer");
     $scope.timerEnd = $scope.timer;
     $scope.enabled = false;
+    var speaker = randoms.randomParticipants[randoms.currentRound].name;
+    var speakers = $scope.currentSessionObject.participantsArray;
+    for (var i = 0; i < speakers.length; i++){
+      if (speaker === speakers[i].name){
+        speakers[i].time = timer;
+        speakers[i].speakStatus = 'hasSpoke';
+      }
+    }
+    console.log($scope.currentSessionObject,"speakStatus");
   }
 
   $scope.logoutAndUpdate = logoutAndUpdate;

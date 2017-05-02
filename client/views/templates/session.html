@@ -16,7 +16,6 @@
       <div class = 'row'>
         <div id = 'timer' class = 'col-md-12' ng-class = "{timerGreen:(timerStatus == 0),timerOrange:(timerStatus == 1),timerRed:(timerStatus == 2)}">
             <h1>{{timer | secondsToDateTime | date: 'mm:ss'}}</h1>
-            <h1>{{timerStatus}}</h1>
         </div>
       </div>
     </div>
@@ -48,7 +47,7 @@
       <button type="button" class="btn btn-default" ng-click = 'startTimer()' >
         <span class="glyphicon glyphicon-play"></span>
       </button>
-      <button type="button" class="btn btn-default" ng-click = 'stopTimer()' >
+      <button type="button" class="btn btn-default" ng-click = 'stopTimer(timer, randoms)' >
         <span class="glyphicon glyphicon-stop red"></span>
       </button>
       <button type="button" class="btn btn-default" ng-click = 'chooseNext(timer,randoms)' >
