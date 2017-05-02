@@ -203,7 +203,7 @@ alphabetical within section*/
   bottom: 0;
 }
 
-.blue{
+.hasNotSpoke{
   /*background-color: #3399ff;*/
   border: 3px solid #82C78E;
 }
@@ -220,4 +220,19 @@ second hand color #C87061*/
 
 .hasSpoken{
   border: 3px solid darkgray;
+}
+
+.timerGreen{
+  color: #82C78E;
+  /*background-color: #82C78E;*/
+}
+
+.timerOrange{
+  color: #F4B669;
+
+}
+
+.timerRed{
+  color: #C87061;
+
 }

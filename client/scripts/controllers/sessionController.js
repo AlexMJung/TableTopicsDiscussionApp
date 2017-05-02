@@ -18,11 +18,13 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
     }
     console.log($scope.currentSessionObject,"speakStatus");
     $scope.timer = 0;
+    $scope.timerStatus = 0;
     randoms.currentRound += 1;
   }//ends chooseNext
 
   $scope.timer = 0;
   $scope.timerEnd = 0;
+  $scope.timerStatus = 0;
   $scope.enabled = false;
 
   function theTimer(){
@@ -30,6 +32,12 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
       if($scope.enabled){
         console.log("plus one");
         $scope.timer += 1;
+        if ($scope.timer >= 120){
+          $scope.timerStatus = 2;
+        }
+        else if ($scope.timer >= 60){
+          $scope.timerStatus = 1;
+        }
       }
       else{
         console.log("is this happening");
