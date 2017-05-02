@@ -13,8 +13,23 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
     $scope.timer = 0;
     $scope.timerStatus = 0;
     randoms.currentRound += 1;
-    var speaker = randoms.randomParticipants[randoms.currentRound].name;
+
     var speakers = $scope.currentSessionObject.participantsArray;
+    if ((randoms.currentRound) === randoms.numRound){
+      var overMin = 0;
+      for (i = 0; i < speakers.length; i++){
+        if (speakers[i].time >= 60 ){
+          overMin += 1;
+        }
+      }
+      console.log("overMin", overMin);
+      console.log("numSpeakers", speakers.length);
+      $scope.currentSessionObject.percentage = 100 * (overMin/speakers.length);
+      $scope.sessionStatus = 'done';
+      return;
+    }
+    var speaker = randoms.randomParticipants[randoms.currentRound].name;
+
     for (var i = 0; i < speakers.length; i++){
       if (speaker === speakers[i].name){
         speakers[i].speakStatus = 'isSpeaking';
@@ -70,18 +85,7 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
         speakers[i].speakStatus = 'hasSpoke';
       }
     }
-    if ((randoms.currentRound + 1) === randoms.numRound){
-      var overMin = 0;
-      for (i = 0; i < speakers.length; i++){
-        if (speakers[i].time >= 60 ){
-          overMin += 1;
-        }
-      }
-      console.log("overMin", overMin);
-      console.log("numSpeakers", speakers.length);
-      $scope.currentSessionObject.percentage = 100 * (overMin/speakers.length);
-      $scope.sessionStatus = 'done';
-    }
+
     $scope.sessionStatus = 'next';
   }
 
