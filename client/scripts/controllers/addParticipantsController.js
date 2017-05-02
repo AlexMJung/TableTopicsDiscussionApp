@@ -7,7 +7,7 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
   var participant = {};
   participant.name = '';
   participant.time = '';
-  participant.hasSpoke = false;
+  participant.speakStatus = 'hasNot';
 
   //var
   $scope.currentThemeObject = UserService.currentThemeObject;
@@ -28,7 +28,7 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
     participantObject = {};
     participantObject.name = name;
     participantObject.time = 0;
-    participantObject.hasSpoke = false;
+    participantObject.speakStatus = 'hasNot';
     $scope.currentSessionObject.participantsArray.push(participantObject);
 
     $scope.participant.name = '';

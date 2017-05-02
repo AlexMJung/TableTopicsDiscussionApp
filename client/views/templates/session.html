@@ -23,8 +23,9 @@
 
     <div id = 'participantsColumn' class = 'col-md-3'>
       <div id = 'participantsSpacing' class="row">
-          <div class="well well-sm blue" ng-repeat="participant in currentSessionObject.participantsArray track by $index">
-              <div class = 'row'>
+          <!-- <div class="well well-sm" ng-repeat="participant in currentSessionObject.participantsArray track by $index"> -->
+            <div ng-repeat="participant in currentSessionObject.participantsArray track by $index">
+              <div class = 'row well well-sm' ng-class = "{blue:(participant.speakStatus === 'hasNot'), hasSpoken:(participant.speakStatus === 'hasSpoke')}" >
                 <div class = 'col-md-6 participant-display'>
                   {{participant.name}}
                 </div>

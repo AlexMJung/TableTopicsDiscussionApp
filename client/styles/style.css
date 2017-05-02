@@ -205,17 +205,19 @@ alphabetical within section*/
 
 .blue{
   /*background-color: #3399ff;*/
-  border: 3px solid #3399ff;
+  border: 3px solid #82C78E;
 }
 
 .isSpeaking{
-  border: 3px solid #82C78E
+  border: 3px solid #F4B669;
 }
 /*
+
+blue #3399ff
 hand color #82C78E
 timer color #F4B669
 second hand color #C87061*/
 
 .hasSpoken{
-  border: 3px solid #darkgray;
+  border: 3px solid darkgray;
 }

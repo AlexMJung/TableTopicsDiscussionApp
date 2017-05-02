@@ -13,9 +13,10 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
     for (var i = 0; i < speakers.length; i++){
       if (speaker === speakers[i].name){
         speakers[i].time = timer;
-        speakers[i].hasSpoke = true;
+        speakers[i].speakStatus = 'hasSpoke';
       }
     }
+    console.log($scope.currentSessionObject,"speakStatus");
     $scope.timer = 0;
     randoms.currentRound += 1;
   }//ends chooseNext
