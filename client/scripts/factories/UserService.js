@@ -66,12 +66,45 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     }
 
     $http.post('/sessions/addSession', currentSessionObject).then(function(response){
+      currentSessionObject = {};
       currentSessionObject.data = response.data;
       $location.path("/sessionIntro");
     });//ends http.post/sessions.addSession
   }//ends saveSession
 
 //sessionIntro
+  var randoms = {};
+  randoms.randomQuesitons = [];
+  randoms.randomParticipants = [];
+
+  function startSession(currentSessionObject){
+    var questions = angular.copy(currentSessionObject.theme.questionsArray);
+    var participants = angular.copy(currentSessionObject.participantsArray);
+    randoms.randomQuestions = randomize(questions);
+    randoms.randomParticipants = randomize(participants);
+    randoms.numRound = participants.length;
+    randoms.currentRound = 0;
+    console.log("randomQuestions and then randomParticipants then numRound then currentRound", randoms.randomQuestions, randoms.randomParticipants, randoms.numRound, randoms.currentRound);
+    $location.path("/session");
+  }//ends startSession
+
+  //randomize Quesitons and participantsArray
+  function randomize (array){
+    var m = array.length,
+        t, i;
+    // While there remain elements to shuffle…
+    while (m) {
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * m--);
+        // And swap it with the current element.
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+    }
+    return array;
+  }//ends randomize
+
+
 
 
   return {
@@ -89,6 +122,10 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     saveSession: saveSession,
 
     //sessionIntro
+    startSession: startSession,
+
+    //session
+    randoms: randoms
 
 
   };//ends return

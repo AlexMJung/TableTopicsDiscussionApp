@@ -45,7 +45,7 @@ myApp.config(['$routeProvider', '$locationProvider',
 
     .when('/sessionIntro', {
       templateUrl: '/views/templates/sessionIntro.html',
-      controller: 'UserController',
+      controller: 'SessionIntroController',
       resolve: {
         getuser : ['UserService', function(UserService){
           return UserService.getuser();

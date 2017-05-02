@@ -50,34 +50,34 @@ myApp.controller('UserController', ['$scope', '$http', '$location','$interval', 
   //   $scope.sessionObject.questionsArray.splice(index,1);
   // }//ends deleteQuestion
 
-  //bring newParticipant into scope
-  $scope.newParticipant = '';
-  //bring functions into scope
-  $scope.addParticipant = addParticipant;
-  $scope.deleteParticipant = deleteParticipant;
-
-  var firstParticipant = true;
-  console.log("firstParticipant", firstParticipant);
-
-  function addParticipant(newParticipant){
-    if (newParticipant === ''){
-      return;
-    }
-    if (firstParticipant === true){
-      console.log("cleaning stuff out");
-      $scope.sessionObject.participantsArray = [];
-      $scope.currentSessionObject.data.participantsArray = [];
-      console.log($scope.currentSessionObject.data.participantsArray);
-      firstParticipant = false;
-    }
-    var participant = angular.copy(newParticipant);
-    $scope.sessionObject.participantsArray.push(participant);
-    $scope.newParticipant = '';
-  }//ends addParticipant
-
-  function deleteParticipant(index){
-    $scope.sessionObject.participantsArray.splice(index,1);
-  }//ends deleteQuestion
+  // //bring newParticipant into scope
+  // $scope.newParticipant = '';
+  // //bring functions into scope
+  // $scope.addParticipant = addParticipant;
+  // $scope.deleteParticipant = deleteParticipant;
+  //
+  // var firstParticipant = true;
+  // console.log("firstParticipant", firstParticipant);
+  //
+  // function addParticipant(newParticipant){
+  //   if (newParticipant === ''){
+  //     return;
+  //   }
+  //   if (firstParticipant === true){
+  //     console.log("cleaning stuff out");
+  //     $scope.sessionObject.participantsArray = [];
+  //     $scope.currentSessionObject.data.participantsArray = [];
+  //     console.log($scope.currentSessionObject.data.participantsArray);
+  //     firstParticipant = false;
+  //   }
+  //   var participant = angular.copy(newParticipant);
+  //   $scope.sessionObject.participantsArray.push(participant);
+  //   $scope.newParticipant = '';
+  // }//ends addParticipant
+  //
+  // function deleteParticipant(index){
+  //   $scope.sessionObject.participantsArray.splice(index,1);
+  // }//ends deleteQuestion
 
   $scope.chooseNext = chooseNext;
 
