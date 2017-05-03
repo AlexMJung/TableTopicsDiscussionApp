@@ -28,10 +28,10 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
       $scope.sessionStatus = 'done';
       return;
     }
-    var speaker = randoms.randomParticipants[randoms.currentRound].name;
+    var speaker = randoms.randomParticipants[randoms.currentRound].id;
 
     for (var i = 0; i < speakers.length; i++){
-      if (speaker === speakers[i].name){
+      if (speaker === speakers[i].id){
         speakers[i].speakStatus = 'isSpeaking';
       }
     }
@@ -74,11 +74,11 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
   function stopTimer(timer, randoms){
     $scope.timerEnd = $scope.timer;
     $scope.enabled = false;
-    var speaker = randoms.randomParticipants[randoms.currentRound].name;
+    var speaker = randoms.randomParticipants[randoms.currentRound].id;
     var speakers = $scope.currentSessionObject.participantsArray;
     console.log(speaker,speakers,"speaker and speakers");
     for (var i = 0; i < speakers.length; i++){
-      if (speaker === speakers[i].name){
+      if (speaker === speakers[i].id){
         speakers[i].time = timer;
         speakers[i].speakStatus = 'hasSpoke';
       }

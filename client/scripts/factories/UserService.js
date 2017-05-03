@@ -64,6 +64,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   currentSessionObject.participantsArray = [];
 
   function saveSession(currentSessionObject){
+
     if(currentSessionObject.theme.questionsArray.length < currentSessionObject.participantsArray.length){
       console.log("you have fewer questions than participants, that is not going to work.");
     }
@@ -81,16 +82,21 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   randoms.randomParticipants = [];
 
   function startSession(currentSessionObject){
+    console.log("inside startSession",currentSessionObject);
     var questions = angular.copy(currentSessionObject.theme.questionsArray);
     var participants = angular.copy(currentSessionObject.participantsArray);
+    console.log("inside startSession",currentSessionObject);
     randoms.randomQuestions = randomize(questions);
     randoms.randomParticipants = randomize(participants);
     randoms.numRound = participants.length;
     randoms.currentRound = 0;
-    var speaker = randoms.randomParticipants[randoms.currentRound].name;
+    var speaker = randoms.randomParticipants[randoms.currentRound].id;
     var speakers = currentSessionObject.participantsArray;
+    console.log("inside startSession",currentSessionObject);
+    console.log(speaker, "speaker", "speakers", speakers);
     for (var i = 0; i < speakers.length; i++){
-      if (speaker === speakers[i].name){
+      if (speaker === speakers[i].id){
+        console.log(speaker, speakers[i].id);
         speakers[i].speakStatus = 'isSpeaking';
       }
     }

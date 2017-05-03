@@ -18,12 +18,11 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
 
   //add participants
   $scope.addParticipant = addParticipant;
-
+  var idNum = 0;
   function addParticipant(newParticipantName){
     if (newParticipantName === ''){
       return;
     }
-    var idNum = 0;
     var name = angular.copy(newParticipantName);
 
     participantObject = {};
@@ -31,10 +30,12 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
     participantObject.name = name;
     participantObject.time = 0;
     participantObject.speakStatus = 'hasNot';
+    console.log("I made this person!", participantObject);
     $scope.currentSessionObject.participantsArray.push(participantObject);
 
     $scope.participant.name = '';
     idNum += 1;
+    console.log("idnum", idNum);
   }//ends addParticipant
 
   //deleteParticipant
