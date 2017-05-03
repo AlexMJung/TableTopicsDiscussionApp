@@ -18,6 +18,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   }//ends getuser
 
   function logout(){
+    currentThemeObject.theme = '';
+    currentThemeObject.questionsArray = [];
+    currentSessionObject.participantsArray =[];
     $http.get('/user/logout').then(function(response) {
       $location.path("/login");
     });//ends $http.get/user/logout
