@@ -204,11 +204,15 @@ alphabetical within section*/
   font-size: 20px;
 }
 
-#chooseNext{
+.choose-next{
   margin-top: 5px;
   text-align: center;
   position: fixed;
   bottom: 0;
+}
+
+.choose-next p{
+  font-size: 20px;
 }
 
 .hasNotSpoke{
@@ -236,19 +240,19 @@ second hand color #C87061*/
 }
 
 .timerGreen{
-  color: #82C78E;
+  /*color: #82C78E;*/
 
-  /*background-color: #82C78E;*/
+  background-color: #82C78E;
 }
 
 .timerOrange{
-  color: #F4B669;
+  /*color: #F4B669;*/
 
-  /*background-color: #F4B669;*/
+  background-color: #F4B669;
 }
 
 .timerRed{
-  color: #C87061;
+  /*color: #C87061;*/
 
-  /*background-color: #C87061;*/
+  background-color: #C87061;
 }

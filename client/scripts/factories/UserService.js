@@ -1,5 +1,4 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
-  console.log('User Service Loaded');
 
 //users
   //variables
@@ -10,7 +9,6 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     $http.get('/user').then(function(response) {
         if(response.data.username) {
             userObject.userName = response.data.username;
-            console.log('User Data: ', userObject.userName);
         } else {
             $location.path("/login");
         }
@@ -18,9 +16,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   }//ends getuser
 
   function logout(){
-    currentThemeObject.theme = '';
-    currentThemeObject.questionsArray = [];
-    currentSessionObject.participantsArray =[];
+    // currentThemeObject.theme = '';
+    // currentThemeObject.questionsArray = [];
+    // currentSessionObject.participantsArray =[];
     $http.get('/user/logout').then(function(response) {
       $location.path("/login");
     });//ends $http.get/user/logout
@@ -82,25 +80,19 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   randoms.randomParticipants = [];
 
   function startSession(currentSessionObject){
-    console.log("inside startSession",currentSessionObject);
     var questions = angular.copy(currentSessionObject.theme.questionsArray);
     var participants = angular.copy(currentSessionObject.participantsArray);
-    console.log("inside startSession",currentSessionObject);
     randoms.randomQuestions = randomize(questions);
     randoms.randomParticipants = randomize(participants);
     randoms.numRound = participants.length;
     randoms.currentRound = 0;
     var speaker = randoms.randomParticipants[randoms.currentRound].id;
     var speakers = currentSessionObject.participantsArray;
-    console.log("inside startSession",currentSessionObject);
-    console.log(speaker, "speaker", "speakers", speakers);
     for (var i = 0; i < speakers.length; i++){
       if (speaker === speakers[i].id){
-        console.log(speaker, speakers[i].id);
         speakers[i].speakStatus = 'isSpeaking';
       }
     }
-    console.log("randomQuestions and then randomParticipants then numRound then currentRound", randoms.randomQuestions, randoms.randomParticipants, randoms.numRound, randoms.currentRound);
     $location.path("/session");
   }//ends startSession
 

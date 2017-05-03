@@ -1,4 +1,4 @@
-myApp.controller('SessionController', ['$scope', '$interval', 'UserService', function($scope, $interval, UserService) {
+myApp.controller('SessionController', ['$scope', '$interval', '$location', 'UserService', function($scope, $interval, $location, UserService) {
   //gets the user and lets the user logout
   $scope.userObject = UserService.userObject;
   $scope.logout = UserService.logout;
@@ -22,8 +22,6 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
           overMin += 1;
         }
       }
-      console.log("overMin", overMin);
-      console.log("numSpeakers", speakers.length);
       $scope.currentSessionObject.percentage = 100 * (overMin/speakers.length);
       $scope.sessionStatus = 'done';
       return;
@@ -46,7 +44,6 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
   function theTimer(){
     var interval = $interval(function(){
       if($scope.enabled){
-        console.log("plus one");
         $scope.timer += 1;
         if ($scope.timer >= 120){
           $scope.timerStatus = 3;
@@ -54,9 +51,11 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
         else if ($scope.timer >= 60){
           $scope.timerStatus = 2;
         }
+        else if ($scope.timer >= 1){
+          $scope.timerStatus = 1;
+        }
       }
       else{
-        console.log("is this happening");
         $interval.cancel(interval);
       }
     },1000);
@@ -65,7 +64,6 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
   $scope.startTimer = startTimer;
   function startTimer(){
     $scope.enabled = true;
-    console.log("start timer");
     theTimer();
     $scope.sessionStatus = 'talking';
   }//ends start timer
@@ -76,7 +74,6 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
     $scope.enabled = false;
     var speaker = randoms.randomParticipants[randoms.currentRound].id;
     var speakers = $scope.currentSessionObject.participantsArray;
-    console.log(speaker,speakers,"speaker and speakers");
     for (var i = 0; i < speakers.length; i++){
       if (speaker === speakers[i].id){
         speakers[i].time = timer;
@@ -86,12 +83,14 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
 
     $scope.sessionStatus = 'next';
   }
+  $scope.currentThemeObject = UserService.currentThemeObject;
 
-  $scope.logoutAndUpdate = logoutAndUpdate;
-  function logoutAndUpdate(currentSessionObject){
-    console.log("this is the currentThemeObject",$scope.currentThemeObject);
-    console.log("I need to make a put here", currentSessionObject);
-    $scope.logout();
+  $scope.startAnotherSession = startAnotherSession;
+  function startAnotherSession(currentSessionObject){
+    $scope.currentThemeObject.theme = '';
+    $scope.currentThemeObject.questionsArray = [];
+    currentSessionObject.participantsArray =[];
+    $location.path("/chooseTheme");
   }//ends logoutAndUpdate
 
   }]);//ends sessionIntroController

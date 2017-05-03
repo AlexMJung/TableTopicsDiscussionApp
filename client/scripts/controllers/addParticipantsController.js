@@ -1,6 +1,5 @@
 myApp.controller('AddParticipantsController', ['$scope', 'UserService', function($scope, UserService) {
 
-  console.log("loads AddParticipantsController");
   //gets the user and lets the user logout
   $scope.userObject = UserService.userObject;
   $scope.logout = UserService.logout;
@@ -30,12 +29,10 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
     participantObject.name = name;
     participantObject.time = 0;
     participantObject.speakStatus = 'hasNot';
-    console.log("I made this person!", participantObject);
     $scope.currentSessionObject.participantsArray.push(participantObject);
 
     $scope.participant.name = '';
     idNum += 1;
-    console.log("idnum", idNum);
   }//ends addParticipant
 
   //deleteParticipant
