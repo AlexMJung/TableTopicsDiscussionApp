@@ -54,9 +54,6 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
         else if ($scope.timer >= 60){
           $scope.timerStatus = 2;
         }
-        else if ($scope.timer >= 5){
-          $scope.timerStatus = 1;
-        }
       }
       else{
         console.log("is this happening");
@@ -79,6 +76,7 @@ myApp.controller('SessionController', ['$scope', '$interval', 'UserService', fun
     $scope.enabled = false;
     var speaker = randoms.randomParticipants[randoms.currentRound].name;
     var speakers = $scope.currentSessionObject.participantsArray;
+    console.log(speaker,speakers,"speaker and speakers");
     for (var i = 0; i < speakers.length; i++){
       if (speaker === speakers[i].name){
         speakers[i].time = timer;
