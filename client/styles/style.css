@@ -13,7 +13,9 @@ body{
 }
 
 h1{
+  font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
+  font-size: 75px;
 }
 
 /*@TODO */
@@ -23,6 +25,12 @@ alphabetical within section*/
 
 /*order of appearance*/
 /*general use*/
+.add-margin{
+  margin-top: 20px;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
 .participant-list{
   margin-left: 10px;
   margin-right: 10px;
@@ -196,26 +204,62 @@ alphabetical within section*/
   font-size: 20px;
 }
 
-#chooseNext{
+.choose-next{
   margin-top: 5px;
   text-align: center;
   position: fixed;
   bottom: 0;
 }
 
-.blue{
+.choose-next p{
+  font-size: 20px;
+}
+
+.hasNotSpoke{
   /*background-color: #3399ff;*/
   border: 3px solid #3399ff;
 }
 
 .isSpeaking{
-  border: 3px solid #82C78E
+  border: 3px solid #F4B669;
 }
 /*
+
+blue #3399ff
 hand color #82C78E
 timer color #F4B669
 second hand color #C87061*/
 
 .hasSpoken{
-  border: 3px solid #darkgray;
+  border: 3px none darkgray;
+  color: darkgray;
+}
+
+.timer-div{
+  padding: 10px;
+}
+
+.timerStart{
+
+}
+
+.timerGreen{
+  /*color: #82C78E;*/
+
+  background-color: #82C78E;
+
+}
+
+.timerOrange{
+  /*color: #F4B669;*/
+
+  background-color: #F4B669;
+
+}
+
+.timerRed{
+  /*color: #C87061;*/
+
+  background-color: #C87061;
+
 }

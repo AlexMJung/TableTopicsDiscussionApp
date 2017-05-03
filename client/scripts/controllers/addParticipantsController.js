@@ -1,4 +1,4 @@
-myApp.controller('AddParticipantsController', ['$scope', 'UserService', function($scope, UserService) {
+myApp.controller('AddParticipantsController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
 
   //gets the user and lets the user logout
   $scope.userObject = UserService.userObject;
@@ -7,7 +7,7 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
   var participant = {};
   participant.name = '';
   participant.time = '';
-  participant.hasSpoke = false;
+  participant.speakStatus = 'hasNot';
 
   //var
   $scope.currentThemeObject = UserService.currentThemeObject;
@@ -17,21 +17,22 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
 
   //add participants
   $scope.addParticipant = addParticipant;
-
+  var idNum = 0;
   function addParticipant(newParticipantName){
     if (newParticipantName === ''){
       return;
     }
-
     var name = angular.copy(newParticipantName);
 
     participantObject = {};
+    participantObject.id = idNum;
     participantObject.name = name;
     participantObject.time = 0;
-    participantObject.hasSpoke = false;
+    participantObject.speakStatus = 'hasNot';
     $scope.currentSessionObject.participantsArray.push(participantObject);
 
     $scope.participant.name = '';
+    idNum += 1;
   }//ends addParticipant
 
   //deleteParticipant
@@ -43,6 +44,11 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
 
   //saveParticipants post Session to db
   $scope.saveSession = UserService.saveSession;
+
+  $scope.goBacktoChooseTheme = goBacktoChooseTheme;
+  function goBacktoChooseTheme(){
+      $location.path("/chooseTheme");
+  }
 
 
 }]);//ends addParticipantsController

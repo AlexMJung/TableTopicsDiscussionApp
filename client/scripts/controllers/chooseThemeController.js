@@ -41,11 +41,7 @@ myApp.controller('ChooseThemeController', ['$scope', 'UserService', function($sc
 
   //add theme
   $scope.addTheme = UserService.addTheme;
-  $scope.addNewTheme = addNewTheme;
-  function addNewTheme(currentThemeObject){
-    newTheme = angular.copy(currentThemeObject);
-    $scope.addTheme(newTheme);
-  }
+  
 
   //update theme
   $scope.updateTheme = UserService.updateTheme;

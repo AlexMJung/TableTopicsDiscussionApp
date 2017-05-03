@@ -9,22 +9,29 @@
         </div>
         <div class = 'col-md-8'>
           <h2>{{currentSessionObject.theme.theme}}</h2>
-          <h2>{{randoms.randomParticipants[randoms.currentRound].name}}</h2>
-          <h2>{{randoms.randomQuestions[randoms.currentRound]}}</h2>
+          <h2 ng-if = "((randoms.currentRound) < randoms.numRound)">{{randoms.randomParticipants[randoms.currentRound].name}}</h2>
+          <h2 ng-if = "((randoms.currentRound) < randoms.numRound)">{{randoms.randomQuestions[randoms.currentRound]}}</h2>
+          <h2 ng-if = "((randoms.currentRound) === randoms.numRound)">Percent Success: {{currentSessionObject.percentage}}%</h2>
         </div>
       </div>
       <div class = 'row'>
-        <div id = 'timer' class = 'col-md-12'>
-            <h1>{{timer | secondsToDateTime | date: 'mm:ss'}}</h1>
+        <div class = ' timer-div'>
+          <div id = 'timer' class = 'col-md-12 timerStart' ng-class = "{timerGreen:(timerStatus == 1),timerOrange:(timerStatus == 2),timerRed:(timerStatus == 3)}">
+          </div>
         </div>
       </div>
+      <!-- <div class = 'row'>
+        <div class = 'col-md-offset-5 col-md-2'>
+          <p>{{timer | secondsToDateTime | date: 'mm:ss'}}</p>
+        </div>
+      </div> -->
     </div>
     <!-- ends topic and timer div -->
 
     <div id = 'participantsColumn' class = 'col-md-3'>
       <div id = 'participantsSpacing' class="row">
-          <div class="well well-sm blue" ng-repeat="participant in currentSessionObject.participantsArray track by $index">
-              <div class = 'row'>
+            <div ng-repeat="participant in currentSessionObject.participantsArray track by $index">
+              <div class = 'row well well-sm' ng-class = "{isSpeaking:(participant.speakStatus === 'isSpeaking'), hasSpoken:(participant.speakStatus === 'hasSpoke')}" >
                 <div class = 'col-md-6 participant-display'>
                   {{participant.name}}
                 </div>
@@ -42,18 +49,22 @@
 </div>
 <!-- ends container -->
 
-<div>
-    <div id = 'chooseNext' class = 'col-md-12'>
-      <button type="button" class="btn btn-default" ng-click = 'startTimer()' >
+<div class = 'row'>
+    <div  class = 'col-md-2 choose-next'>
+      <p>{{timer | secondsToDateTime | date: 'mm:ss'}}</p>
+    </div>
+    <div class = 'col-md-10 choose-next'>
+      <button type="button" class="btn btn-default" ng-disabled = "(sessionStatus === 'talking' || sessionStatus === 'next' || sessionStatus === 'done')" ng-click = 'startTimer()' >
         <span class="glyphicon glyphicon-play"></span>
       </button>
-      <button type="button" class="btn btn-default" ng-click = 'stopTimer()' >
+      <button type="button" class="btn btn-default" ng-disabled = "(sessionStatus === 'ready' || sessionStatus === 'next' || sessionStatus === 'done')" ng-click = 'stopTimer(timer, randoms)' >
         <span class="glyphicon glyphicon-stop red"></span>
       </button>
-      <button type="button" class="btn btn-default" ng-click = 'chooseNext(timer,randoms)' >
+      <button type="button" class="btn btn-default" ng-disabled = "(sessionStatus === 'ready' || sessionStatus === 'talking' || sessionStatus === 'done')" ng-click = 'chooseNext(timer,randoms)' >
         <span class="glyphicon glyphicon-step-forward"></span> Choose Next
       </button>
-      <button type="button" class="btn btn-default" ng-click = 'logoutAndUpdate(currentSessionObject)' >Log out
+      <button type="button" class="btn btn-default" ng-click = 'startAnotherSession(currentSessionObject)' >
+        <span class="glyphicon glyphicon-eject"></span> Start Another Session
       </button>
     </div>
 </div>

@@ -1,5 +1,4 @@
 myApp.factory('UserService', ['$http', '$location', function($http, $location){
-  console.log('User Service Loaded');
 
 //users
   //variables
@@ -10,7 +9,6 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     $http.get('/user').then(function(response) {
         if(response.data.username) {
             userObject.userName = response.data.username;
-            console.log('User Data: ', userObject.userName);
         } else {
             $location.path("/login");
         }
@@ -18,6 +16,9 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   }//ends getuser
 
   function logout(){
+    // currentThemeObject.theme = '';
+    // currentThemeObject.questionsArray = [];
+    // currentSessionObject.participantsArray =[];
     $http.get('/user/logout').then(function(response) {
       $location.path("/login");
     });//ends $http.get/user/logout
@@ -61,6 +62,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   currentSessionObject.participantsArray = [];
 
   function saveSession(currentSessionObject){
+
     if(currentSessionObject.theme.questionsArray.length < currentSessionObject.participantsArray.length){
       console.log("you have fewer questions than participants, that is not going to work.");
     }
@@ -84,7 +86,13 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     randoms.randomParticipants = randomize(participants);
     randoms.numRound = participants.length;
     randoms.currentRound = 0;
-    console.log("randomQuestions and then randomParticipants then numRound then currentRound", randoms.randomQuestions, randoms.randomParticipants, randoms.numRound, randoms.currentRound);
+    var speaker = randoms.randomParticipants[randoms.currentRound].id;
+    var speakers = currentSessionObject.participantsArray;
+    for (var i = 0; i < speakers.length; i++){
+      if (speaker === speakers[i].id){
+        speakers[i].speakStatus = 'isSpeaking';
+      }
+    }
     $location.path("/session");
   }//ends startSession
 
