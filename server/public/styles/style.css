@@ -231,7 +231,7 @@ timer color #F4B669
 second hand color #C87061*/
 
 .hasSpoken{
-  /*border: 3px solid darkgray;*/
+  border: 3px none darkgray;
   color: darkgray;
 }
 
