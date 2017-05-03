@@ -48,10 +48,10 @@ myApp.controller('SessionController', ['$scope', '$interval', '$location', 'User
         if ($scope.timer >= 120){
           $scope.timerStatus = 3;
         }
-        else if ($scope.timer >= 60){
+        else if ($scope.timer >= 90){
           $scope.timerStatus = 2;
         }
-        else if ($scope.timer >= 1){
+        else if ($scope.timer >= 60){
           $scope.timerStatus = 1;
         }
       }

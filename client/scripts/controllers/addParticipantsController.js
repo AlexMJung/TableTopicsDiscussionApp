@@ -1,4 +1,4 @@
-myApp.controller('AddParticipantsController', ['$scope', 'UserService', function($scope, UserService) {
+myApp.controller('AddParticipantsController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
 
   //gets the user and lets the user logout
   $scope.userObject = UserService.userObject;
@@ -44,6 +44,11 @@ myApp.controller('AddParticipantsController', ['$scope', 'UserService', function
 
   //saveParticipants post Session to db
   $scope.saveSession = UserService.saveSession;
+
+  $scope.goBacktoChooseTheme = goBacktoChooseTheme;
+  function goBacktoChooseTheme(){
+      $location.path("/chooseTheme");
+  }
 
 
 }]);//ends addParticipantsController
