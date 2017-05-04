@@ -276,11 +276,13 @@ second hand color #C87061*/
 
 /*clock animation*/
 .seconds-container {
+  height: 182px;
+  width: 182px;
   position: absolute;
-  top: 215px;
-  right: 155px;
+  top: 305px;
+  right: 0;
   bottom: 0;
-  left: 0;
+  left: 608px;
 }
 
 .seconds {
