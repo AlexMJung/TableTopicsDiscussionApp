@@ -52,6 +52,14 @@ module.exports = function(grunt){
               'angular-route.min.js',
               'angular-route.min.js.map'],
         dest: 'server/public/vendors/angular-route/'
+      },
+      socket: {
+        expand: true,
+        cwd: 'node_modules/socket.io-client/dist',
+        src: ['socket.io.js',
+              'socket.io.min.js',
+              'socket.io.js.map'],
+        dest: 'server/public/vendors/socket/'
       }
     },
     watch: {

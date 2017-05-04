@@ -8,6 +8,7 @@ myApp.controller('AddParticipantsController', ['$scope', '$location', 'UserServi
   participant.name = '';
   participant.time = '';
   participant.speakStatus = 'hasNot';
+  $scope.participant = participant;
 
   //var
   $scope.currentThemeObject = UserService.currentThemeObject;
@@ -19,6 +20,7 @@ myApp.controller('AddParticipantsController', ['$scope', '$location', 'UserServi
   $scope.addParticipant = addParticipant;
   var idNum = 0;
   function addParticipant(newParticipantName){
+    console.log("inside addParticipant with:", newParticipantName);
     if (newParticipantName === ''){
       return;
     }
@@ -30,7 +32,7 @@ myApp.controller('AddParticipantsController', ['$scope', '$location', 'UserServi
     participantObject.time = 0;
     participantObject.speakStatus = 'hasNot';
     $scope.currentSessionObject.participantsArray.push(participantObject);
-
+    console.log("$scope.currentSessionObject.participantsArray",$scope.currentSessionObject.participantsArray);
     $scope.participant.name = '';
     idNum += 1;
   }//ends addParticipant
@@ -48,6 +50,16 @@ myApp.controller('AddParticipantsController', ['$scope', '$location', 'UserServi
   $scope.goBacktoChooseTheme = goBacktoChooseTheme;
   function goBacktoChooseTheme(){
       $location.path("/chooseTheme");
+  }
+
+  //sockets
+  socketFunction();
+  function socketFunction(){
+    var socket = io();
+    socket.on('emitName', function(name){
+        console.log("I've heard from the server that I need to do something");
+        $scope.$apply(addParticipant(name));
+    });
   }
 
 

@@ -1,6 +1,8 @@
 //base modules
 var express = require('express');
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 //david bowies modules
 var davidBowie = require( './modules/db.js');
@@ -48,7 +50,22 @@ app.use('/themes', themes);
 app.use('/sessions', sessions);
 app.use('/', index);
 
+//socket.io
+io.on('connection', function(socket){
+    console.log( "Nice work buddy! A user connected.");
+    socket.on('disconnect', function(){
+      console.log('user disconnected');
+    });
+});
+
+io.on('connection', function(socket){
+  socket.on('emitName', function(name){
+    console.log('Name: ' + name);
+    io.emit('emitName', name);
+  });
+});
+
 //listen
-app.listen(app.get("port"), function(){
+http.listen(app.get("port"), function(){
    console.log("I'm here to listen to you: " + app.get("port"));
 });
