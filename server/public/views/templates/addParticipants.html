@@ -1,0 +1,64 @@
+<!--Header and Logout  -->
+<header ng-include="'/views/partials/header.html'"></header>
+<div class = 'instructions'>
+  <div class = 'container'>
+    <div class = 'row'>
+      <div class = 'col-md-10' ng-include="'views/partials/nav.html'"></div>
+      <div class = 'button-right col-md-2'>
+        <button class="btn btn-default" ng-click="logout()">Log Out</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Theme, Save Participants, numQ's and numP's -->
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-9'>
+      <h2>{{currentThemeObject.data.theme}}</h2>
+      <h3>There are {{currentThemeObject.data.questionsArray.length}} questions prepared for this session.</h3>
+      <h3>There are {{currentSessionObject.participantsArray.length}} participants in this session.</h3>
+      <h5 class = 'alert alert-danger' role = 'alert' ng-if = "currentSessionObject.participantsArray.length > currentThemeObject.data.questionsArray.length">You cannot have more participants than questions.</h5>
+    </div>
+    <div class = 'col-md-3 button-right'>
+      <button type="button" class="btn btn-default" ng-click = 'goBacktoChooseTheme()' >
+        <span class="glyphicon glyphicon-arrow-left"></span>
+      </button>
+      <button type="button" class="btn btn-default" ng-click = 'saveSession(currentSessionObject)' >
+        <span class="glyphicon glyphicon-floppy-disk"></span> Save Participants
+      </button>
+    </div>
+  </div>
+
+
+<!--Add Participants-->
+  <div id = 'addParticipants' class = 'row'>
+    <div class = 'col-md-12'>
+      <input class = 'user-input' type = 'text' placeholder = 'Add a Participant' ng-model = 'participant.name' ng-keydown = '($event.keyCode === 13 || $event.keyCode === 9) && addParticipant(participant.name)'/>
+      <span>Press Enter to Add Participant</span>
+    </div>
+  </div>
+
+
+<!-- Participant display div -->
+  <div class = 'pre-scrollable pre-scroll-verride'>
+
+    <ul class="list-group" ng-repeat = 'participant in currentSessionObject.participantsArray track by $index'>
+
+      <div class = 'row'>
+
+        <div class = 'col-md-10'>
+          <li class="list-group-item participant-list">{{participant.name}}</li>
+        </div>
+
+        <div class = 'col-md-2'>
+          <button type="button" class="btn btn-default btn-sm" ng-click='deleteParticipant($index)' >
+            <span class="glyphicon glyphicon-remove red"></span>
+          </button>
+        </div>
+
+      </div>
+    </ul>
+  </div>
+</div>
+<!-- ends continer -->

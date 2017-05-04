@@ -1,0 +1,46 @@
+<!-- header -->
+<header ng-include="'/views/partials/header.html'"></header>
+
+<!-- login -->
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-offset-2 col-md-10'>
+      <h2>Table Topics Discussion Practice Group:</h2>
+    </div>
+  <div class = 'row'>
+    <div class = 'col-md-offset-2 col-md-8'>
+      <p class = 'add-margin'>Table Topics Discussion Practice App is a full-stack web application which facilitates groups in practicing off the cuff responses to themed questions in a low stakes and supportive environment. Inspired by the Table Topics portion of the Toastmasters format, this app will help participants become comfortable with speaking publicly for 1 - 2 minutes on a wide range of topics. By engaging the participants with a playful environment it will work toward building confidence and improv skills, lowering anxiety, and helping them to communicate their thoughts and needs more effectively.</p>
+    </div>
+  </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class = ' login-container row'>
+    <div class = 'col-md-offset-4 col-md-4 col-md-offset-4'>
+      <div class = 'panel panel-default'>
+        <div class = 'panel-body'>
+
+          <h2>Login to Begin</h2>
+
+          <h5 class = 'alert alert-danger' role = 'alert' ng-if = "message != ''">{{message}}</h5>
+
+          <form ng-submit = 'login()'>
+            <div>
+                <input class = 'user-input' type = 'text' placeholder = 'username' ng-model = 'user.username' />
+            </div>
+            <div>
+                <input class = 'user-input' type = 'password' placeholder = 'password' ng-model = 'user.password' />
+            </div>
+            <div>
+                <input class = 'btn btn-default' type = 'submit' name = 'submit' value = 'Log in' />
+                <br>
+                <a href = '#register'>Register</a>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
