@@ -273,3 +273,40 @@ second hand color #C87061*/
 .socket-input{
   background-color: ghostwhite;
 }
+
+/*clock animation*/
+.seconds-container {
+  height: 182px;
+  width: 182px;
+  position: absolute;
+  top: 305px;
+  right: 0;
+  bottom: 0;
+  left: 608px;
+}
+
+.seconds {
+  background: #C87061;
+  border-radius: 50%;
+  height: 90px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform-origin: 50% 80%;
+  width: 3px;
+  z-index: 8;
+}
+
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+/*.seconds-container {
+  animation: rotate 60s infinite linear;
+}*/
+
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
+}
