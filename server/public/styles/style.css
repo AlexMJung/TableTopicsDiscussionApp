@@ -105,7 +105,6 @@ alphabetical within section*/
 .pre-scroll-override{
   max-height: 500px;
 }
-    /*preScrollOverride needs to be a class*/
 
 /*header*/
 #headerLogo{
@@ -223,8 +222,8 @@ alphabetical within section*/
 .isSpeaking{
   border: 3px solid #F4B669;
 }
-/*
 
+/*
 blue #3399ff
 hand color #82C78E
 timer color #F4B669
@@ -240,26 +239,37 @@ second hand color #C87061*/
 }
 
 .timerStart{
-
 }
 
 .timerGreen{
   /*color: #82C78E;*/
-
   background-color: #82C78E;
-
 }
 
 .timerOrange{
   /*color: #F4B669;*/
-
   background-color: #F4B669;
-
 }
 
 .timerRed{
   /*color: #C87061;*/
-
   background-color: #C87061;
+}
 
+/*socket*/
+.socket-center-div{
+  text-align: center;
+}
+
+#socketLogo{
+  border-radius: 15px;
+  height: 250px;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  padding: 10px;
+  width: 250px;
+}
+
+.socket-input{
+  background-color: ghostwhite;
 }
