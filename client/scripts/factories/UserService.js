@@ -49,6 +49,7 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
   }//ends createTheme
 
   function updateTheme(updateObject){
+    console.log("updateObject",updateObject);
     $http.put('/themes/updateTheme', updateObject).then(function(response){
       currentThemeObject.data = response.data;
       currentSessionObject.theme = currentThemeObject.data;

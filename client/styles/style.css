@@ -48,6 +48,10 @@ alphabetical within section*/
   margin-right: 10px;
   padding: 10px;
 }
+
+.btn{
+  font-size: 16px;
+}
   /*not completely sure what this one does*/
 
 #relative{
@@ -105,7 +109,6 @@ alphabetical within section*/
 .pre-scroll-override{
   max-height: 500px;
 }
-    /*preScrollOverride needs to be a class*/
 
 /*header*/
 #headerLogo{
@@ -154,7 +157,7 @@ alphabetical within section*/
 
 /*sessionIntro*/
 #introTron{
-  background-image: url(/styles/images/logo.png);
+  /*background-image: url(/styles/images/logo.png);*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -162,6 +165,7 @@ alphabetical within section*/
   margin-top: 50px;
   text-align: right;
   background-color: white;
+  position:relative;
 }
 
 /*session*/
@@ -223,8 +227,8 @@ alphabetical within section*/
 .isSpeaking{
   border: 3px solid #F4B669;
 }
-/*
 
+/*
 blue #3399ff
 hand color #82C78E
 timer color #F4B669
@@ -240,26 +244,91 @@ second hand color #C87061*/
 }
 
 .timerStart{
-
 }
 
 .timerGreen{
   /*color: #82C78E;*/
-
   background-color: #82C78E;
-
 }
 
 .timerOrange{
   /*color: #F4B669;*/
-
   background-color: #F4B669;
-
 }
 
 .timerRed{
   /*color: #C87061;*/
-
   background-color: #C87061;
+}
 
+/*socket*/
+.socket-center-div{
+  text-align: center;
+}
+
+#socketLogo{
+  border-radius: 15px;
+  height: 250px;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  padding: 10px;
+  width: 250px;
+}
+
+.socket-input{
+  background-color: ghostwhite;
+}
+
+/*clock animation*/
+.seconds-container {
+  height: 182px;
+  width: 182px;
+  position: absolute;
+  top: 252px;
+  right: 0;
+  bottom: 0;
+  left: 281px;
+  z-index: 7;
+}
+
+.seconds {
+  background: #C87061;
+  border-radius: 50%;
+  height: 90px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform-origin: 50% 80%;
+  width: 3px;
+  z-index: 8;
+}
+
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+/*.seconds-container {
+  animation: rotate 60s infinite linear;
+}*/
+
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
+}
+
+.animate-logo{
+  height:500px;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 200px;
+  z-index: 6;
+}
+
+.bring-up{
+  position: relative;
+  z-index: 100;
 }

@@ -29,6 +29,7 @@ myApp.controller('ChooseThemeController', ['$scope', 'UserService', function($sc
 
   function deleteQuestion(index){
     $scope.currentThemeObject.questionsArray.splice(index,1);
+    console.log("$scope.currentThemeObject.questionsArray",$scope.currentThemeObject.questionsArray);
   }//ends deleteQuestion
 
   //choose existing theme
@@ -41,7 +42,7 @@ myApp.controller('ChooseThemeController', ['$scope', 'UserService', function($sc
 
   //add theme
   $scope.addTheme = UserService.addTheme;
-  
+
 
   //update theme
   $scope.updateTheme = UserService.updateTheme;

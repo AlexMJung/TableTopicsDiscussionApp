@@ -1,4 +1,3 @@
-console.log("you made it to session.js");
 // requires
 var express = require("express");
 var router = express.Router();

@@ -63,6 +63,11 @@ myApp.config(['$routeProvider', '$locationProvider',
       }
     })
 
+    .when('/socket', {
+      templateUrl: '/views/templates/socket.html',
+      controller: 'SocketController'
+    })
+
     .otherwise({
       redirectTo: 'login'
     });
