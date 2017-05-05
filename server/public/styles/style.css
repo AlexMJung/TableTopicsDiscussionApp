@@ -153,7 +153,7 @@ alphabetical within section*/
 
 /*sessionIntro*/
 #introTron{
-  background-image: url(/styles/images/logo.png);
+  /*background-image: url(/styles/images/logo.png);*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -161,6 +161,7 @@ alphabetical within section*/
   margin-top: 50px;
   text-align: right;
   background-color: white;
+  position:relative;
 }
 
 /*session*/
@@ -279,10 +280,11 @@ second hand color #C87061*/
   height: 182px;
   width: 182px;
   position: absolute;
-  top: 305px;
+  top: 252px;
   right: 0;
   bottom: 0;
-  left: 35%;
+  left: 281px;
+  z-index: 7;
 }
 
 .seconds {
@@ -309,4 +311,20 @@ second hand color #C87061*/
 
 .seconds-container {
   animation: rotate 60s infinite steps(60);
+}
+
+.animate-logo{
+  height:500px;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 200px;
+  z-index: 6;
+}
+
+.bring-up{
+  position: relative;
+  z-index: 100;
 }
