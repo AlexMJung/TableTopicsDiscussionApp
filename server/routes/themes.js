@@ -49,7 +49,7 @@ var Themes = mongoose.model( "themes", ThemesSchema, "themes");
 
     Themes.findOneAndUpdate(
         {'_id': id},
-        {$addToSet:{'questionsArray':{$each: questionsArray}}},
+        {$set:{'questionsArray': questionsArray}},
         {new: true},
         function(err, updatedObject){
       if(err){

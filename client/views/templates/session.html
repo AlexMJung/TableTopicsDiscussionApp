@@ -11,7 +11,7 @@
           <h2>{{currentSessionObject.theme.theme}}</h2>
           <h2 ng-if = "((randoms.currentRound) < randoms.numRound)">{{randoms.randomParticipants[randoms.currentRound].name}}</h2>
           <h2 ng-if = "((randoms.currentRound) < randoms.numRound)">{{randoms.randomQuestions[randoms.currentRound]}}</h2>
-          <h2 ng-if = "((randoms.currentRound) === randoms.numRound)">Percent Success: {{currentSessionObject.percentage}}%</h2>
+          <h2 ng-if = "((randoms.currentRound) === randoms.numRound)">Percent Success: {{currentSessionObject.percentage | number: 2}}%</h2>
         </div>
       </div>
       <div class = 'row'>
