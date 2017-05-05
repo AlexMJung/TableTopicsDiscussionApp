@@ -48,6 +48,10 @@ alphabetical within section*/
   margin-right: 10px;
   padding: 10px;
 }
+
+.btn{
+  font-size: 16px;
+}
   /*not completely sure what this one does*/
 
 #relative{
