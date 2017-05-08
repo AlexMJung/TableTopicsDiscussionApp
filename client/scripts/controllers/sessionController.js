@@ -91,6 +91,7 @@ myApp.controller('SessionController', ['$scope', '$interval', '$location', 'User
     $scope.currentThemeObject.questionsArray = [];
     currentSessionObject.participantsArray =[];
     $location.path("/chooseTheme");
+    location.reload();
   }//ends logoutAndUpdate
 
   }]);//ends sessionIntroController
