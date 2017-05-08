@@ -18,7 +18,7 @@ myApp.controller('SessionController', ['$scope', '$interval', '$location', 'User
     if ((randoms.currentRound) === randoms.numRound){
       var overMin = 0;
       for (i = 0; i < speakers.length; i++){
-        if (speakers[i].time >= 60 ){
+        if (speakers[i].time >= 10 ){
           overMin += 1;
         }
       }
