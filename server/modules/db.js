@@ -5,8 +5,8 @@ var mongoURI = '';
 if(process.env.MONGODB_URI !== undefined) {
     mongoURI = process.env.MONGODB_URI;
 } else {
-    // mongoURI = 'mongodb://localhost:27017/TableTopicsDPG';
-    mongoURI = 'mongodb://cooper:youaregreat@ds133211.mlab.com:33211/table-topics-database';
+    mongoURI = 'mongodb://localhost:27017/TableTopicsDPG';
+    // mongoURI = 'mongodb://cooper:youaregreat@ds133211.mlab.com:33211/table-topics-database';
 }
 
 var MongoDB = mongoose.connect(mongoURI).connection;

@@ -9,13 +9,14 @@ body{
   background-color: white;
   height: 100%;
   position: relative;
-  color: #slategrey;
+  color: slategrey;
 }
 
 h1{
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-size: 75px;
+  color: white;
 }
 
 /*@TODO */
@@ -111,6 +112,14 @@ alphabetical within section*/
 }
 
 /*header*/
+#headerImage{
+  background-image: url(/styles/images/murmuration.jpg);
+  /*background-position: right;*/
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
+  overflow: hidden;
+}
+
 #headerLogo{
   border-radius: 15px;
   float:left;
