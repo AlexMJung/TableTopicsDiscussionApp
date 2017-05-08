@@ -21,7 +21,6 @@ myApp.factory('UserService', ['$http', '$location', function($http, $location){
     // currentSessionObject.participantsArray =[];
     $http.get('/user/logout').then(function(response) {
       $location.path("/login");
-      location.reload(true);
     });//ends $http.get/user/logout
   }//ends logout
 
