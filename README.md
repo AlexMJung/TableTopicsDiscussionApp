@@ -52,6 +52,8 @@ The landing page is the first screen participants will see when a session is abo
 ## Practice Session
 
   Admin Login> Create Session> Enter Participants> Session Intro> **Practice Session>** Admin Logout
+  
+  ![alt text](images-for-readme/session.png)
 
 Session organizer and participants will spend the majority of their time on this page. This page executes the practice session, choosing participants and questions at random.
 
