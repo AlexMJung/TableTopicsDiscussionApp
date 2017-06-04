@@ -1,15 +1,12 @@
-# Express/Passport with Angular Routing
-This version uses Angular to control the login requests and redirection in coordination with client-side routing.
+# Murmuration: A Table Topics Discussion Practice App
+
+Keith Tomlinson
+April 19, 2017 | Version 1.0
 
 Important Directions:
 * Run `npm install`,
 * Run `grunt' in an open tab of terminal,
 * Use the `client` file to work on front end files. Grunt will watch those files to be compiled into the `server/public` files. This handles minification and such.
-
-# Table Topics Discussion Practice App
-
-Keith Tomlinson
-April 19, 2017 | Version 1.0
 
 ## Application Overview
 Table Topics Discussion Practice App is a full-stack web application which facilitates groups in practicing off the cuff responses to themed questions in a low stakes and supportive environment. Inspired by the Table Topics portion of the Toastmasters format, this app will help participants become comfortable with speaking publicly for 1 - 2 minutes on a wide range of topics. By engaging the participants with a playful environment it will work toward building confidence and improv skills, lowering anxiety, and helping them to communicate their thoughts and needs more effectively.
