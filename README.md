@@ -39,7 +39,7 @@ Upon login the session organizer names the session, creates a theme for the sess
 ## Enters Participants
   Admin Login> Create Session> **Enter Participants>** Session Intro> Practice Session> Admin Logout
   
-  ![alt text](images-for-readme/addParticpants.png)
+  ![alt text](images-for-readme/addParticipants.png)
 
 After create session is verified, the session organizer is brought to an input participant names view. Participants names are added to the current session object in the database collection of sessions.
 
