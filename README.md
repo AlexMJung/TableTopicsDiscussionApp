@@ -25,6 +25,8 @@ Views the browser during a session and responds to direction from but does not p
 ## Admin Login and Create Session
 **Admin Login>** Create Session> Enter Participants> Session Intro> Practice Session> Admin Logout
 
+![alt text](images-for-readme/chooseTheme.png)
+
 At the base / of the application, the session organizer is asked to login to create a new
 session.
 
@@ -32,13 +34,10 @@ session.
 
 Upon login the session organizer names the session, creates a theme for the session and enters questions for the session. This builds a session object which will be stored in a database collection of sessions. The view will update as questions are entered allowing the session organizer to see what has been entered. Each entered question can be updated or deleted by the organizer.
 
-### Organizer Opens a Session
-
-Instead of the session organizer adding in questions, the organizer will name the session and set its theme then create a session that participants will be invited to join.
-
-
 ## Enters Participants
   Admin Login> Create Session> **Enter Participants>** Session Intro> Practice Session> Admin Logout
+  
+  ![alt text](images-for-readme/addParticpants.png)
 
 After create session is verified, the session organizer is brought to an input participant names view. Participants names are added to the current session object in the database collection of sessions.
 
