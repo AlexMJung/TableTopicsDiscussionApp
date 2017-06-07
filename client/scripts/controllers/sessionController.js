@@ -45,13 +45,13 @@ myApp.controller('SessionController', ['$scope', '$interval', '$location', 'User
     var interval = $interval(function(){
       if($scope.enabled){
         $scope.timer += 1;
-        if ($scope.timer >= 15){
+        if ($scope.timer >= 120){
           $scope.timerStatus = 3;
         }
-        else if ($scope.timer >= 10){
+        else if ($scope.timer >= 90){
           $scope.timerStatus = 2;
         }
-        else if ($scope.timer >= 5){
+        else if ($scope.timer >= 60){
           $scope.timerStatus = 1;
         }
       }
