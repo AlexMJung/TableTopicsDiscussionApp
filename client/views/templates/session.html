@@ -63,8 +63,11 @@
       <button type="button" class="btn btn-default" ng-disabled = "(sessionStatus === 'ready' || sessionStatus === 'talking' || sessionStatus === 'done')" ng-click = 'chooseNext(timer,randoms)' >
         <span class="glyphicon glyphicon-step-forward"></span> Choose Next
       </button>
+      <button type="button" class="btn btn-default" ng-click = 'endThisSession(currentSessionObject)' >
+        <span class="glyphicon glyphicon-eject"></span> End This Session
+      </button>
       <button type="button" class="btn btn-default" ng-click = 'startAnotherSession(currentSessionObject)' >
-        <span class="glyphicon glyphicon-eject"></span> Start Another Session
+        <span class="glyphicon glyphicon-repeat"></span> Start Another Session
       </button>
     </div>
 </div>

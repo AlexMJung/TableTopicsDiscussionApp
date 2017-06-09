@@ -94,4 +94,10 @@ myApp.controller('SessionController', ['$scope', '$interval', '$location', 'User
     location.reload(true);
   }//ends logoutAndUpdate
 
+  $scope.endThisSession = endThisSession;
+  function endThisSession(currentSessionObject){
+    console.log("end this session", currentSessionObject);
+
+  }//ends endThisSession
+
   }]);//ends sessionIntroController
